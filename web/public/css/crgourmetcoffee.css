@@ -1,0 +1,116 @@
+a {
+    text-decoration: none;
+}
+.clearfix {
+    clear: both;
+}
+/**Header Classes**/
+header {
+    background-color: #0e0604;
+    padding: 0;
+    width: 100%;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-inverse {
+    background-color: #0e0604;
+    border-color: #0e0604;
+}
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+.navbar-inverse .navbar-brand span:nth-child(1) {
+    font-weight: bold;
+}
+.navbar-inverse .navbar-brand span:nth-child(2) {
+    font-weight: bold;
+    color: #ddb26e;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+/**Header End**/
+
+/**Banner Classes**/
+#banner {
+    background-image: url(../imgs/coffeeGrains.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 35vh;
+    width: 100%;
+    text-align: center;
+}
+#siteLogo {
+    margin: 5vh auto;
+    width: 55vh;
+}
+/**Banner End**/
+
+/**Products Section Classes**/
+.productThumbnails {
+    text-align: center;
+    color: #222;
+    margin: 2% 0 0;
+    padding: 0;
+}
+.prodThumbInside {
+    border: 1px solid #e0e0e0;
+    margin: 2%;
+}
+.prodThumbInside img {
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    padding: 7%;
+    margin-bottom: 2%;
+    width: 75%;
+}
+.productThumbnailsHeadings {
+    background-color: #ddb26e;
+    padding: 0.5px;
+    margin: 0 auto 10px;
+}
+.productDetails {
+    text-decoration: none;
+    color: #333;
+}
+.productDetails:nth-child(odd) {
+    text-align: left;
+}
+.productDetails:nth-child(even) {
+    text-align: right;
+}
+
+/**Products Section End**/
+
+/**Info Section Classes**/
+#siteInfoSection {
+    margin: 2% 0;
+}
+#siteInfo {
+    background-image: url(../imgs/coffeeField.png);
+    background-position: 98% 30%;
+    background-repeat: no-repeat;
+    height: 35vh;
+    text-align: center;
+}
+#siteInfoText {
+    background-color: #0e0604;
+    height: 35vh;
+    color: #fff;
+    padding: 2% 3%;
+    text-align: right;
+}
+.pagetitle {
+    text-align: center;
+    font-size: xx-large;
+}
+.pagesubtitle{
+    text-align: center;
+    font-size: x-large;
+}
+/**Info Section End**/
+
+/**Contact Section Classes**/
+
+/**Contact Section End**/
