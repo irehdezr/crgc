@@ -1,0 +1,139 @@
+/**Product Info Classes**/
+#farmInfoSection h2 {
+    color: #333;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 1.5% 0;
+}
+#prodInfoHeading h4, #order h4, #prodInfoGrindHeading h4, .prodInfoIconHeadings h4 {
+    color: #73502a;
+    font-weight: bold;
+    margin: 5% 0;
+    text-align: center;
+    text-decoration: none;
+}
+#prodInfoSection {
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+#prodInfoDetails {
+    color: #333;
+}
+#prodInfoDetails span {
+    font-weight: bold;
+}
+.prodInfoImgs, #prodInfoDetails {
+    padding:2%;
+}
+.prodInfoImgs img {
+    width: 50%;
+}
+.prodInfoIconHeadings img {
+    margin-top: 15px;
+    width: 35%;
+}
+.prodInfoPreferences {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10vh;
+    padding-bottom: 30px;
+}
+.prodInfoIconHeadings button {
+    background-color: #ddb26e;
+    border: 1px solid #ddb26e;
+}
+.prodInfoIconHeadings button:hover, .prodInfoIconHeadings button:active, .prodInfoIconHeadings button:focus {
+    background-color: #73502a;
+    border: 1px solid #73502a;
+}
+.prodInfoIconHeadings button span {
+    margin-right: 5px;
+}
+/**Product Info End**/
+
+/**Carousel Section Classes**/
+#prodInfoCarouselContainer {
+    margin: 2vh auto 3vh;
+}
+.carousel-control {
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 0;
+    color: #73502a;
+    font-size: 70px;
+    left: 0;
+    opacity: 1;
+    padding: 5% 2%;
+    position: absolute;
+    text-align: center;
+    text-shadow: none;
+    top: 0;
+    width: 5%;
+}
+.carousel-control:hover {
+    color: #0e0604;
+}
+.carouselCards h4 {
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+#carouselHeading{
+    padding: 0;
+}
+#carouselHeading h3 {
+    background-color: #ddb26e;
+    color: #fff;
+    font-weight: bold;
+    margin: 15px auto 0;
+    padding: 5px;
+    /* width: 90%; */
+}
+.carousel-control.left {
+    background-image: url("../imgs/leftIcon.png");
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    /* left: -3vw;*/
+}
+.carousel-control.right {
+    background-image: url("../imgs/rightIcon.png");
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    /* right: -3vw;*/
+}
+.carousel-indicators li {
+    border: 1px solid #73502a;
+}
+.carousel-indicators .active {
+    background-color: #73502a;
+}
+.rating > span {
+    color: #ddb26e;
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+}
+/* home porduct details*/
+.productThumbnails {
+    text-align: center;
+    color: #222;
+    margin: 2% 0 0;
+    padding: 0;
+}
+.prodThumbInside img {
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    flex-wrap: wrap;
+    padding: 7%;
+    margin-bottom: 2%;
+    width: 75%;
+}
+.price {
+    font-weight: bold;
+}
+/* home porduct details*/
+#cupMap {
+    padding: 4%;
+}
+/**Carousel Section End**/
