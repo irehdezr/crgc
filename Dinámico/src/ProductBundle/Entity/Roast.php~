@@ -1,0 +1,19 @@
+<?php
+
+namespace ProductBundle\Entity;
+
+/**
+ * Roast
+ */
+class Roast
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $description;
+}

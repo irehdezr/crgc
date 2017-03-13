@@ -1,0 +1,39 @@
+<?php
+
+namespace ProductBundle\Entity;
+
+/**
+ * Presentation
+ */
+class Presentation
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var int
+     */
+    private $product;
+
+    /**
+     * @var int
+     */
+    private $roast;
+
+    /**
+     * @var int
+     */
+    private $grind;
+
+    /**
+     * @var int
+     */
+    private $price;
+
+    /**
+     * @var int
+     */
+    private $weight;
+}

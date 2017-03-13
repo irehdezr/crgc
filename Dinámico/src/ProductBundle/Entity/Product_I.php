@@ -41,6 +41,18 @@ class Product_I
      * @var string
      */
     private $description;
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $presentations;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->presentations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -170,6 +182,40 @@ class Product_I
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Add presentation
+     *
+     * @param \ProductBundle\Entity\Presentation $presentation
+     *
+     * @return Product_I
+     */
+    public function addPresentation(\ProductBundle\Entity\Presentation $presentation)
+    {
+        $this->presentations[] = $presentation;
+
+        return $this;
+    }
+
+    /**
+     * Remove presentation
+     *
+     * @param \ProductBundle\Entity\Presentation $presentation
+     */
+    public function removePresentation(\ProductBundle\Entity\Presentation $presentation)
+    {
+        $this->presentations->removeElement($presentation);
+    }
+
+    /**
+     * Get presentations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPresentations()
+    {
+        return $this->presentations;
     }
 
     /**

@@ -1,0 +1,19 @@
+<?php
+
+namespace ProductBundle\Entity;
+
+/**
+ * Grind
+ */
+class Grind
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $description;
+}

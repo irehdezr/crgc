@@ -1,5 +1,5 @@
 .productThumbnails {
-    /*! text-align: center; */
+    text-align: center;
     color: #222;
     margin: 2% 0 0;
     padding: 0;
@@ -39,23 +39,15 @@
 }
 .price {
     font-weight: bold;
+    text-align: center;
 }
 
-.rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-}
 .rating > span {
-    cursor: pointer;
+    color: #ddb26e;
+    cursor: default;
     display: inline-block;
     position: relative;
     width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-    color: #ddb26e;
-    content: "\2605";
-    position: absolute;
 }
 
 

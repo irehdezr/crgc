@@ -4,7 +4,10 @@ DROP TABLE `Farm_Certification`;
 DROP TABLE `Farm_Cultivar`;
 DROP TABLE `Farm_Species`;
 DROP TABLE `Farm_Award`;
+DROP TABLE `Product_Presentation`;
 DROP TABLE `Product_I`;
+DROP TABLE `Roast`;
+DROP TABLE `Grind`;
 DROP TABLE `Farm_I`;
 DROP TABLE `Certification`;
 DROP TABLE `Cultivar`;
@@ -51,6 +54,18 @@ CREATE TABLE IF NOT EXISTS `Farm_I` (
 	PRIMARY KEY `PK_Farm_I` (`id`)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
+CREATE TABLE IF NOT EXISTS `Roast` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`description` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL UNIQUE,
+	PRIMARY KEY `PK_Roast` (`id`)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `Grind` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`description` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL UNIQUE,
+	PRIMARY KEY `PK_Grind` (`id`)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci AUTO_INCREMENT=1 ;
+
   
 CREATE TABLE IF NOT EXISTS `Product_I` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
@@ -71,9 +86,11 @@ CREATE TABLE IF NOT EXISTS `Product_Presentation`(
 	`grind_id` int(11) NOT NULL,
 	`price` int(11) NOT NULL,
 	`weight` int(11) NOT NULL,
-	
-	FOREIGN KEY `FK_Product_Presentation_Product_I` (`product_id`) REFERENCES `Product_I` (`id`)
-)ENGINE=innoBD  DEFAULT CHARSET=uft8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+	PRIMARY KEY `PK_Product_Presentation` (`id`),
+	FOREIGN KEY `FK_Product_Presentation_Product_I` (`product_id`) REFERENCES `Product_I` (`id`),
+	FOREIGN KEY `FK_Product_Presentation_Roast` (`roast_id`) REFERENCES `Roast` (`id`),
+	FOREIGN KEY `FK_Product_Presentation_Grind` (`grind_id`) REFERENCES `Grind` (`id`)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `Farm_Award` (
 	`farm_id` int(11) NOT NULL,

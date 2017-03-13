@@ -25,15 +25,37 @@ INSERT INTO `Farm_I` (`id`, `name`, `image`, `description`, `elevation`, `harves
 (NULL, 'Tortuga', '/web/public/imgs/farms/tortuga.png', 'For more than a decade, the Caballero family has been providing Intelligentsia with beautiful coffees we are proud to offer as La Tortuga. We enjoy this coffee\'s syrupy body and clean flavors of plum, brown sugar, and tamarind.', '1200-1500', 'November-April', '10.3532151651', '10.3532151651'),
 (NULL, 'Yirgacheffe', '/web/public/imgs/farms/yirgacheffe.png', 'This estate was inherited from my grandfather Yirgacheffe, we named the farm after him. It is located in Heredia and it has belonged to the family for more than 80 years, going from generation to generation of the Yirgacheffe family. ', '1450-1600', 'November-March', '10.3532151651', '10.3532151651');
 
+  
+INSERT INTO `Roast` (`id`, `description`) VALUES 
+(NULL, 'None'),
+(NULL, 'Blonde'),
+(NULL, 'Medium'),
+(NULL, 'Dark');
+
+
+  
+INSERT INTO `Grind` (`id`, `description`) VALUES 
+(NULL, 'None'),
+(NULL, 'Whole Bean'),
+(NULL, 'Ground');
+
 
 INSERT INTO `Product_I` (`id`, `farm_id`, `name`, `image`, `rank`, `reviews`, `description`) VALUES
-(NULL, 1, 'Chumbal', '/web/public/imgs/coffeeBag1.png', 3, 15, 'Whole Bean'),
-(NULL, 1, 'Solela', '/web/public/imgs/coffeeBag2.png', 4, 10, 'Whole Bean'),
-(NULL, 1, 'Reeba', '/web/public/imgs/coffeeBag3.png', 2, 4, 'Ground'),
-(NULL, 1, 'Gevalia', '/web/public/imgs/coffeeBag2.png', 5, 5, 'Whole Bean'),
-(NULL, 1, 'Folgers', '/web/public/imgs/coffeeBag3.png', 4, 20, 'Ground'),
-(NULL, 2, 'Sisel', '/web/public/imgs/coffeeBag1.png', 2, 5, 'Whole Bean');
+(NULL, 1, 'Chumbal', '/web/public/imgs/coffeeBag1.png', 3, 15, 'Description'),
+(NULL, 1, 'Solela', '/web/public/imgs/coffeeBag2.png', 4, 10, 'Description'),
+(NULL, 1, 'Reeba', '/web/public/imgs/coffeeBag3.png', 2, 4, 'Description'),
+(NULL, 1, 'Gevalia', '/web/public/imgs/coffeeBag2.png', 5, 5, 'Description'),
+(NULL, 1, 'Folgers', '/web/public/imgs/coffeeBag3.png', 4, 20, 'Description'),
+(NULL, 2, 'Sisel', '/web/public/imgs/coffeeBag1.png', 2, 5, 'Description');
 
+INSERT INTO `product_presentation` (`id`, `product_id`, `roast_id`, `grind_id`, `price`, `weight`) VALUES
+(NULL, '1', '2', '2', '20', '340'),
+(NULL, '1', '3', '3', '15', '300'),
+(NULL, '2', '4', '3', '18', '200'),
+(NULL, '3', '2', '2', '21', '250'),
+(NULL, '4', '3', '3', '22', '360'),
+(NULL, '5', '4', '2', '14', '180'),
+(NULL, '6', '1', '3', '30', '500');
 
 INSERT INTO `Farm_Award` (`farm_id`, `award_id`, `place`, `year`) VALUES 
 ('1', '2', '2nd', '2015'),

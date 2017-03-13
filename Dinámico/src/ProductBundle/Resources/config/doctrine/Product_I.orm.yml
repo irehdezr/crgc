@@ -22,7 +22,10 @@ ProductBundle\Entity\Product_I:
         description:
             type: string
             length: 255
-
+    oneToMany:
+        presentations:
+          targetEntity: Presentation
+          mappedBy: product
     manyToOne:
         farm:
           targetEntity: FarmBundle\Entity\Farm_I
