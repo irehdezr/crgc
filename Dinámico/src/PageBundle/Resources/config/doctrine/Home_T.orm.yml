@@ -1,0 +1,65 @@
+PageBundle\Entity\Home_T:
+    type: entity
+    table: Home_T
+    repositoryClass: PageBundle\Repository\Home_TRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        descriptionTitle:
+            type: string
+            length: '50'
+            column: description_title
+
+        descriptionInfo:
+            type: string
+            length: 255
+            column: description_info
+
+        bannerImage:
+            type: string
+            length: 255
+            column: banner_image
+
+    manyToOne:
+        product1:
+          targetEntity: ProductBundle\Entity\Product_I
+          joinColumn:
+            name: product_1
+            referencedColumnName: id
+        product2:
+          targetEntity: ProductBundle\Entity\Product_I
+          joinColumn:
+            name: product_2
+            referencedColumnName: id
+        product3:
+          targetEntity: ProductBundle\Entity\Product_I
+          joinColumn:
+            name: product_3
+            referencedColumnName: id    
+        product4:
+          targetEntity: ProductBundle\Entity\Product_I
+          joinColumn:
+            name: product_4
+            referencedColumnName: id
+        product5:
+          targetEntity: ProductBundle\Entity\Product_I
+          joinColumn:
+            name: product_5
+            referencedColumnName: id
+        product6:
+          targetEntity: ProductBundle\Entity\Product_I
+          joinColumn:
+            name: product_6
+            referencedColumnName: id
+    oneToOne:        
+        farm:
+          targetEntity: FarmBundle\Entity\Farm_I
+          joinColumn:
+            name: farm_id
+            referencedColumnName: id
+            
+    lifecycleCallbacks: {  }

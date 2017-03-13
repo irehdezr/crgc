@@ -1,0 +1,265 @@
+{% extends "layout.html.twig" %}
+
+{% block title%} Farm Information {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('public/css/product.css')}}" />
+    <link rel="stylesheet" href="{{ asset('public/css/farm_information.css') }}" />
+{% endblock %}
+{% block javascripts %}
+	<script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyA8iOI-wKQIfkncEFwGUHS3dsce-nlwsQ0&callback=loadMap"></script>
+	<script src="{{ asset('public/js/farm_information.js')}}"></script>
+	<script>
+		var lat = {{ farm.getLatitude() }}
+		var lon = {{ farm.getLongitude() }}
+	</script>
+{% endblock %}
+
+{% block body %}
+	<center><h2>Farm Information</h2></center>
+	<section id='farmInfoSection'>
+		<div class='container-fluid'>
+			<div id='farmInfoContainer' class='row'>
+				<div id='farmInfoHeading' class='col-xs-12'>
+					<center>
+						<h3>
+							{{ farm.getName() }}
+						</h3>
+					</center>
+				</div>
+				<div id="farmPicContainer" class='col-xs-12 col-md-offset-3 col-md-6 col-lg-offset-0 col-lg-6'>
+					<img src="{{ farm.getImage() }}" id="farmPic">
+				</div>
+				<div id='farmInfoDetailsContainer' class='col-md-12 col-lg-6'>
+					<div class='farmInfoCards col-lg-6 col-md-6'>
+						<div class='farmInfoIcons'>
+							<img src="/web/public/imgs/icon1.png">
+						</div>
+							<h4>
+								{{ template.getDescriptionTitle() }}
+							</h4>
+							<p>
+								{{ farm.getDescription() }}
+							</p>
+						</div>
+						<div class='farmInfoCards col-lg-6 col-md-6'>
+							<div class='farmInfoIcons'>
+								<img src="/web/public/imgs/icon2.png">
+							</div>
+							<h4>{{ template.getInformationTitle() }}</h4>
+							<p><span>{{ template.getElevationTitle() }}</span>: {{ farm.getElevation() }} m.a.s.l.</p>
+							<p><span>{{ template.getHarvestTitle() }}</span>: {{ farm.getHarvest() }}</p>
+							<p><span>{{ template.getSpeciesTitle() }}</span>:
+								{% for species in farm.getSpecies() %}
+									</br>
+									-{{species.getDescription()}}
+								{% endfor %}
+							</p>
+							<p><span>{{ template.getCultivarTitle() }}</span>:
+								{% for cultivar in farm.getCultivars() %}
+									</br>
+									-{{cultivar.getDescription()}}
+								{% endfor %}
+							</p>
+							<p><span>{{ template.getCertificationsTitle() }}</span>:
+								{% for certification in farm.getCertifications() %}
+									</br>
+									-{{certification.getDescription()}}
+								{% endfor %}
+							</p>
+						</div>
+						<div class='farmInfoCards col-lg-6 col-md-6'>
+							<div class='farmInfoIcons'>
+								<img src="/web/public/imgs/icon3.png">
+							</div>
+							<h4>{{ template.getAwardsTitle() }}</h4>
+							<p>
+								{% for award in farm.getFarmAwards() %}
+									-{{ award.getAward().getDescription() }},{{ award.getPlace() }} place,{{ award.getYear() }}</br>
+								{% endfor %}
+							</p>
+						</div>
+						<div class='farmInfoCards col-lg-6 col-md-6'>
+							<div class='farmInfoIcons'>
+								<img src="/web/public/imgs/icon4.png">
+							</div>
+							<h4>{{ template.getLocationTitle() }}</h4>
+							<div id="farm_map">Map </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class='clearfix'></div>
+		{% if farm.getProducts()|length > 0 %}
+		<section>
+			<div id='carouselHeading' class='col-xs-12'>
+				<center><h3>{{ template.getProductsTitle() ~ farm.getProducts()|length }}</h3></center>
+			</div>
+			<div class='clearfix'></div>
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+			    	    <div class="well">
+			    	    {% set size = farm.getProducts()|length / 3 %} 
+			    	    {% if size < 1 %}
+			    	    	{% set size = 1%}
+			    	    {% endif%}
+			                <div id="myCarousel" class="carousel slide">
+				                <ol class="carousel-indicators">
+				                {% for index in 1..size|number_format(0) %}
+				                	{% if loop.index < 2 %}
+				                    	<li data-target="#myCarousel" data-slide-to="{{ loop.index }}" class="active"></li>
+				                    {% else %}
+				                    	<li data-target="#myCarousel" data-slide-to="{{ loop.index }}" class=""></li>
+				                	{% endif %}
+				                {% endfor %}
+				                </ol>
+				                <div class="carousel-inner">
+				                   	{% for product in farm.getProducts() %}
+								        {% if loop.index  < 2 %} 
+								    	    <div class="item active">
+								    	{% endif %}
+				                   		{% if loop.index <  4 %}
+								                <div class="row-fluid">
+													<div class="carouselCards col-xs-12 col-md-4">
+			                                            <a id="Product1" >
+														<div class="productThumbnails">
+															<div class='prodThumbInside'>
+																<div class="productThumbnailsHeadings">
+																	<h4>{{ product.getName()}}</h4>
+																</div>
+																<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}">
+																	<img src="{{product.getImage()}}">
+																</a>
+																<p class="price">$20.00</p>		
+																<div class='productDetailsContainer row'>
+																	<div class='productDetails col-xs-5 col-xs-offset-1'>
+																		<p>340g/12 oz</p>
+																		<p>Medium roas</p>
+																	</div>
+																	<div href="#" class='productDetails  col-xs-5 col-md-5'>
+																		<p>{{ product.getDescription() }}</p>
+																		<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}"><p>More info/options</p></a> 
+																	</div>
+																</div>
+																<div class='productDetailsContainer row'>
+																	<div class='productDetails col-xs-5 col-xs-offset-1'>
+																		<div class="rating">
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																		</div>
+																	</div>
+																	<div class='productDetails col-xs-5 col-md-5'>
+																		<p>{{product.getReviews()}} reviews</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+			                                        </a>
+													</div>
+								              	</div>
+				                   		{% elseif loop.index is divisible by(4) %}
+								            </div>
+				                   			<div class="item">
+								                <div class="row-fluid">
+													<div class="carouselCards col-xs-12 col-md-4">
+			                                            <a id="Product1" >
+														<div class="productThumbnails">
+															<div class='prodThumbInside'>
+																<div class="productThumbnailsHeadings">
+																	<h4>{{ product.getName()}}</h4>
+																</div>
+																<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}">
+																	<img src="{{product.getImage()}}">
+																</a>
+																<p class="price">$20.00</p>		
+																<div class='productDetailsContainer row'>
+																	<div class='productDetails col-xs-5 col-xs-offset-1'>
+																		<p>340g/12 oz</p>
+																		<p>Medium roas</p>
+																	</div>
+																	<div href="#" class='productDetails  col-xs-5 col-md-5'>
+																		<p>{{ product.getDescription() }}</p>
+																		<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}"><p>More info/options</p></a> 
+																	</div>
+																</div>
+																<div class='productDetailsContainer row'>
+																	<div class='productDetails col-xs-5 col-xs-offset-1'>
+																		<div class="rating">
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																		</div>
+																	</div>
+																	<div class='productDetails col-xs-5 col-md-5'>
+																		<p>{{product.getReviews()}} reviews</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+			                                        </a>
+													</div>
+								              	</div>
+				                   		{% else %}
+								                <div class="row-fluid">
+													<div class="carouselCards col-xs-12 col-md-4">
+			                                            <a id="Product1" >
+														<div class="productThumbnails">
+															<div class='prodThumbInside'>
+																<div class="productThumbnailsHeadings">
+																	<h4>{{ product.getName()}}</h4>
+																</div>
+																<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}">
+																	<img src="{{product.getImage()}}">
+																</a>
+																<p class="price">$20.00</p>		
+																<div class='productDetailsContainer row'>
+																	<div class='productDetails col-xs-5 col-xs-offset-1'>
+																		<p>340g/12 oz</p>
+																		<p>Medium roas</p>
+																	</div>
+																	<div href="#" class='productDetails  col-xs-5 col-md-5'>
+																		<p>{{ product.getDescription() }}</p>
+																		<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}"><p>More info/options</p></a> 
+																	</div>
+																</div>
+																<div class='productDetailsContainer row'>
+																	<div class='productDetails col-xs-5 col-xs-offset-1'>
+																		<div class="rating">
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																			<span>&#9734;</span>
+																		</div>
+																	</div>
+																	<div class='productDetails col-xs-5 col-md-5'>
+																		<p>{{product.getReviews()}} reviews</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+			                                        </a>
+													</div>
+								              	</div>
+					                   	{% endif %}
+						            {% endfor %}
+						            </div>
+				                <a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>
+				                <a class="right carousel-control" href="#myCarousel" data-slide="next"></a>
+			                	</div>
+			            	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% endif %}
+	</main>
+{% endblock %}

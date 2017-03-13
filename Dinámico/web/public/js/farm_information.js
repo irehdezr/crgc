@@ -1,26 +1,9 @@
-/*global $*/
-
-$(window).ready(function() {
-    $.ajax({
-        data: {
-            farm: 2
-        },
-        url: './database/farm_information.php',
-        type: 'GET',
-        async: false,
-        success: function(response) {
-            loadPage(JSON.parse(response).farm);
-        },
-    });
-});
-
-function loadPage(farm) {
-    $("#farm_name").html(farm.name);
-    $("#farm_description").html(farm.description);
-    $("#farm_picture_1").attr("src", farm.picture_1);
-    $("#farm_elevation").html(farm.elevation);
-    $("#farm_harvest").html(farm.harvest);
-    $("#farm_species").html(farm.species);
-    $("#farm_cultivar").html(farm.cultivar);
-    $("#farm_certifications").html(farm.certification);
+onload = function() {loadMap()};
+function loadMap() {
+	var myCenter = new google.maps.LatLng(lat,lon);
+	var mapCanvas = document.getElementById("farm_map");
+	var mapOptions = {center: myCenter, zoom: 8};
+	var map = new google.maps.Map(mapCanvas, mapOptions);
+	var marker = new google.maps.Marker({position:myCenter});
+	marker.setMap(map);
 }

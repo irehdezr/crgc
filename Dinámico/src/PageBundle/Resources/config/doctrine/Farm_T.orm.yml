@@ -1,0 +1,52 @@
+PageBundle\Entity\Farm_T:
+    type: entity
+    table: Farm_T
+    repositoryClass: PageBundle\Repository\Farm_TRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        descriptionTitle:
+            type: string
+            length: '50'
+            column: description_title
+        informationTitle:
+            type: string
+            length: '50'
+            column: information_title
+        awardsTitle:
+            type: string
+            length: '50'
+            column: awards_title
+        locationTitle:
+            type: string
+            length: '50'
+            column: location_title
+        productsTitle:
+            type: string
+            length: '50'
+            column: products_title
+        elevationTitle:
+            type: string
+            length: '50'
+            column: elevation_title
+        harvestTitle:
+            type: string
+            length: '50'
+            column: harvest_title
+        speciesTitle:
+            type: string
+            length: '50'
+            column: species_title
+        cultivarTitle:
+            type: string
+            length: '50'
+            column: cultivar_title
+        certificationsTitle:
+            type: string
+            length: '50'
+            column: certifications_title
+    lifecycleCallbacks: {  }

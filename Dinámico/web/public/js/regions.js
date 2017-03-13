@@ -50,7 +50,7 @@ var DotaTarrazu_marker = new google.maps.Marker({
   DotaTarrazu_marker.setMap(map);
 
   google.maps.event.addListener(DotaTarrazu_marker,'click',function() {
-  window.location.href = "?content=onDevelopment"; 
+  window.location.href = "#"; 
   });
   
   var CentralValley_marker = new google.maps.Marker({
@@ -69,6 +69,6 @@ var DotaTarrazu_marker = new google.maps.Marker({
   OcidentalValley_marker.setMap(map);
 
   google.maps.event.addListener(OcidentalValley_marker,'click',function() {
-  window.location.href = "?content=onDevelopment"; 
+  window.location.href = "#"; 
   });
 }

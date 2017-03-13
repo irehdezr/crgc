@@ -1,0 +1,34 @@
+ProductBundle\Entity\Product_I:
+    type: entity
+    table: Product_I
+    repositoryClass: ProductBundle\Repository\Product_IRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        image:
+            type: string
+            length: 255
+        rank:
+            type: integer
+        reviews:
+            type: integer
+        description:
+            type: string
+            length: 255
+
+    manyToOne:
+        farm:
+          targetEntity: FarmBundle\Entity\Farm_I
+          inversedBy: products
+          joinColumn:
+            name: farm_id
+            referencedColumnName: id
+
+    lifecycleCallbacks: {  }

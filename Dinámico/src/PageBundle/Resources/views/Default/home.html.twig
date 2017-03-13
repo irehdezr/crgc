@@ -1,179 +1,47 @@
 {% extends "layout.html.twig" %}
 
 {% block title%}CR Gourmet Coffee{% endblock %}
+
+{% block stylesheets%}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('public/css/product.css')}}" />{% endblock %}
 {% block body %}
 <main>
 		<section id='mainBanner'>
-			<div id='banner'>
-				<img src='/web/public/imgs/logo.png' id='siteLogo'>
+			<div id='banner' style='background-image: url( {{ template.getBannerImage() }} )'>
 			</div>
 		</section>
 		<div class='clearfix'></div>
+		<center><h2>Featured Products</h2></center>
 		<section id='productsShowcase'>
 			<div class="row col-xs-12 col-md-10 col-md-offset-1">
-				<div class="productThumbnails col-xs-12 col-md-6 col-lg-4">
+				{% for product in products %}
+				<div class="productThumbnails col-xs-6 col-md-6 col-lg-4">
 					<div class='prodThumbInside'>
 						<div class="productThumbnailsHeadings">
-							<h4>Chumbal</h4>
-						</div>
-						<img src="/web/public/imgs/coffeeBag1.png">
-						<p></p>
-						<div class='productDetailsContainer row'>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p>Rank</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>3 Reviews</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p></p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>340g/12 oz</p>
-							</a>
-						</div>
+							<h4>{{ product.getName() }}</h4>
+						</div> 
+						<a href="{{ path('product_information', {'product': product.getFarm().getId()~ product.getId() }) }}">
+						<img src=" {{ product.getImage() }}">
+					</a>
 					</div>
 				</div>
-
-				<div class="productThumbnails col-xs-12 col-md-6 col-lg-4">
-					<div class='prodThumbInside'>
-						<div class="productThumbnailsHeadings">
-							<h4>Solela</h4>
-						</div>
-						<img src="/web/public/imgs/coffeeBag2.png">
-						<p></p>
-						<div class='productDetailsContainer row'>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p>Rank</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>3 Reviews</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p></p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>340g/12 oz</p>
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="productThumbnails col-xs-12 col-md-6 col-lg-4">
-					<div class='prodThumbInside'>
-						<div class="productThumbnailsHeadings">
-							<h4>Reeba</h4>
-						</div>
-						<img src="/web/public/imgs/coffeeBag3.png">
-						<p></p>
-						<div class='productDetailsContainer row'>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p>Rank</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>3 Reviews</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p></p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>340g/12 oz</p>
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="productThumbnails col-xs-12 col-md-6 col-lg-4">
-					<div class='prodThumbInside'>
-						<div class="productThumbnailsHeadings">
-							<h4>Solela</h4>
-						</div>
-						<img src="/web/public/imgs/coffeeBag2.png">
-						<p></p>
-						<div class='productDetailsContainer row'>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p>Rank</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>3 Reviews</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p></p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>340g/12 oz</p>
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="productThumbnails col-xs-12 col-md-6 col-lg-4">
-					<div class='prodThumbInside'>
-						<div class="productThumbnailsHeadings">
-							<h4>Reeba</h4>
-						</div>
-						<img src="/web/public/imgs/coffeeBag3.png">
-						<p></p>
-						<div class='productDetailsContainer row'>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p>Rank</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>3 Reviews</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p></p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>340g/12 oz</p>
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="productThumbnails col-xs-12 col-md-6 col-lg-4">
-					<div class='prodThumbInside'>
-						<div class="productThumbnailsHeadings">
-							<h4>Chumbal</h4>
-						</div>
-						<img src="/web/public/imgs/coffeeBag1.png">
-						<p></p>
-						<div class='productDetailsContainer row'>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p>Rank</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>3 Reviews</p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5 col-md-offset-1'>
-								<p></p>
-							</a>
-							<a href="#" class='productDetails col-xs-6 col-md-5'>
-								<p>340g/12 oz</p>
-							</a>
-						</div>
-					</div>
-				</div>
-
+				{% endfor %}
 			</div>
-
-
 		</section>
 		<div class='clearfix'></div>
 		<section id='siteInfoSection' class='container-fluid'>
 			<div class="row">
-				<div id='siteInfo' class="col-xs-12 col-md-8"></div>
+				<div id='siteInfo' class="col-xs-12 col-md-8" style='background-image: url({{ template.getFarm().getImage()  }} )'></div>
 				<div id='siteInfoText' class="col-xs-12 col-md-4">
 					<h3>
-                        <p>
-                            We bring you the best coffee from Costa Rica.<br/>
-                            Our site is operated by high-quality Costa Rican producers, who sell directly their own coffee without intermediaries.
-                            These producers have been winners of the Cup of Excellence – prestigous contest to reward coffee quality.
-                        </p>
-                    </h3>
+                        {{ template.getDescriptionTitle() }}
+					</h3>	
+					<h4>
+                        {{ template.getDescriptionInfo() }}
+                    </h4>
 				</div>
 			</div>
 		</section>
-
 	</main>
 {% endblock %}

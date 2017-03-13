@@ -1,0 +1,69 @@
+FarmBundle\Entity\Farm_I:
+    type: entity
+    table: Farm_I
+    repositoryClass: FarmBundle\Repository\Farm_IRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '100'
+        image:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        elevation:
+            type: string
+            length: '50'
+        harvest:
+            type: string
+            length: '50'
+        latitude:
+            type: float
+        longitude:
+            type: float
+    oneToMany:
+        products:
+            targetEntity: ProductBundle\Entity\Product_I
+            mappedBy: farm
+        farm_awards:    
+            targetEntity: Farm_Award
+            mappedBy: farm
+    manyToMany:
+        certifications:
+            targetEntity: Certification
+            joinTable:
+                name: Farm_Certification
+                joinColumns:
+                    farm_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    certification_id:
+                        referencedColumnName: id
+        species:
+            targetEntity: Species
+            joinTable:
+                name: Farm_Species
+                joinColumns:
+                    farm_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    species_id:
+                        referencedColumnName: id
+        cultivars:
+            targetEntity: Cultivar
+            joinTable:
+                name: Farm_Cultivar
+                joinColumns:
+                    farm_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    cultivar_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }

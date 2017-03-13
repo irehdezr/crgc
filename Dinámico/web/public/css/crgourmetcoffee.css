@@ -1,116 +1,200 @@
+/**Overall Classes**/
+body, html { 
+    overflow-x:hidden; 
+}
+
+body {
+    margin: 0 auto;
+    padding: 50px 0 0;  
+    width: 100%;
+}
+
 a {
     text-decoration: none;
+}
+
+p{
+    text-align: justify;
 }
 .clearfix {
     clear: both;
 }
+
 /**Header Classes**/
 header {
-    background-color: #0e0604;
+    background-color: #0e0604 !important;
     padding: 0;
     width: 100%;
 }
-.navbar {
+header #navBar {
+    font-size: 16px;
+}
+header .navbar {
     margin-bottom: 0;
 }
-.navbar-inverse {
-    background-color: #0e0604;
-    border-color: #0e0604;
+header .navbar-inverse {
+    background-color: #0e0604 !important; 
+    border-color: #0e0604 !important;
 }
-.navbar-inverse .navbar-brand {
+header #mainMenu li a:hover { 
+    color: #ddb26e;
+}
+header .navbar-inverse .navbar-brand {
     color: #fff;
 }
-.navbar-inverse .navbar-brand span:nth-child(1) {
+header .navbar-inverse .navbar-brand span:nth-child(1) {
     font-weight: bold;
 }
-.navbar-inverse .navbar-brand span:nth-child(2) {
+header .navbar-inverse .navbar-brand span:nth-child(2) {
     font-weight: bold;
     color: #ddb26e;
 }
-.navbar-inverse .navbar-nav>li>a {
+header .navbar-inverse .navbar-nav>li>a {
     color: #fff;
+}
+header .navbar{
+    -webkit-box-shadow: 0 4px 15px -11px #333;
+    -moz-box-shadow: 0 4px 15px -11px #333;
+    box-shadow: 0 4px 15px -11px #333;
+}
+#shopping-cup {
+    background-image: url( /web/public/imgs/shopping-cup.svg); 
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 50% 45%;
+    margin-right: 15px;
+    padding: 12px 15px 13px 15px;
+}
+#shopping-cup span {  
+    font-size: 0.75em;
+    padding: 1px;
+}
+@media (max-width: 764px){ 
+    #shopping-cup {
+        background-image: url( /web/public/imgs/shopping-cup.svg);
+        background-repeat: no-repeat;
+        background-size: 16.5% auto;
+        background-position: 0.5% 45%;
+        margin-right: 15px;
+        padding: 12px 15px 13px 21px;
+    }
+    #shopping-cup span {  /
+        font-size: 0.75em;
+        padding: 1px;
+    }
 }
 /**Header End**/
 
+
 /**Banner Classes**/
 #banner {
-    background-image: url(../imgs/coffeeGrains.png);
     background-position: 0 0;
     background-repeat: no-repeat;
-    height: 35vh;
-    width: 100%;
+    background-size: 100% auto;
+    height: 15vw;
     text-align: center;
+    width: 100%;
 }
+
+#pageInfoHeading {
+    background-color: #ddb26e;
+    color: #ffff;
+    font-weight: bold;
+    margin: 0 auto 1%;
+    padding: 0;
+    margin-top: 50px;
+}
+#pageInfoHeading h3 {
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+}
+
 #siteLogo {
-    margin: 5vh auto;
-    width: 55vh;
+    margin: 6% auto;
+    width: 60%;
 }
 /**Banner End**/
 
-/**Products Section Classes**/
-.productThumbnails {
-    text-align: center;
-    color: #222;
-    margin: 2% 0 0;
-    padding: 0;
-}
-.prodThumbInside {
-    border: 1px solid #e0e0e0;
-    margin: 2%;
-}
-.prodThumbInside img {
-    border: 1px solid #e0e0e0;
-    border-radius: 50%;
-    padding: 7%;
-    margin-bottom: 2%;
-    width: 75%;
-}
-.productThumbnailsHeadings {
-    background-color: #ddb26e;
-    padding: 0.5px;
-    margin: 0 auto 10px;
-}
-.productDetails {
-    text-decoration: none;
-    color: #333;
-}
-.productDetails:nth-child(odd) {
-    text-align: left;
-}
-.productDetails:nth-child(even) {
-    text-align: right;
-}
-
-/**Products Section End**/
-
 /**Info Section Classes**/
 #siteInfoSection {
-    margin: 2% 0;
+    margin: 2% 0 0;
 }
+
 #siteInfo {
-    background-image: url(../imgs/coffeeField.png);
     background-position: 98% 30%;
     background-repeat: no-repeat;
-    height: 35vh;
+    height: 40vh;
     text-align: center;
 }
+
 #siteInfoText {
-    background-color: #0e0604;
-    height: 35vh;
+    background-color: #73502a;
     color: #fff;
+    height: 40vh;
+    overflow: hidden;
     padding: 2% 3%;
     text-align: right;
 }
-.pagetitle {
-    text-align: center;
-    font-size: xx-large;
-}
-.pagesubtitle{
-    text-align: center;
-    font-size: x-large;
-}
 /**Info Section End**/
 
-/**Contact Section Classes**/
 
-/**Contact Section End**/
+/**Footer Section Classes**/
+
+.footer {
+    /* background-color: #ddb26e; */
+    background-color: #0e0604 !important;
+}
+.footer .container-fluid {
+    text-align: center;
+}
+footer .navbar {             /* NUEVO (v3) (03-05-17)*/
+    margin-bottom: 0;
+}
+footer .navbar-inverse {     /* NUEVO (v3) (03-05-17)*/
+    background-color: #0e0604 !important;
+    border-color: #0e0604 !important;
+}
+#quickLinks li a, .socialIcon { /* NUEVO (v3) (03-05-17)*/
+    color: #fff;
+    font-weight: bold;
+}
+#quickLinks li a:hover, .socialIcon:hover {  /* NUEVO (v3) (03-05-17)*/
+    color: #ddb26e;
+    font-weight: bold;
+}
+.socialIcon {  /* NUEVO (v3) (03-05-17)*/
+    margin: 10px;
+}
+#facebook {     /* NUEVO (v3) (03-05-17)*/
+    background-image: url("../imgs/facebook.svg");  
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+#twitter {  /* NUEVO (v3) (03-05-17)*/
+    background-image: url("../imgs/twitter.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+@media (max-width: 764px){ /* NUEVO (v3) (03-05-17)*/
+    #facebook {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 6.5% auto;
+        padding: 4% 0;
+    }
+    #twitter {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 6.5% auto;
+        padding: 4% 0;
+    }
+}
+#credits {
+    background-color: #4d4d4d;
+    color: #fff;
+    min-height: 50px;
+    padding: 15px;
+    width: 100%;
+}
+/**Footer Section End**/

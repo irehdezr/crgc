@@ -3,21 +3,25 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}CRgourmetcoffee{% endblock %}</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% block stylesheets %}
-                <link rel="stylesheet" href="{{ asset('public/bootstrap/css/bootstrap.css')}}" />
+                <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css')}}" />
                 <link rel="stylesheet" href="{{ asset('public/css/crgourmetcoffee.css')}}" />
         {% endblock %}
     </head>
     <body>
         <div id="header">
-            {% include "header.html"%}
+            {% include "header.html.twig"%}
         </div>
         <div id="content">
             {% block body %}{% endblock %}
         </div>
         <div id="footer">
-            {% include "footer.html"%}
+            {% include "footer.html.twig"%}
         </div>
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('public/js/jquery-3.1.0.min.js')}}"></script>
+            <script src="{{ asset('public/js/bootstrap.js')}}"  </script>
+       {% endblock %}
     </body>
 </html>

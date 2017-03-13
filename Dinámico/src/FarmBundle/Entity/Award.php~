@@ -1,0 +1,24 @@
+<?php
+
+namespace FarmBundle\Entity;
+
+/**
+ * Award
+ */
+class Award
+{
+    /**
+     * @var int
+     */
+    private $id;
+  
+    /**
+     * @var ArrayCollection
+     */
+    private $farm_awards;
+
+    /**
+     * @var string
+     */
+    private $description;
+}

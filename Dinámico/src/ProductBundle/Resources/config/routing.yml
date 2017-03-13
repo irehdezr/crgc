@@ -1,0 +1,3 @@
+product_information:
+    path:     /{product}
+    defaults: { _controller: ProductBundle:Default:product}
