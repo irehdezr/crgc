@@ -122,3 +122,15 @@
     height: 30vh;
     vertical-align: middle;
 }
+
+.prodInfoIconHeadings button {
+    background-color: #ddb26e;
+    border: 1px solid #ddb26e;
+}
+.prodInfoIconHeadings button:hover, .prodInfoIconHeadings button:active, .prodInfoIconHeadings button:focus {
+    background-color: #73502a;
+    border: 1px solid #73502a;
+}
+.prodInfoIconHeadings button span {
+    margin-right: 5px;
+}

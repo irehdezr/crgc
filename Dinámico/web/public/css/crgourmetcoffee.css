@@ -73,12 +73,12 @@ header .navbar{
     #shopping-cup {
         background-image: url( /web/public/imgs/shopping-cup.svg);
         background-repeat: no-repeat;
-        background-size: 16.5% auto;
+        background-size: 150% auto;
         background-position: 0.5% 45%;
         margin-right: 15px;
         padding: 12px 15px 13px 21px;
     }
-    #shopping-cup span {  /
+    #shopping-cup span {  
         font-size: 0.75em;
         padding: 1px;
     }

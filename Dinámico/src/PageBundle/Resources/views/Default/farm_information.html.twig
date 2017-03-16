@@ -41,6 +41,11 @@
 							</h4>
 							<p>
 								{{ farm.getDescription() }}
+								<div class='prodInfoIconHeadings'>
+									<center>
+										<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#cupMap"><span class="glyphicon glyphicon-eye-open"></span>Read story</button>
+									</center>
+								</div>
 							</p>
 						</div>
 						<div class='farmInfoCards col-lg-6 col-md-6'>
@@ -48,25 +53,23 @@
 								<img src="/web/public/imgs/icon2.png">
 							</div>
 							<h4>{{ template.getInformationTitle() }}</h4>
+							<p><span>Region: </span>: Central Valley</p>
 							<p><span>{{ template.getElevationTitle() }}</span>: {{ farm.getElevation() }} m.a.s.l.</p>
 							<p><span>{{ template.getHarvestTitle() }}</span>: {{ farm.getHarvest() }}</p>
-							<p><span>{{ template.getSpeciesTitle() }}</span>:
-								{% for species in farm.getSpecies() %}
-									</br>
-									-{{species.getDescription()}}
-								{% endfor %}
-							</p>
+							<p><span>{{ template.getSpeciesTitle() }}</span>: Arabica</p>
 							<p><span>{{ template.getCultivarTitle() }}</span>:
+							<div class= "col-md-12 col-md-offset-2">
 								{% for cultivar in farm.getCultivars() %}
-									</br>
-									-{{cultivar.getDescription()}}
+									{{cultivar.getDescription()}} </br>
 								{% endfor %}
+							</div>
 							</p>
 							<p><span>{{ template.getCertificationsTitle() }}</span>:
+							<div class= "col-md-12 col-md-offset-2">
 								{% for certification in farm.getCertifications() %}
-									</br>
-									-{{certification.getDescription()}}
+									{{certification.getDescription()}} </br>
 								{% endfor %}
+							</div>
 							</p>
 						</div>
 						<div class='farmInfoCards col-lg-6 col-md-6'>
@@ -76,7 +79,7 @@
 							<h4>{{ template.getAwardsTitle() }}</h4>
 							<p>
 								{% for award in farm.getFarmAwards() %}
-									-{{ award.getAward().getDescription() }},{{ award.getPlace() }} place,{{ award.getYear() }}</br>
+									{{ award.getAward().getDescription() }},{{ award.getPlace() }} place,{{ award.getYear() }}</br>
 								{% endfor %}
 							</p>
 						</div>

@@ -214,6 +214,7 @@ header .navbar/*, #prodInfoRow*/ {
 }
 .price {
     font-weight: bold;
+    text-align: center;
 }
 /* home porduct details*/
 #cupMap {
