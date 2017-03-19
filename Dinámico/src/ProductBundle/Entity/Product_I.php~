@@ -41,4 +41,13 @@ class Product_I
      * @var string
      */
     private $description;
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $presentations;
+
+    /**
+     * @var int
+     */
+    private $defaultPresentation;
 }

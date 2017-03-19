@@ -1,0 +1,54 @@
+ProductBundle\Entity\Product_T:
+    type: entity
+    table: Product_T
+    repositoryClass: ProductBundle\Repository\Product_TRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        pageTitle:
+            type: string
+            length: '30'
+        farmTitle:
+            type: string
+            length: '30'
+        orderTitle:
+            type: string
+            length: '30'
+        reviewsTitle:
+            type: string
+            length: '30'
+        informationTitle:
+            type: string
+            length: '30'
+        roastTitle:
+            type: string
+            length: '30'
+        weightTitle:
+            type: string
+            length: '30'
+        grindTitle:
+            type: string
+            length: '30'
+        cupScoringTitle:
+            type: string
+            length: '30'
+        speciesTitle:
+            type: string
+            length: '30'
+        cultivarTitle:
+            type: string
+            length: '30'
+        gradeTitle:
+            type: string
+            length: '30'
+        processingTitle:
+            type: string
+            length: '30'
+        flavorNotesTitle:
+            type: string
+            length: '30'
+    lifecycleCallbacks: {  }

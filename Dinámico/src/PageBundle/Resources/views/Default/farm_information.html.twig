@@ -132,7 +132,10 @@
 																<div class="productThumbnailsHeadings">
 																	<h4>{{ product.getName()}}</h4>
 																</div>
-																<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}">
+																<a href="{{ path('product_information', {
+																'farm': product.getFarm().getId(),
+																'product': product.getId(),
+																'presentation': 1 }) }}">
 																	<img src="{{product.getImage()}}">
 																</a>
 																<p class="price">
@@ -149,7 +152,11 @@
 																	</div>
 																	<div href="#" class='productDetails  col-xs-5 col-md-5'>
 																		<p>{{ product.getPresentations()|first.getGrind().getDescription() }}</p>
-																		<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}"><p>More info/options</p></a> 
+																			<a href="{{ path('product_information', {
+																			'farm': product.getFarm().getId(),
+																			'product': product.getId(),
+																			'presentation': 1 }) }}">
+																		<p>More info/options</p></a> 
 																	</div>
 																</div>
 																<div class='productDetailsContainer row'>
@@ -186,7 +193,10 @@
 																<div class="productThumbnailsHeadings">
 																	<h4>{{ product.getName()}}</h4>
 																</div>
-																<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}">
+																	<a href="{{ path('product_information', {
+																'farm': product.getFarm().getId(),
+																'product': product.getId(),
+																'presentation': 1 }) }}">
 																	<img src="{{product.getImage()}}">
 																</a>
 																<p class="price">
@@ -203,7 +213,11 @@
 																	</div>
 																	<div href="#" class='productDetails  col-xs-5 col-md-5'>
 																		<p>{{ product.getPresentations()|first.getGrind().getDescription() }}</p>
-																		<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}"><p>More info/options</p></a> 
+																			<a href="{{ path('product_information', {
+																				'farm': product.getFarm().getId(),
+																				'product': product.getId(),
+																				'presentation': 1 }) }}">
+																			<p>More info/options</p></a> 
 																	</div>
 																</div>
 																<div class='productDetailsContainer row'>
@@ -238,8 +252,10 @@
 																<div class="productThumbnailsHeadings">
 																	<h4>{{ product.getName()}}</h4>
 																</div>
-																<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}">
-																	<img src="{{product.getImage()}}">
+																	<a href="{{ path('product_information', {
+																'farm': product.getFarm().getId(),
+																'product': product.getId(),
+																'presentation': 1 }) }}">
 																</a>
 																<p class="price">
 																${{ product.getPresentations()|first.getPrice() }}</br>
@@ -255,7 +271,10 @@
 																	</div>
 																	<div href="#" class='productDetails  col-xs-5 col-md-5'>
 																		<p>{{ product.getPresentations()|first.getGrind().getDescription() }}</p>
-																		<a href="{{ path('product_information', {'product': product.getFarm().getId() ~ product.getId() }) }}"><p>More info/options</p></a> 
+																			<a href="{{ path('product_information', {
+																				'farm': product.getFarm().getId(),
+																				'product': product.getId(),
+																				'presentation': 1 }) }}"><p>More info/options</p></a> 
 																	</div>
 																</div>
 																<div class='productDetailsContainer row'>

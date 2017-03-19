@@ -9,9 +9,9 @@
 {% block body %}
 <main>
 		<section>
-			<center><h2>Product Information</h2></center>
+			<center><h2>{{ template.getPageTitle() }}</h2></center>
 			<div id='carouselHeading' class='col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6'>
-				<center><h3>Chumbal</h3></center>
+				<center><h3>{{ product.getName() }}</h3></center>
 			</div>
 			<div id='prodInfoSection' class='col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6'>
 				<div id='prodInfoCarouselContainer' class="container col-xs-12">
@@ -22,29 +22,41 @@
 									<div class="carouselCards col-xs-12 col-md-offset-2 col-md-8">
 										<div class="productThumbnails">
 											<div class='prodThumbInside'>
-												<img class='prodThumbImgs' src="/web/public/imgs/coffeeBag1.png">
+												<img class='prodThumbImgs' src=" {{ product.getImage() }}">
 												<div class='row'>
-													<h4>Farm: <a id='prodInfofarmInfo' href="">Tortuga</a></h4>
+													<h4>{{ template.getFarmTitle() }}: 
+														<a id='prodInfofarmInfo' href="{{ path('farm_information',{'farm_id':product.getFarm().getId()}) }}">{{ product.getFarm().getName() }}</a>
+													</h4>
 												</div>	
 												<div class='row'>
 													<div class='col-xs-12'>
-														<p class='price'>$29.99</p>
+														<p class='price'>{{ presentation.getPrice() }}</p>
 												</div>
 												</div>
 												<div class='row'>
 													<a class='prodInfoIconHeadOrder col-xs-offset-4 col-xs-4' href="#">
 														<img src="/web/public/imgs/icon5.svg">
-														<h4>Order</h4>
+														<h4>{{ template.getOrderTitle() }}</h4>
 													</a>
 												</div>
 												<div class='row'>
 													<div class='col-xs-12 col-md-6'>
 														<div class="rating">
-																<span>&#x2605;</span><span>&#x2605;</span><span>&#x2605;</span><span>&#x2606;</span><span>&#x2606;</span>
-															</div>
+															{% set rank= 0 %}
+															{% for inx in 1..product.getRank() %}
+															 	{% set rank = rank+1 %}
+															 	<span>&#x2605;</span>
+															{% endfor %}
+															{% if rank < 5 %}
+																{% for inx2 in rank..4 %}
+																 	{% set rank = rank+1 %}
+																 	<span>&#x2606;</span>
+																{% endfor %}
+															{% endif %}
+														</div>
 														</div>
 														<div class='col-xs-12 col-md-6'>
-															<a href="#">12 reviews</a>
+															<a href="#">{{ product.getReviews() }} {{ template.getReviewsTitle() }}</a>
 														</div>	
 													</div>													
 											</div>
@@ -52,7 +64,6 @@
 									</div>
 			                	</div>
 			                </div>
-			                 
 			                <div class="item">
 			                	<div class="row-fluid">
 									<div class="carouselCards col-xs-12 col-md-offset-2 col-md-8">
@@ -133,31 +144,21 @@
 		<section>
 			<div class='prodInfoPreferences row col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6'>
 				<div class='row'>
-					<div class='col-xs-12 col-md-offset-3 col-md-6'>
-						<center>
-							<div class='prodInfoIconHeadings col-xs-offset-3 col-xs-6'>
-								<img src="/web/public/imgs/icon6.svg">
-								<h4>Presentation</h4>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class='row'>
 					<div class='col-xs-12 col-md-6'>
 						<div id='informationSection'>
 							<center>
 								<div class='prodInfoIconHeadings col-xs-offset-3 col-xs-6'>
 									<img src="/web/public/imgs/icon2.svg">
-									<h4>Information</h4>
+									<h4>{{ template.getInformationTitle() }}</h4>
 								</div>
 							</center>
 							<div id='prodInfoDetails' class='col-xs-12'>
 								<p>
-									<span>Species: </span>Arabica</br>
-									<span>Cultivar: </span>Caturra</br>
-									<span>Grade: </span>SHB</br>
-									<span>Processing: </span>Washed</br>
-									<span>Flavor notes: </span>Dried frutis and chocolate</br>
+									<span>{{ template.getSpeciesTitle() }}: </span></br>
+									<span>{{ template.getCultivarTitle() }}: </span></br>
+									<span>{{ template.getGradeTitle() }}: </span></br>
+									<span>{{ template.getProcessingTitle() }}: </span></br>
+									<span>{{ template.getFlavorNotesTitle() }}</span></br>
 								</p>
 							</div>
 						</div>
@@ -167,19 +168,15 @@
 							<center>
 								<div class='prodInfoIconHeadings col-xs-offset-3 col-xs-6'>
 									<img src="/web/public/imgs/icon7.svg">
-									<h4>Roast</h4>
+									<h4>{{ template.getRoastTitle() }}</h4>
 								</div>
 							</center>
 							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">Light roast</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">Medium</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">Dark</button>
-								</div>
+								{% for pPresentation in product.getPresentations%}							
+									<div class="btn-group" role="group">
+										<button type="button" class="btn btn-default">{{ pPresentation.getRoast().getDescription() }}</button>
+									</div>
+								{% endfor %}
 							</div>
 						</div>
 					</div>
@@ -190,23 +187,15 @@
 							<center>
 								<div class='prodInfoIconHeadings col-xs-offset-3 col-xs-6'>
 									<img src="/web/public/imgs/icon10.svg">
-									<h4>Weight</h4>
+									<h4>{{ template.getWeightTitle() }}</h4>
 								</div>
 							</center>
 							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">32 oz</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">12 oz</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">32 oz</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">12 oz</button>
-								</div>
-
+								{% for pPresentation in product.getPresentations%}							
+									<div class="btn-group" role="group">
+										<button type="button" class="btn btn-default">{{ pPresentation.getWeight() }}</button>
+									</div>
+								{% endfor %}
 							</div>
 						</div>
 					</div>
@@ -215,16 +204,15 @@
 							<center>
 								<div class='prodInfoIconHeadings col-xs-offset-3 col-xs-6'>
 									<img src="/web/public/imgs/icon8.svg">
-									<h4>Grind</h4>
+									<h4>{{ template.getWeightTitle() }}</h4>
 								</div>
 							</center>
 							<div class="btn-group btn-group-justified" role="group" aria-label="...">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">Whole Bean</button>
-								</div>
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">Ground</button>
-								</div>
+								{% for pPresentation in product.getPresentations%}							
+									<div class="btn-group" role="group">
+										<button type="button" class="btn btn-default">{{ pPresentation.getGrind().getDescription() }}</button>
+									</div>
+								{% endfor %}
 							</div>
 						</div>
 					</div>
@@ -235,7 +223,7 @@
 							<center>
 								<div class='prodInfoIconHeadings col-xs-offset-3 col-xs-6'>
 									<img src="/web/public/imgs/icon9.svg">
-									<h4>Cup Scoring</h4>
+									<h4>{{ template.getCupScoringTitle() }}</h4>
 								</div>
 							</center>
 							<div id='cupMap' class='col-xs-12'>

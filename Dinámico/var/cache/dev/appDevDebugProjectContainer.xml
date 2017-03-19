@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/home/ubuntu/workspace/app</parameter>
+    <parameter key="kernel.root_dir">C:\xampp\htdocs\app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">/home/ubuntu/workspace/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/home/ubuntu/workspace/var/logs</parameter>
+    <parameter key="kernel.cache_dir">C:\xampp\htdocs\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\xampp\htdocs\var\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -50,7 +50,7 @@
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/home/ubuntu/workspace/app/../var/sessions/dev</parameter>
+    <parameter key="session.save_path">C:\xampp\htdocs\app/../var/sessions/dev</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
@@ -59,13 +59,13 @@
       <parameter>twig</parameter>
     </parameter>
     <parameter key="validator.mapping.cache.prefix"></parameter>
-    <parameter key="validator.mapping.cache.file">/home/ubuntu/workspace/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\xampp\htdocs\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:/home/ubuntu/workspace/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\var\cache\dev/profiler</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/home/ubuntu/workspace/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\xampp\htdocs\var\cache\dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</parameter>
@@ -77,7 +77,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">/home/ubuntu/workspace/app/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">C:\xampp\htdocs\app/config/routing_dev.yml</parameter>
     <parameter key="router.cache_class_prefix">appDevDebugProjectContainer</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -135,7 +135,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">/home/ubuntu/workspace/var/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">C:\xampp\htdocs\var\cache\dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -253,7 +253,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/home/ubuntu/workspace/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -371,7 +371,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>/home/ubuntu/workspace/app/Resources</argument>
+                <argument>C:\xampp\htdocs\app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -390,7 +390,7 @@
             <argument type="service">
               <service class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
                 <argument type="service" id="kernel"/>
-                <argument>/home/ubuntu/workspace/app</argument>
+                <argument>C:\xampp\htdocs\app</argument>
                 <argument type="collection"/>
               </service>
             </argument>
@@ -404,7 +404,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>/home/ubuntu/workspace/app/Resources</argument>
+                <argument>C:\xampp\htdocs\app/Resources</argument>
               </service>
             </argument>
             <argument type="collection"/>
@@ -414,7 +414,7 @@
           <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer" public="false">
             <tag name="kernel.cache_warmer"/>
             <argument type="service" id="annotations.reader"/>
-            <argument>/home/ubuntu/workspace/var/cache/dev/annotations.php</argument>
+            <argument>C:\xampp\htdocs\var\cache\dev/annotations.php</argument>
             <argument type="service" id="cache.annotations"/>
           </service>
         </argument>
@@ -428,15 +428,15 @@
           <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer" public="false">
             <tag name="kernel.cache_warmer"/>
             <argument type="service" id="validator.builder"/>
-            <argument>/home/ubuntu/workspace/var/cache/dev/validation.php</argument>
+            <argument>C:\xampp\htdocs\var\cache\dev/validation.php</argument>
             <argument type="service">
               <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                 <tag name="cache.pool"/>
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
-                <argument>WJO856FDxn</argument>
+                <argument>WALfgrC8+F</argument>
                 <argument>0</argument>
-                <argument>WDYAJj2olIYJoakbKMCCcB</argument>
-                <argument>/home/ubuntu/workspace/var/cache/dev/pools</argument>
+                <argument>gHzSdq-CIgv-X8qRb5CocV</argument>
+                <argument>C:\xampp\htdocs\var\cache\dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
               </service>
@@ -478,7 +478,7 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>/home/ubuntu/workspace/app/Resources</argument>
+      <argument>C:\xampp\htdocs\app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
       <argument>034cbd78530e2fce0998be96af3c34ec41c5d4d4</argument>
@@ -561,9 +561,9 @@
           <tag name="cache.pool" clearer="cache.default_clearer"/>
           <tag name="cache.pool" clearer="cache.default_clearer"/>
           <tag name="monolog.logger" channel="cache"/>
-          <argument>ahVlmoIW-q</argument>
+          <argument>zqOGi2fRBy</argument>
           <argument>null</argument>
-          <argument>WDYAJj2olIYJoakbKMCCcB</argument>
+          <argument>gHzSdq-CIgv-X8qRb5CocV</argument>
           <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
           <factory class="Symfony\Component\PropertyAccess\PropertyAccessor" method="createCache"/>
         </service>
@@ -572,9 +572,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
       <tag name="cache.pool" clearer="cache.default_clearer"/>
-      <argument>pHX5CCA3q3</argument>
+      <argument>4ktr-vYZOY</argument>
       <argument>0</argument>
-      <argument>/home/ubuntu/workspace/var/cache/dev/pools</argument>
+      <argument>C:\xampp\htdocs\var\cache\dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -582,20 +582,20 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="cache.pool" clearer="cache.default_clearer"/>
-      <argument>EWAhA3MmBx</argument>
+      <argument>HdjzSD8ar2</argument>
       <argument>0</argument>
-      <argument>WDYAJj2olIYJoakbKMCCcB</argument>
-      <argument>/home/ubuntu/workspace/var/cache/dev/pools</argument>
+      <argument>gHzSdq-CIgv-X8qRb5CocV</argument>
+      <argument>C:\xampp\htdocs\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <tag name="cache.pool" clearer="cache.default_clearer"/>
-      <argument>3SdeEP2M04</argument>
+      <argument>+ElHr+VsRo</argument>
       <argument>0</argument>
-      <argument>WDYAJj2olIYJoakbKMCCcB</argument>
-      <argument>/home/ubuntu/workspace/var/cache/dev/pools</argument>
+      <argument>gHzSdq-CIgv-X8qRb5CocV</argument>
+      <argument>C:\xampp\htdocs\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -651,7 +651,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">/home/ubuntu/workspace/var/cache/dev/translations</argument>
+        <argument key="cache_dir">C:\xampp\htdocs\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <argument type="collection"/>
@@ -1089,7 +1089,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>/home/ubuntu/workspace/var/cache/dev</argument>
+      <argument>C:\xampp\htdocs\var\cache\dev</argument>
     </service>
     <service id="validator" class="Symfony\Component\Validator\Validator\ValidatorInterface">
       <factory service="validator.builder" method="getValidator"/>
@@ -1119,7 +1119,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>/home/ubuntu/workspace/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
+          <argument>C:\xampp\htdocs\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1151,7 +1151,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:/home/ubuntu/workspace/var/cache/dev/profiler</argument>
+          <argument>file:C:\xampp\htdocs\var\cache\dev/profiler</argument>
         </service>
       </argument>
       <argument type="service" id="monolog.logger.profiler" on-invalid="null"/>
@@ -1306,7 +1306,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>/home/ubuntu/workspace</argument>
+      <argument>C:\xampp\htdocs</argument>
       <argument>/_profiler/open?file=%%f&amp;line=%%l#line%%l</argument>
     </service>
     <service id="debug.event_dispatcher" class="Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher">
@@ -1587,7 +1587,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58c72325b89191.86794633</argument>
+            <argument>58ce8e47660050.18353491</argument>
           </service>
         </argument>
       </argument>
@@ -1735,7 +1735,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58c72325b89191.86794633</argument>
+            <argument>58ce8e47660050.18353491</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1798,7 +1798,7 @@
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">name</argument>
-        <argument key="cache">/home/ubuntu/workspace/var/cache/dev/twig</argument>
+        <argument key="cache">C:\xampp\htdocs\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -1858,7 +1858,7 @@
           <service class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
             <tag name="twig.extension"/>
             <argument type="service" id="debug.file_link_formatter"/>
-            <argument>/home/ubuntu/workspace/app</argument>
+            <argument>C:\xampp\htdocs\app</argument>
             <argument>UTF-8</argument>
           </service>
         </argument>
@@ -2052,7 +2052,7 @@
     <service id="monolog.handler.fingers_crossed.error_level_activation_strategy" class="Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy"/>
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor" public="false"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/home/ubuntu/workspace/var/logs/dev.log</argument>
+      <argument>C:\xampp\htdocs\var\logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -2162,17 +2162,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_e6b003deb00548d56ec8b380466d3d64be4a3b13580622aec41b60a7552f2ca0</argument>
+        <argument>sf2orm_default_d400496c82dc0a79195a9bc22aa89f05e7a052f12388e6ccd1335d803ee80866</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_e6b003deb00548d56ec8b380466d3d64be4a3b13580622aec41b60a7552f2ca0</argument>
+        <argument>sf2orm_default_d400496c82dc0a79195a9bc22aa89f05e7a052f12388e6ccd1335d803ee80866</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_e6b003deb00548d56ec8b380466d3d64be4a3b13580622aec41b60a7552f2ca0</argument>
+        <argument>sf2orm_default_d400496c82dc0a79195a9bc22aa89f05e7a052f12388e6ccd1335d803ee80866</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
@@ -2210,9 +2210,9 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
-                        <argument key="/home/ubuntu/workspace/src/PageBundle/Resources/config/doctrine">PageBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/src/FarmBundle/Resources/config/doctrine">FarmBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/src/ProductBundle/Resources/config/doctrine">ProductBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\PageBundle\Resources\config\doctrine">PageBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\FarmBundle\Resources\config\doctrine">FarmBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\ProductBundle\Resources\config\doctrine">ProductBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2225,9 +2225,9 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
-                        <argument key="/home/ubuntu/workspace/src/PageBundle/Resources/config/doctrine">PageBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/src/FarmBundle/Resources/config/doctrine">FarmBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/src/ProductBundle/Resources/config/doctrine">ProductBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\PageBundle\Resources\config\doctrine">PageBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\FarmBundle\Resources\config\doctrine">FarmBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\ProductBundle\Resources\config\doctrine">ProductBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2240,9 +2240,9 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
-                        <argument key="/home/ubuntu/workspace/src/PageBundle/Resources/config/doctrine">PageBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/src/FarmBundle/Resources/config/doctrine">FarmBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/src/ProductBundle/Resources/config/doctrine">ProductBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\PageBundle\Resources\config\doctrine">PageBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\FarmBundle\Resources\config\doctrine">FarmBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\src\ProductBundle\Resources\config\doctrine">ProductBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2255,7 +2255,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>/home/ubuntu/workspace/var/cache/dev/doctrine/orm/Proxies</argument>
+            <argument>C:\xampp\htdocs\var\cache\dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -2439,7 +2439,7 @@
       </argument>
       <argument>bottom</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>/home/ubuntu/workspace</argument>
+      <argument>C:\xampp\htdocs</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -2587,12 +2587,12 @@
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>/home/ubuntu/workspace/var/cache/dev/sessions</argument>
+      <argument>C:\xampp\htdocs\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-      <argument>/home/ubuntu/workspace/app/../var/sessions/dev</argument>
+      <argument>C:\xampp\htdocs\app/../var/sessions/dev</argument>
     </service>
     <service id="templating.loader" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\FilesystemLoader">
       <argument type="service" id="templating.locator"/>
@@ -2607,9 +2607,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>/home/ubuntu/workspace/app/config/routing_dev.yml</argument>
+      <argument>C:\xampp\htdocs\app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">/home/ubuntu/workspace/var/cache/dev</argument>
+        <argument key="cache_dir">C:\xampp\htdocs\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -2633,7 +2633,7 @@
         <service class="Symfony\Component\Cache\DoctrineProvider" public="false">
           <argument type="service">
             <service class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-              <argument>/home/ubuntu/workspace/var/cache/dev/annotations.php</argument>
+              <argument>C:\xampp\htdocs\var\cache\dev/annotations.php</argument>
               <argument type="service" id="cache.annotations"/>
               <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
             </service>
@@ -2655,50 +2655,50 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/src/PageBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\src\PageBundle/Resources/views</argument>
         <argument>Page</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/src/FarmBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\src\FarmBundle/Resources/views</argument>
         <argument>Farm</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/src/ProductBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\src\ProductBundle/Resources/views</argument>
         <argument>Product</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/app/Resources/views</argument>
+        <argument>C:\xampp\htdocs\app/Resources/views</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
+        <argument>C:\xampp\htdocs\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">

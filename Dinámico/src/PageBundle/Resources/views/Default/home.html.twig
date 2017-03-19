@@ -1,4 +1,4 @@
-{% extends "layout.html.twig" %}
+ {% extends "layout.html.twig" %}
 
 {% block title%}CR Gourmet Coffee{% endblock %}
 
@@ -21,7 +21,9 @@
 						<div class="productThumbnailsHeadings">
 							<h4>{{ product.getName() }}</h4>
 						</div> 
-						<a href="{{ path('product_information', {'product': product.getFarm().getId()~ product.getId() }) }}">
+						<a href="{{ path('product_information', {'farm': product.getFarm().getId(),
+																'product': product.getId(),
+																'presentation': 1 }) }}">
 						<img src=" {{ product.getImage() }}">
 					</a>
 					</div>

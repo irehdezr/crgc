@@ -5,6 +5,7 @@ DROP TABLE `Farm_Cultivar`;
 DROP TABLE `Farm_Species`;
 DROP TABLE `Farm_Award`;
 DROP TABLE `Product_Presentation`;
+DROP TABLE `Product_T`;
 DROP TABLE `Product_I`;
 DROP TABLE `Roast`;
 DROP TABLE `Grind`;
@@ -67,6 +68,25 @@ CREATE TABLE IF NOT EXISTS `Grind` (
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci AUTO_INCREMENT=1 ;
 
   
+CREATE TABLE IF NOT EXISTS `Product_T` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`page_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`farm_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`order_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`reviews_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`information_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`species_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`cultivar_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`grade_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`processing_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`flavor_notes_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`roast_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`weight_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`grind_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	`cup_scoring_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+	PRIMARY KEY `PK_Product_T` (`id`)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
 CREATE TABLE IF NOT EXISTS `Product_I` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`farm_id` int(11) NOT NULL,

@@ -47,6 +47,10 @@ class Product_I
     private $presentations;
 
     /**
+     * @var int
+     */
+    private $defaultPresentation;
+    /**
      * Constructor
      */
     public function __construct()

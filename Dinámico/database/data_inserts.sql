@@ -39,6 +39,8 @@ INSERT INTO `Grind` (`id`, `description`) VALUES
 (NULL, 'Whole Bean'),
 (NULL, 'Ground');
 
+INSERT INTO `product_t` (`id`, `page_title`, `farm_title`, `order_title`, `reviews_title`, `information_title`, `species_title`, `cultivar_title`, `grade_title`, `processing_title`, `flavor_notes_title`, `roast_title`, `weight_title`, `grind_title`, `cup_scoring_title`) VALUES 
+(NULL, 'Product Information', 'Farm', 'Order', 'Reviews', 'Information', 'Species', 'Cultivar', 'Grade', 'Processing', 'Flavor notes', 'Roast', 'Weight', 'Grind', 'Cup scoring');
 
 INSERT INTO `Product_I` (`id`, `farm_id`, `name`, `image`, `rank`, `reviews`, `description`) VALUES
 (NULL, 1, 'Chumbal', '/web/public/imgs/coffeeBag1.png', 3, 15, 'Description'),
