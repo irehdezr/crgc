@@ -5,17 +5,12 @@ namespace ProductBundle\Entity;
 /**
  * Product_I
  */
-class Product_I
-{
-    /**
-     * @var int
-     */
-    private $id;
+class Product_I{
 
     /**
-     * @var int
+     * @var integer
      */
-    private $farm;
+    private $id;
 
     /**
      * @var string
@@ -28,12 +23,12 @@ class Product_I
     private $image;
 
     /**
-     * @var int
+     * @var integer
      */
     private $rank;
 
     /**
-     * @var int
+     * @var integer
      */
     private $reviews;
 
@@ -41,15 +36,37 @@ class Product_I
      * @var string
      */
     private $description;
+
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $presentations;
 
     /**
-     * @var int
+     * @var \FarmBundle\Entity\Farm_I
      */
-    private $defaultPresentation;
+    private $farm;
+
+    /**
+     * @var \FarmBundle\Entity\Cultivar
+     */
+    private $cultivar;
+
+    /**
+     * @var \ProductBundle\Entity\Grade
+     */
+    private $grade;
+
+    /**
+     * @var \ProductBundle\Entity\Processing
+     */
+    private $processing;
+
+    /**
+     * @var \ProductBundle\Entity\Flavor
+     */
+    private $flavor;
+
     /**
      * Constructor
      */
@@ -244,5 +261,101 @@ class Product_I
     public function getFarm()
     {
         return $this->farm;
+    }
+
+    /**
+     * Set cultivar
+     *
+     * @param \FarmBundle\Entity\Cultivar $cultivar
+     *
+     * @return Product_I
+     */
+    public function setCultivar(\FarmBundle\Entity\Cultivar $cultivar = null)
+    {
+        $this->cultivar = $cultivar;
+
+        return $this;
+    }
+
+    /**
+     * Get cultivar
+     *
+     * @return \FarmBundle\Entity\Cultivar
+     */
+    public function getCultivar()
+    {
+        return $this->cultivar;
+    }
+
+    /**
+     * Set grade
+     *
+     * @param \ProductBundle\Entity\Grade $grade
+     *
+     * @return Product_I
+     */
+    public function setGrade(\ProductBundle\Entity\Grade $grade = null)
+    {
+        $this->grade = $grade;
+
+        return $this;
+    }
+
+    /**
+     * Get grade
+     *
+     * @return \ProductBundle\Entity\Grade
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * Set processing
+     *
+     * @param \ProductBundle\Entity\Processing $processing
+     *
+     * @return Product_I
+     */
+    public function setProcessing(\ProductBundle\Entity\Processing $processing = null)
+    {
+        $this->processing = $processing;
+
+        return $this;
+    }
+
+    /**
+     * Get processing
+     *
+     * @return \ProductBundle\Entity\Processing
+     */
+    public function getProcessing()
+    {
+        return $this->processing;
+    }
+
+    /**
+     * Set flavor
+     *
+     * @param \ProductBundle\Entity\Flavor $flavor
+     *
+     * @return Product_I
+     */
+    public function setFlavor(\ProductBundle\Entity\Flavor $flavor = null)
+    {
+        $this->flavor = $flavor;
+
+        return $this;
+    }
+
+    /**
+     * Get flavor
+     *
+     * @return \ProductBundle\Entity\Flavor
+     */
+    public function getFlavor()
+    {
+        return $this->flavor;
     }
 }

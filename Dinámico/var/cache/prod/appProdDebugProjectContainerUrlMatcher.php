@@ -37,9 +37,17 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'farm_information')), array (  '_controller' => 'FarmBundle\\Controller\\DefaultController::farmAction',  'farm_id' => 0,));
         }
 
-        // product_information
-        if (0 === strpos($pathinfo, '/product') && preg_match('#^/product/(?P<farm>[^/]++)/(?P<product>[^/]++)/(?P<presentation>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'product_information')), array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::productAction',));
+        if (0 === strpos($pathinfo, '/product')) {
+            // product_information
+            if (preg_match('#^/product/(?P<farm>[^/]++)/(?P<product>[^/]++)/(?P<presentation>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'product_information')), array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::productAction',));
+            }
+
+            // product_add_presentation_to_cart
+            if (0 === strpos($pathinfo, '/product/addToCart') && preg_match('#^/product/addToCart(?:/(?P<presentation>[^/]++))?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'product_add_presentation_to_cart')), array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::addToCartAction',  'presentation' => 1,));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -1,85 +1,3 @@
-/**Overall Classes**/
-body, html { 
-    overflow-x:hidden; /*Agregar a 3era version*/  /* NUEVO (v3) (03-05-17)*/
-}
-body {
-    margin: 0 auto;
-    padding: 50px 0 0;  /* NUEVO (v3) (03-05-17)*/
-    width: 100%;
-}
-a {
-    text-decoration: none;
-}
-.clearfix {
-    clear: both;
-}
-
-/**Overall End**/
-
-/**Header Classes**/
-header {
-    background-color: #0e0604 !important;
-    padding: 0;
-    width: 100%;
-}
-header #navBar {
-    font-size: 16px;
-}
-header .navbar {
-    margin-bottom: 0;
-}
-header .navbar-inverse {
-    background-color: #0e0604 !important; 
-    border-color: #0e0604 !important;
-}
-header #mainMenu li a:hover { /* NUEVO (v3) (03-05-17)*/
-    color: #ddb26e;
-}
-header .navbar-inverse .navbar-brand {
-    color: #fff;
-}
-header .navbar-inverse .navbar-brand span:nth-child(1) {
-    font-weight: bold;
-}
-header .navbar-inverse .navbar-brand span:nth-child(2) {
-    font-weight: bold;
-    color: #ddb26e;
-}
-header .navbar-inverse .navbar-nav>li>a {
-    color: #fff;
-}
-header .navbar/*, #prodInfoRow*/ {
-    -webkit-box-shadow: 0 4px 15px -11px #333;
-    -moz-box-shadow: 0 4px 15px -11px #333;
-    box-shadow: 0 4px 15px -11px #333;
-}
-#shopping-cup {
-    background-image: url(../imgs/shopping-cup.svg); /* NUEVO (v3) (03-05-17)*/
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: 50% 45%;
-    margin-right: 15px;
-    padding: 12px 15px 13px 15px;
-}
-#shopping-cup span {  /* NUEVO (v3) (03-05-17)*/
-    font-size: 0.75em;
-    padding: 1px;
-}
-@media (max-width: 764px){ /* NUEVO (v3) (03-05-17)*/
-    #shopping-cup {
-        background-image: url(../imgs/shopping-cup.svg);
-        background-repeat: no-repeat;
-        background-size: 16.5% auto;
-        background-position: 0.5% 45%;
-        margin-right: 15px;
-        padding: 12px 15px 13px 21px;
-    }
-    #shopping-cup span {  /* NUEVO (v3) (03-05-17)*/
-        font-size: 0.75em;
-        padding: 1px;
-    }
-}
-/**Header End**/
 
 /**Product Info Classes**/
 #farmInfoSection h2 {
@@ -88,12 +6,24 @@ header .navbar/*, #prodInfoRow*/ {
     font-weight: bold;
     margin: 1.5% 0;
 }
-#prodInfoHeading h4, #order h4, #prodInfoGrindHeading h4, .prodInfoIconHeadings h4 {
+.prodInfoPresentatioSection h4 {
     color: #73502a;
+    font-weight: bold;
+    margin: 2% 0;
+    text-align: center;
+    text-decoration: none;
+}
+#prodInfoHeading h4, #prodInfoGrindHeading h4, .prodInfoIconHeadings h4, .prodInfoIconHeadOrder h4 {
+    color: #73502a !important;
     font-weight: bold;
     margin: 5% 0;
     text-align: center;
     text-decoration: none;
+}
+#prodInfofarmInfo h4 {
+    color: #333 !important;
+    font-size: 1.25em;
+    font-weight: bold;
 }
 #prodInfoSection {
     border-left: 1px solid #e0e0e0;
@@ -115,27 +45,19 @@ header .navbar/*, #prodInfoRow*/ {
     margin-top: 15px;
     width: 35%;
 }
+.prodInfoIconHeadOrder img{
+    width: 40%;
+}
 .prodInfoPreferences {
     border: 1px solid #e0e0e0;
     margin-bottom: 10vh;
     padding-bottom: 30px;
 }
-.prodInfoIconHeadings button {
-    background-color: #ddb26e;
-    border: 1px solid #ddb26e;
-}
-.prodInfoIconHeadings button:hover, .prodInfoIconHeadings button:active, .prodInfoIconHeadings button:focus {
-    background-color: #73502a;
-    border: 1px solid #73502a;
-}
-.prodInfoIconHeadings button span {
-    margin-right: 5px;
-}
 /**Product Info End**/
 
 /**Carousel Section Classes**/
 #prodInfoCarouselContainer {
-    margin: 2vh auto 3vh;
+    margin: 0 auto 3vh;
 }
 .carousel-control {
     background-color: rgba(0, 0, 0, 0);
@@ -204,7 +126,7 @@ header .navbar/*, #prodInfoRow*/ {
     margin: 2% 0 0;
     padding: 0;
 }
-.prodThumbInside img {
+.prodThumbInside .prodThumbImgs {
     border: 1px solid #e0e0e0;
     border-radius: 50%;
     flex-wrap: wrap;
@@ -214,70 +136,14 @@ header .navbar/*, #prodInfoRow*/ {
 }
 .price {
     font-weight: bold;
+    font-size: 1.25em;
     text-align: center;
 }
 /* home porduct details*/
 #cupMap {
     padding: 4%;
 }
-/**Carousel Section End**/
-
-/**Footer Section Classes**/
-
-.footer {
-    /* background-color: #ddb26e; */
-    background-color: #0e0604 !important;
-}
-.footer .container-fluid {
-    text-align: center;
-}
-footer .navbar {             /* NUEVO (v3) (03-05-17)*/
-    margin-bottom: 0;
-}
-footer .navbar-inverse {     /* NUEVO (v3) (03-05-17)*/
-    background-color: #0e0604 !important;
-    border-color: #0e0604 !important;
-}
-#quickLinks li a, .socialIcon { /* NUEVO (v3) (03-05-17)*/
-    color: #fff;
-    font-weight: bold;
-}
-#quickLinks li a:hover, .socialIcon:hover {  /* NUEVO (v3) (03-05-17)*/
-    color: #ddb26e;
-    font-weight: bold;
-}
-.socialIcon {  /* NUEVO (v3) (03-05-17)*/
-    margin: 10px;
-}
-#facebook {     /* NUEVO (v3) (03-05-17)*/
-    background-image: url("../imgs/facebook.svg");  
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-}
-#twitter {  /* NUEVO (v3) (03-05-17)*/
-    background-image: url("../imgs/twitter.svg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-}
-@media (max-width: 764px){ /* NUEVO (v3) (03-05-17)*/
-    #facebook {
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: 6.5% auto;
-        padding: 4% 0;
-    }
-    #twitter {
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: 6.5% auto;
-        padding: 4% 0;
-    }
-}
-#credits {
-    background-color: #4d4d4d;
-    color: #fff;
-    min-height: 50px;
-    padding: 15px;
+#cupMap img {
     width: 100%;
 }
-/**Footer Section End**/
+/**Carousel Section End**/

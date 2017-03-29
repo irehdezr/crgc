@@ -12,4 +12,5 @@ FarmBundle\Entity\Species:
         description:
             type: string
             length: '100'
+            unique: true
     lifecycleCallbacks: {  }

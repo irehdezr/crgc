@@ -66,4 +66,11 @@ FarmBundle\Entity\Farm_I:
                 inverseJoinColumns:
                     cultivar_id:
                         referencedColumnName: id
+    manyToOne:
+        region:
+            targetEntity: FarmBundle\Entity\Region
+            inversedBy: farms
+            joinColumn:
+                name: region_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

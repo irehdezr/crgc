@@ -11,5 +11,5 @@ ProductBundle\Entity\Grind:
     fields:
         description:
             type: string
-            length: 100
+            length: '100'
     lifecycleCallbacks: {  }

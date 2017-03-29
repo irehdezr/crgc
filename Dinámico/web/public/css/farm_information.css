@@ -134,3 +134,6 @@
 .prodInfoIconHeadings button span {
     margin-right: 5px;
 }
+.btn-info{
+    text-align: right !important;
+}

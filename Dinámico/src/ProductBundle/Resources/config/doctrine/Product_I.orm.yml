@@ -33,5 +33,24 @@ ProductBundle\Entity\Product_I:
           joinColumn:
             name: farm_id
             referencedColumnName: id
-
+        cultivar:
+            targetEntity: FarmBundle\Entity\Cultivar
+            joinColumn:
+                name: cultivar_id
+                referencedColumnName: id
+        grade:
+            targetEntity: Grade
+            joinColumn:
+                name: grade_id
+                referencedColumnName: id
+        processing:
+            targetEntity: Processing
+            joinColumn:
+                name: processing_id
+                referencedColumnName: id
+        flavor:
+            targetEntity: Flavor
+            joinColumn:
+                name: flavor_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

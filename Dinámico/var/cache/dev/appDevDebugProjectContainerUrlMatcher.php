@@ -116,7 +116,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // product_information
-        if (0 === strpos($pathinfo, '/product') && preg_match('#^/product/(?P<product>[^/]++)$#s', $pathinfo, $matches)) {
+        if (0 === strpos($pathinfo, '/product') && preg_match('#^/product/(?P<farm>[^/]++)/(?P<product>[^/]++)/(?P<presentation>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'product_information')), array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::productAction',));
         }
 

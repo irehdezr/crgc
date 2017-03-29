@@ -3,21 +3,14 @@
 {% block title%} Farm Information {% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('public/css/product.css')}}" />
-    <link rel="stylesheet" href="{{ asset('public/css/farm_information.css') }}" />
-{% endblock %}
-{% block javascripts %}
-	<script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyA8iOI-wKQIfkncEFwGUHS3dsce-nlwsQ0&callback=loadMap"></script>
-	<script src="{{ asset('public/js/farm_information.js')}}"></script>
-	<script>
-		var lat = {{ farm.getLatitude() }}
-		var lon = {{ farm.getLongitude() }}
-	</script>
-    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('/web/public/css/product.css')}}" />
+    <link rel="stylesheet" href="{{ asset('/web/public/css/farm_information.css') }}" />
 {% endblock %}
 
 {% block body %}
-	<center><h2>Farm Information</h2></center>
+	<center>
+		<h2>{{ template.getPageTitle() }}</h2>
+	</center>
 	<section id='farmInfoSection'>
 		<div class='container-fluid'>
 			<div id='farmInfoContainer' class='row'>
@@ -43,7 +36,9 @@
 								{{ farm.getDescription() }}
 								<div class='prodInfoIconHeadings'>
 									<center>
-										<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#cupMap"><span class="glyphicon glyphicon-eye-open"></span>Read story</button>
+										<button type="button" class="btn btn-info">												<span class="glyphicon glyphicon-search"></span>
+											{{ template.getStoryBtnTitle() }}
+										</button>
 									</center>
 								</div>
 							</p>
@@ -53,23 +48,27 @@
 								<img src="/web/public/imgs/icon2.png">
 							</div>
 							<h4>{{ template.getInformationTitle() }}</h4>
-							<p><span>Region: </span>: Central Valley</p>
+							<p><span>{{ template.getRegionTitle() }}</span>: {{ farm.getRegion().getName() }}</p>
 							<p><span>{{ template.getElevationTitle() }}</span>: {{ farm.getElevation() }} m.a.s.l.</p>
 							<p><span>{{ template.getHarvestTitle() }}</span>: {{ farm.getHarvest() }}</p>
-							<p><span>{{ template.getSpeciesTitle() }}</span>: Arabica</p>
-							<p><span>{{ template.getCultivarTitle() }}</span>:
-							<div class= "col-md-12 col-md-offset-2">
+							<p><span>{{ template.getSpeciesTitle() }}</span>: {{ template.getSpeciesInfo() }}</p>
+							<p><span>{{ template.getCultivarTitle() }}:</span>
 								{% for cultivar in farm.getCultivars() %}
-									{{cultivar.getDescription()}} </br>
+									{% if loop.first %}
+										{{ cultivar.getDescription() }}
+									{% else %}
+										, {{ cultivar.getDescription() }}
+									{% endif %}
 								{% endfor %}
-							</div>
 							</p>
 							<p><span>{{ template.getCertificationsTitle() }}</span>:
-							<div class= "col-md-12 col-md-offset-2">
 								{% for certification in farm.getCertifications() %}
-									{{certification.getDescription()}} </br>
+									{% if loop.first %}
+										{{ certification.getDescription() }}
+									{% else %}
+										, {{ certification.getDescription() }}
+									{% endif %}
 								{% endfor %}
-							</div>
 							</p>
 						</div>
 						<div class='farmInfoCards col-lg-6 col-md-6'>
@@ -79,7 +78,7 @@
 							<h4>{{ template.getAwardsTitle() }}</h4>
 							<p>
 								{% for award in farm.getFarmAwards() %}
-									{{ award.getAward().getDescription() }},{{ award.getPlace() }} place,{{ award.getYear() }}</br>
+									-{{ award.getAward().getDescription() }}, {{ award.getPlace() }} place, {{ award.getYear() }}</br>
 								{% endfor %}
 							</p>
 						</div>
@@ -97,6 +96,7 @@
 		<div class='clearfix'></div>
 		{% if farm.getProducts()|length > 0 %}
 		<section>
+			<div class='hidden-xs hidden-sm'>
 			<div id='carouselHeading' class='col-xs-12'>
 				<center><h3>{{ template.getProductsTitle() }}</h3></center>
 			</div>
@@ -109,16 +109,7 @@
 			    	    {% if size < 1 %}
 			    	    	{% set size = 1%}
 			    	    {% endif%}
-                			<div id="farm_informationCarousel" class="carousel slide" data-interval="false">
-				                <ol class="carousel-indicators">
-				                {% for index in 1..size|number_format(0) %}
-				                	{% if loop.index < 2 %}
-				                    	<li data-target="#farm_informationCarousel" data-slide-to="{{ loop.index }}" class="active"></li>
-				                    {% else %}
-				                    	<li data-target="#farm_informationCarousel" data-slide-to="{{ loop.index }}" class=""></li>
-				                	{% endif %}
-				                {% endfor %}
-				                </ol>	                
+                			<div id="farm_informationCarousel" class="carousel slide" data-interval="false">          
 				                <div class="carousel-inner" role="listbox">
 				                   	{% for product in farm.getProducts() %}
 								        {% if loop.index  < 2 %} 
@@ -135,12 +126,12 @@
 																<a href="{{ path('product_information', {
 																'farm': product.getFarm().getId(),
 																'product': product.getId(),
-																'presentation': 1 }) }}">
+																'presentation': product.getPresentations()|first.getId()  }) }}">
 																	<img src="{{product.getImage()}}">
 																</a>
 																<p class="price">
 																${{ product.getPresentations()|first.getPrice() }}</br>
-																<a href="{{ path('page_homepage', {'name':'onDevelopment' }) }}">Order</a>
+																<a class="orderPresentation" data-presentation-id="{{ product.getPresentations()|first.getId() }}">{{ template.getOrderTitle() }}</a>
 																</p>		
 																<div class='productDetailsContainer row'>
 																	<div class='productDetails col-xs-5 col-xs-offset-1'>
@@ -155,8 +146,8 @@
 																			<a href="{{ path('product_information', {
 																			'farm': product.getFarm().getId(),
 																			'product': product.getId(),
-																			'presentation': 1 }) }}">
-																		<p>More info/options</p></a> 
+																			'presentation': product.getPresentations()|first.getId() }) }}">
+																		<p>{{ template.getMoreInfoTitle() }}</p></a> 
 																	</div>
 																</div>
 																<div class='productDetailsContainer row'>
@@ -176,7 +167,7 @@
 																		</div>
 																	</div>
 																	<div class='productDetails col-xs-5 col-md-5'>
-																		<p>{{product.getReviews()}} reviews</p>
+																		<p>{{product.getReviews()}} {{ template.getReviewsTitle() }}</p>
 																	</div>
 																</div>
 															</div>
@@ -196,12 +187,12 @@
 																	<a href="{{ path('product_information', {
 																'farm': product.getFarm().getId(),
 																'product': product.getId(),
-																'presentation': 1 }) }}">
+																'presentation': product.getPresentations()|first.getId()  }) }}">
 																	<img src="{{product.getImage()}}">
 																</a>
 																<p class="price">
 																${{ product.getPresentations()|first.getPrice() }}</br>
-																<a href="{{ path('page_homepage', {'name':'onDevelopment' }) }}">Order</a>
+																<a class="orderPresentation" data-presentation-id="{{ product.getPresentations()|first.getId() }}">{{ template.getOrderTitle() }}</a>
 																</p>		
 																<div class='productDetailsContainer row'>
 																	<div class='productDetails col-xs-5 col-xs-offset-1'>
@@ -217,7 +208,7 @@
 																				'farm': product.getFarm().getId(),
 																				'product': product.getId(),
 																				'presentation': 1 }) }}">
-																			<p>More info/options</p></a> 
+																			<p>{{ template.getMoreInfoTitle() }}</p></a> 
 																	</div>
 																</div>
 																<div class='productDetailsContainer row'>
@@ -237,7 +228,7 @@
 																		</div>
 																	</div>
 																	<div class='productDetails col-xs-5 col-md-5'>
-																		<p>{{product.getReviews()}} reviews</p>
+																		<p>{{product.getReviews()}} {{ template.getReviewsTitle() }}</p>
 																	</div>
 																</div>
 															</div>
@@ -255,11 +246,12 @@
 																	<a href="{{ path('product_information', {
 																'farm': product.getFarm().getId(),
 																'product': product.getId(),
-																'presentation': 1 }) }}">
+																'presentation': product.getPresentations()|first.getId()  }) }}">
+																	<img src="{{product.getImage()}}">
 																</a>
 																<p class="price">
 																${{ product.getPresentations()|first.getPrice() }}</br>
-																<a href="{{ path('page_homepage', {'name':'onDevelopment' }) }}">Order</a>
+																<a class="orderPresentation" data-presentation-id="{{ product.getPresentations()|first.getId() }}">{{ template.getOrderTitle() }}</a>
 																</p>		
 																<div class='productDetailsContainer row'>
 																	<div class='productDetails col-xs-5 col-xs-offset-1'>
@@ -274,7 +266,7 @@
 																			<a href="{{ path('product_information', {
 																				'farm': product.getFarm().getId(),
 																				'product': product.getId(),
-																				'presentation': 1 }) }}"><p>More info/options</p></a> 
+																				'presentation': 1 }) }}"><p>{{ template.getMoreInfoTitle() }}</p></a> 
 																	</div>
 																</div>
 																<div class='productDetailsContainer row'>
@@ -294,7 +286,7 @@
 																		</div>
 																	</div>
 																	<div class='productDetails col-xs-5 col-md-5'>
-																		<p>{{product.getReviews()}} reviews</p>
+																		<p>{{product.getReviews()}} {{ template.getReviewsTitle() }}</p>
 																	</div>
 																</div>
 															</div>
@@ -314,5 +306,104 @@
 			</div>
 		</section>
 		{% endif %}
+		{% if farm.getProducts()|length > 0 %}
+		<section>
+			<div class='hidden-lg hidden-md'>
+			<div id='carouselHeading' class='col-xs-12'>
+				<center><h3>{{ template.getProductsTitle() }}</h3></center>
+			</div>
+			<div class='clearfix'></div>
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+			    	    <div class="well">
+                			<div id="farm_informationCarousel2" class="carousel slide" data-interval="false">             
+				                <div class="carousel-inner" role="listbox">
+				                   	{% for product in farm.getProducts() %}
+								        {% if loop.first %} 
+								    	    <div class="item active">
+								    	{% else %}
+								    	    <div class="item ">
+								    	{% endif %}
+								                <div class="row-fluid">
+													<div class="carouselCards col-xs-12 col-md-4">
+														<div class="productThumbnails">
+															<div class='prodThumbInside'>
+																<div class="productThumbnailsHeadings">
+																	<h4>{{ product.getName()}}</h4>
+																</div>
+																<a href="{{ path('product_information', {
+																'farm': product.getFarm().getId(),
+																'product': product.getId(),
+																'presentation': product.getPresentations()|first.getId()  }) }}">
+																	<img src="{{product.getImage()}}">
+																</a>
+																<p class="price">
+																${{ product.getPresentations()|first.getPrice() }}</br>
+																<a class="orderPresentation" data-presentation-id="{{ product.getPresentations()|first.getId() }}">{{ template.getOrderTitle() }}</a>
+																</p>		
+																<div class='productDetailsContainer row'>
+																	<div class='productDetails col-xs-5 col-xs-offset-1'>
+																		<p>
+																		{{ product.getPresentations()|first.getWeight() }}g/
+																		{{ product.getPresentations()|first.getWeight() *0.04 }}oz
+																		</p>
+																		<p>{{ product.getPresentations()|first.getRoast().getDescription() }}</p>
+																	</div>
+																	<div href="#" class='productDetails  col-xs-5 col-md-5'>
+																		<p>{{ product.getPresentations()|first.getGrind().getDescription() }}</p>
+																			<a href="{{ path('product_information', {
+																			'farm': product.getFarm().getId(),
+																			'product': product.getId(),
+																			'presentation': product.getPresentations()|first.getId() }) }}">
+																		<p>{{ template.getMoreInfoTitle() }}</p></a> 
+																	</div>
+																</div>
+																<div class='productDetailsContainer row'>
+																	<div class='productDetails col-xs-5 col-xs-offset-1'>
+																		<div class="rating">
+																		{% set rank= 0 %}
+																		 {% for inx in 1..product.getRank() %}
+																		 	{% set rank = rank+1 %}
+																		 	<span>&#x2605;</span>
+																		 {% endfor %}
+																		{% if rank < 5 %}
+																		{% for inx2 in rank..4 %}
+																		 	{% set rank = rank+1 %}
+																		 	<span>&#x2606;</span>
+																		{% endfor %}
+																		{% endif %}
+																		</div>
+																	</div>
+																	<div class='productDetails col-xs-5 col-md-5'>
+																		<p>{{product.getReviews()}} {{ template.getReviewsTitle() }}</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+								              	</div>
+								            </div>
+						            {% endfor %}
+						            </div>
+				                <a class="left carousel-control" href="#farm_informationCarousel2" data-slide="prev"></a>
+				                <a class="right carousel-control" href="#farm_informationCarousel2" data-slide="next"></a>
+			            	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% endif %}
 	</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8iOI-wKQIfkncEFwGUHS3dsce-nlwsQ0" type="text/javascript"></script>
+	<script>
+		var lat = {{ farm.getLatitude() }}
+		var lon = {{ farm.getLongitude() }}
+	</script>	
+	<script src="{{ asset('/web/public/js/farm_information.js')}}"></script>
 {% endblock %}

@@ -1,0 +1,16 @@
+ProductBundle\Entity\Processing:
+    type: entity
+    table: Processing
+    repositoryClass: ProductBundle\Repository\ProcessingRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: string
+            length: '100'
+            unique: true
+    lifecycleCallbacks: {  }

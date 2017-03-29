@@ -10,9 +10,10 @@ ProductBundle\Entity\Presentation:
                 strategy: AUTO
     fields:
         price:
-            type: integer
+            type: float
         weight:
             type: integer
+            lenght: '2'
     manyToOne:
         product:
             targetEntity: Product_I

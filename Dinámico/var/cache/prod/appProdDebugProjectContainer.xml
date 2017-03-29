@@ -21,9 +21,9 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appProdDebugProjectContainer</parameter>
-    <parameter key="database_host">127.0.0.1</parameter>
+    <parameter key="database_host">localhost</parameter>
     <parameter key="database_port">null</parameter>
-    <parameter key="database_name">crgourmetcoffee</parameter>
+    <parameter key="database_name">crgourme_crgourmetcoffee</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -351,7 +351,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>LohK4SXC+Q</argument>
                 <argument>0</argument>
-                <argument>zT1FxXKxIO1nGPImKw-KGs</argument>
+                <argument>iUH3uykO+xbKtTW7OXetV3</argument>
                 <argument>C:\xampp\htdocs\var\cache\prod/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -479,7 +479,7 @@
           <tag name="monolog.logger" channel="cache"/>
           <argument>6ZHUMpE1qR</argument>
           <argument>null</argument>
-          <argument>zT1FxXKxIO1nGPImKw-KGs</argument>
+          <argument>iUH3uykO+xbKtTW7OXetV3</argument>
           <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
           <factory class="Symfony\Component\PropertyAccess\PropertyAccessor" method="createCache"/>
         </service>
@@ -500,7 +500,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>HDPMiCiQqF</argument>
       <argument>0</argument>
-      <argument>zT1FxXKxIO1nGPImKw-KGs</argument>
+      <argument>iUH3uykO+xbKtTW7OXetV3</argument>
       <argument>C:\xampp\htdocs\var\cache\prod/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -510,7 +510,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>K6p8FxTLCb</argument>
       <argument>0</argument>
-      <argument>zT1FxXKxIO1nGPImKw-KGs</argument>
+      <argument>iUH3uykO+xbKtTW7OXetV3</argument>
       <argument>C:\xampp\htdocs\var\cache\prod/pools</argument>
       <argument type="service" id="monolog.logger.cache"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1325,7 +1325,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58ce8d031351f6.98444566</argument>
+            <argument>58dbde9a17fa10.08769613</argument>
           </service>
         </argument>
       </argument>
@@ -1474,7 +1474,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58ce8d031351f6.98444566</argument>
+            <argument>58dbde9a17fa10.08769613</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1808,9 +1808,9 @@
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection">
       <argument type="collection">
         <argument key="driver">pdo_mysql</argument>
-        <argument key="host">127.0.0.1</argument>
+        <argument key="host">localhost</argument>
         <argument key="port">null</argument>
-        <argument key="dbname">crgourmetcoffee</argument>
+        <argument key="dbname">crgourme_crgourmetcoffee</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>

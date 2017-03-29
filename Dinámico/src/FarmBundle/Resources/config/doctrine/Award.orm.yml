@@ -12,6 +12,7 @@ FarmBundle\Entity\Award:
         description:
             type: string
             length: '100'
+            unique: true
     oneToMany:
         farm_awards:
           targetEntity: Farm_Award

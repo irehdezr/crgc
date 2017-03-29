@@ -15,7 +15,16 @@ class Farm_T
     /**
      * @var string
      */
+    private $pageTitle;
+
+    /**
+     * @var string
+     */
     private $descriptionTitle;
+    /**
+     * @var string
+     */
+    private $storyBtnTitle;
 
     /**
      * @var string
@@ -40,6 +49,11 @@ class Farm_T
     /**
      * @var string
      */
+    private $regionTitle;
+
+    /**
+     * @var string
+     */
     private $elevationTitle;
 
     /**
@@ -55,22 +69,63 @@ class Farm_T
     /**
      * @var string
      */
+    private $speciesInfo;
+
+    /**
+     * @var string
+     */
     private $cultivarTitle;
 
     /**
      * @var string
      */
     private $certificationsTitle;
+    /**
+     * @var string
+     */
+    private $orderTitle;
+    /**
+     * @var string
+     */
+    private $moreInfoTitle;
 
+    /**
+     * @var string
+     */
+    private $reviewsTitle;
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set pageTitle
+     *
+     * @param string $pageTitle
+     *
+     * @return Farm_T
+     */
+    public function setPageTitle($pageTitle)
+    {
+        $this->pageTitle = $pageTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get pageTitle
+     *
+     * @return string
+     */
+    public function getPageTitle()
+    {
+        return $this->pageTitle;
     }
 
     /**
@@ -95,6 +150,30 @@ class Farm_T
     public function getDescriptionTitle()
     {
         return $this->descriptionTitle;
+    }
+
+    /**
+     * Set storyBtnTitle
+     *
+     * @param string $storyBtnTitle
+     *
+     * @return Farm_T
+     */
+    public function setStoryBtnTitle($storyBtnTitle)
+    {
+        $this->storyBtnTitle = $storyBtnTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get storyBtnTitle
+     *
+     * @return string
+     */
+    public function getStoryBtnTitle()
+    {
+        return $this->storyBtnTitle;
     }
 
     /**
@@ -194,6 +273,30 @@ class Farm_T
     }
 
     /**
+     * Set regionTitle
+     *
+     * @param string $regionTitle
+     *
+     * @return Farm_T
+     */
+    public function setRegionTitle($regionTitle)
+    {
+        $this->regionTitle = $regionTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get regionTitle
+     *
+     * @return string
+     */
+    public function getRegionTitle()
+    {
+        return $this->regionTitle;
+    }
+
+    /**
      * Set elevationTitle
      *
      * @param string $elevationTitle
@@ -266,6 +369,30 @@ class Farm_T
     }
 
     /**
+     * Set speciesInfo
+     *
+     * @param string $speciesInfo
+     *
+     * @return Farm_T
+     */
+    public function setSpeciesInfo($speciesInfo)
+    {
+        $this->speciesInfo = $speciesInfo;
+
+        return $this;
+    }
+
+    /**
+     * Get speciesInfo
+     *
+     * @return string
+     */
+    public function getSpeciesInfo()
+    {
+        return $this->speciesInfo;
+    }
+
+    /**
      * Set cultivarTitle
      *
      * @param string $cultivarTitle
@@ -311,5 +438,77 @@ class Farm_T
     public function getCertificationsTitle()
     {
         return $this->certificationsTitle;
+    }
+
+    /**
+     * Set orderTitle
+     *
+     * @param string $orderTitle
+     *
+     * @return Farm_T
+     */
+    public function setOrderTitle($orderTitle)
+    {
+        $this->orderTitle = $orderTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get orderTitle
+     *
+     * @return string
+     */
+    public function getOrderTitle()
+    {
+        return $this->orderTitle;
+    }
+
+    /**
+     * Set reviewsTitle
+     *
+     * @param string $reviewsTitle
+     *
+     * @return Farm_T
+     */
+    public function setReviewsTitle($reviewsTitle)
+    {
+        $this->reviewsTitle = $reviewsTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get reviewsTitle
+     *
+     * @return string
+     */
+    public function getReviewsTitle()
+    {
+        return $this->reviewsTitle;
+    }
+
+    /**
+     * Set moreInfoTitle
+     *
+     * @param string $moreInfoTitle
+     *
+     * @return Farm_T
+     */
+    public function setMoreInfoTitle($moreInfoTitle)
+    {
+        $this->moreInfoTitle = $moreInfoTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get moreInfoTitle
+     *
+     * @return string
+     */
+    public function getMoreInfoTitle()
+    {
+        return $this->moreInfoTitle;
     }
 }

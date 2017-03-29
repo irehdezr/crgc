@@ -1,14 +1,17 @@
 /**Overall Classes**/
-body, html { 
+html{ 
     overflow-x:hidden; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
     margin: 0 auto;
-    padding: 50px 0 0;  
-    width: 100%;
+    padding: 50px 0 0;
+    min-height: 100%;
 }
-
 a {
     text-decoration: none;
 }

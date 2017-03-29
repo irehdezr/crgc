@@ -4,7 +4,7 @@
 
 {% block stylesheets%}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('public/css/product.css')}}" />{% endblock %}
+    <link rel="stylesheet" href="{{ asset('/web/public/css/product.css')}}" />{% endblock %}
 {% block body %}
 <main>
 		<section id='mainBanner'>
@@ -12,7 +12,11 @@
 			</div>
 		</section>
 		<div class='clearfix'></div>
-		<center><h2>Featured Products</h2></center>
+		<center>
+			<h2>
+				{{ template.getFeaturedProductsTitle() }}		
+			</h2>
+		</center>
 		<section id='productsShowcase'>
 			<div class="col-xs-12 col-md-10 col-md-offset-1">
 				{% for product in products %}
@@ -21,11 +25,15 @@
 						<div class="productThumbnailsHeadings">
 							<h4>{{ product.getName() }}</h4>
 						</div> 
-						<a href="{{ path('product_information', {'farm': product.getFarm().getId(),
-																'product': product.getId(),
-																'presentation': 1 }) }}">
-						<img src=" {{ product.getImage() }}">
-					</a>
+						<a href="{{ path('product_information', {'farm': product.getFarm().getId(),'product': product.getId(),'presentation': product.getPresentations()|first.getId()  }) }}">
+							<img src=" {{ product.getImage() }}">
+						</a>
+						<p>
+							<center>
+								{{ template.getProductFarmTitle() }} 
+								<a href="{{ path('farm_information', {'farm_id': product.getFarm().getId()}) }}"> {{ product.getFarm().getName }} </a>
+							</center>						
+						</p>
 					</div>
 				</div>
 				{% endfor %}

@@ -1,3 +1,6 @@
 product_information:
     path:     /{farm}/{product}/{presentation}
     defaults: { _controller: ProductBundle:Default:product}
+product_add_presentation_to_cart:
+    path:     /addToCart/{presentation}
+    defaults: { _controller: ProductBundle:Default:addToCart, presentation: 1}

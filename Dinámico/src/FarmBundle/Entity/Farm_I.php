@@ -13,6 +13,11 @@ class Farm_I
     private $id;
 
     /**
+     * @var int
+     */
+    private $region;
+
+    /**
      * @var string
      */
     private $name;
@@ -327,6 +332,30 @@ class Farm_I
     public function getFarmAwards()
     {
         return $this->farm_awards;
+    }
+
+    /**
+     * Set region
+     *
+     * @param \FarmBundle\Entity\Region $region
+     *
+     * @return Farm_I
+     */
+    public function setRegion(\FarmBundle\Entity\Region $region = null)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return \FarmBundle\Entity\Region
+     */
+    public function getRegion()
+    {
+        return $this->region;
     }
 
     /**

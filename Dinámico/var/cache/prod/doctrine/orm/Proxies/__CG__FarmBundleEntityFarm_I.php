@@ -64,10 +64,10 @@ class Farm_I extends \FarmBundle\Entity\Farm_I implements \Doctrine\ORM\Proxy\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'id', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'name', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'image', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'description', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'elevation', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'harvest', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'latitude', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'longitude', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'products', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'certifications', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'farm_awards', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'species', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'cultivars'];
+            return ['__isInitialized__', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'id', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'region', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'name', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'image', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'description', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'elevation', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'harvest', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'latitude', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'longitude', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'products', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'certifications', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'farm_awards', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'species', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'cultivars'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'id', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'name', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'image', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'description', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'elevation', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'harvest', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'latitude', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'longitude', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'products', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'certifications', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'farm_awards', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'species', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'cultivars'];
+        return ['__isInitialized__', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'id', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'region', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'name', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'image', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'description', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'elevation', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'harvest', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'latitude', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'longitude', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'products', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'certifications', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'farm_awards', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'species', '' . "\0" . 'FarmBundle\\Entity\\Farm_I' . "\0" . 'cultivars'];
     }
 
     /**
@@ -406,6 +406,28 @@ class Farm_I extends \FarmBundle\Entity\Farm_I implements \Doctrine\ORM\Proxy\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFarmAwards', []);
 
         return parent::getFarmAwards();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRegion(\FarmBundle\Entity\Region $region = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRegion', [$region]);
+
+        return parent::setRegion($region);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRegion()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRegion', []);
+
+        return parent::getRegion();
     }
 
     /**

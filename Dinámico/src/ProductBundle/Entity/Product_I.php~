@@ -5,49 +5,6 @@ namespace ProductBundle\Entity;
 /**
  * Product_I
  */
-class Product_I
-{
-    /**
-     * @var int
-     */
-    private $id;
+class Product_I{
 
-    /**
-     * @var int
-     */
-    private $farm;
-
-    /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $image;
-
-    /**
-     * @var int
-     */
-    private $rank;
-
-    /**
-     * @var int
-     */
-    private $reviews;
-
-    /**
-     * @var string
-     */
-    private $description;
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $presentations;
-
-    /**
-     * @var int
-     */
-    private $defaultPresentation;
 }

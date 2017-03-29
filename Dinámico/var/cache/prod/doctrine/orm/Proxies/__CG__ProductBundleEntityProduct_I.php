@@ -64,10 +64,10 @@ class Product_I extends \ProductBundle\Entity\Product_I implements \Doctrine\ORM
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'id', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'farm', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'name', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'image', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'rank', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'reviews', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'description', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'presentations', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'defaultPresentation'];
+            return ['__isInitialized__', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'id', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'name', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'image', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'rank', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'reviews', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'description', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'presentations', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'farm', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'cultivar', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'grade', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'processing', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'flavor'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'id', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'farm', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'name', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'image', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'rank', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'reviews', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'description', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'presentations', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'defaultPresentation'];
+        return ['__isInitialized__', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'id', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'name', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'image', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'rank', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'reviews', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'description', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'presentations', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'farm', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'cultivar', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'grade', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'processing', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'flavor'];
     }
 
     /**
@@ -351,6 +351,94 @@ class Product_I extends \ProductBundle\Entity\Product_I implements \Doctrine\ORM
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFarm', []);
 
         return parent::getFarm();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCultivar(\FarmBundle\Entity\Cultivar $cultivar = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCultivar', [$cultivar]);
+
+        return parent::setCultivar($cultivar);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCultivar()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCultivar', []);
+
+        return parent::getCultivar();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setGrade(\ProductBundle\Entity\Grade $grade = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setGrade', [$grade]);
+
+        return parent::setGrade($grade);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getGrade()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getGrade', []);
+
+        return parent::getGrade();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setProcessing(\ProductBundle\Entity\Processing $processing = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setProcessing', [$processing]);
+
+        return parent::setProcessing($processing);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getProcessing()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getProcessing', []);
+
+        return parent::getProcessing();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFlavor(\ProductBundle\Entity\Flavor $flavor = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFlavor', [$flavor]);
+
+        return parent::setFlavor($flavor);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFlavor()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFlavor', []);
+
+        return parent::getFlavor();
     }
 
 }

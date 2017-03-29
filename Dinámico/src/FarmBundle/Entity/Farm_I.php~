@@ -13,6 +13,11 @@ class Farm_I
     private $id;
 
     /**
+     * @var int
+     */
+    private $region;
+
+    /**
      * @var string
      */
     private $name;

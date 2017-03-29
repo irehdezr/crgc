@@ -12,17 +12,20 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 		    <ul id='mainMenu' class="nav navbar-nav">
 				<li><a href="{{ path('page_homepage', {'name': 'home'}) }}">Home</a></li>
+           		<li><a href="{{ path('farm_information',{'farm_id': '1' })}}">Farms</a></li>
            		<li><a href="{{ path('page_homepage', {'name': 'onDevelopment'}) }}">Regions</a></li>
-           		<li><a href="{{ path('page_homepage', {'name': 'onDevelopment'}) }}">Farms</a></li>
-           		<li><a href="{{ path('page_homepage', {'name': 'onDevelopment'}) }}">Awards</a></li>
            		<li><a href="{{ path('page_homepage', {'name': 'onDevelopment'}) }}">Search</a></li>
             </ul></ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="{{ path('page_homepage', {'name': 'onDevelopment'}) }}"><span id='login'></span> Login</a>
+						<a href="{{ path('page_homepage', {'name': 'login'}) }}">
+							<span id='login'> Login</span>
+						</a>
 					</li>
 					<li>
-						<a id='shopping-cup' href="{{ path('page_homepage', {'name': 'onDevelopment'}) }}"><span>2</span></a>
+						<a id='shopping-cup' href="{{ path('page_homepage', {'name': 'shoppingCart'}) }}">
+							<span id='itemsCart'>{{ app.session.get('itemsOnCart') }}</span>
+						</a>
 					</li>
 				</ul>
 			</div>

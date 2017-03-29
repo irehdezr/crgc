@@ -24,6 +24,16 @@ PageBundle\Entity\Home_T:
             length: 255
             column: banner_image
 
+        featuredProductsTitle:
+            type: string
+            length: '50'
+            column: featured_products_title
+
+        productFarmTitle:
+            type: string
+            length: '50'
+            column: product_farm_title
+
     manyToOne:
         product1:
           targetEntity: ProductBundle\Entity\Product_I

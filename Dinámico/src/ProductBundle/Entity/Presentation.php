@@ -5,37 +5,37 @@ namespace ProductBundle\Entity;
 /**
  * Presentation
  */
-class Presentation
-{
+class Presentation{
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
     /**
-     * @var int
-     */
-    private $product;
-
-    /**
-     * @var int
-     */
-    private $roast;
-
-    /**
-     * @var int
-     */
-    private $grind;
-
-    /**
-     * @var int
+     * @var float
      */
     private $price;
 
     /**
-     * @var int
+     * @var integer
      */
     private $weight;
+
+    /**
+     * @var \ProductBundle\Entity\Product_I
+     */
+    private $product;
+
+    /**
+     * @var \ProductBundle\Entity\Roast
+     */
+    private $roast;
+
+    /**
+     * @var \ProductBundle\Entity\Grind
+     */
+    private $grind;
+
 
     /**
      * Get id
@@ -50,7 +50,7 @@ class Presentation
     /**
      * Set price
      *
-     * @param integer $price
+     * @param float $price
      *
      * @return Presentation
      */
@@ -64,7 +64,7 @@ class Presentation
     /**
      * Get price
      *
-     * @return integer
+     * @return float
      */
     public function getPrice()
     {

@@ -22,6 +22,11 @@ Class Home_T{
      * @var string
      */
 	private $bannerImage;
+    
+    /**
+     * @var string
+     */
+    private $featuredProductsTitle;
 
 	/**
      * @var \ProductBundle\Entity\Product_I
@@ -52,6 +57,11 @@ Class Home_T{
      * @var \ProductBundle\Entity\Product_I
      */
 	private $product6;
+    
+    /**
+     * @var string
+     */
+    private $productFarmTitle;
 
 	/**
      * @var \FarmBundle\Entity\Farm_I
@@ -138,6 +148,54 @@ Class Home_T{
     public function getBannerImage()
     {
         return $this->bannerImage;
+    }
+
+    /**
+     * Set featuredProductsTitle
+     *
+     * @param string $featuredProductsTitle
+     *
+     * @return Home_T
+     */
+    public function setFeaturedProductsTitle($featuredProductsTitle)
+    {
+        $this->featuredProductsTitle = $featuredProductsTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get featuredProductsTitle
+     *
+     * @return string
+     */
+    public function getFeaturedProductsTitle()
+    {
+        return $this->featuredProductsTitle;
+    }
+
+    /**
+     * Set productFarmTitle
+     *
+     * @param string $productFarmTitle
+     *
+     * @return Home_T
+     */
+    public function setProductFarmTitle($productFarmTitle)
+    {
+        $this->productFarmTitle = $productFarmTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get productFarmTitle
+     *
+     * @return string
+     */
+    public function getProductFarmTitle()
+    {
+        return $this->productFarmTitle;
     }
 
     /**

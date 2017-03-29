@@ -1,0 +1,20 @@
+FarmBundle\Entity\Region:
+    type: entity
+    table: Region
+    repositoryClass: FarmBundle\Repository\RegionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '100'
+            unique: true
+    oneToMany:
+        farms:
+            targetEntity: Farm_I
+            mappedBy: region
+    lifecycleCallbacks: {  }

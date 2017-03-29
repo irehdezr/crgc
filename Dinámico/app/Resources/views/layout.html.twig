@@ -2,11 +2,15 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}CRgourmetcoffee{% endblock %}</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}
+                CRgourmetcoffee
+            {% endblock %}
+        </title>
+        <meta name="viewport" content="width=device-width,height=device-height initial-scale=1.0">
         {% block stylesheets %}
-                <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css')}}" />
-                <link rel="stylesheet" href="{{ asset('public/css/crgourmetcoffee.css')}}" />
+            <link rel="stylesheet" href="{{ asset('/web/public/css/bootstrap.css')}}" />
+            <link rel="stylesheet" href="{{ asset('/web/public/css/crgourmetcoffee.css')}}" />
         {% endblock %}
     </head>
     <body>
@@ -14,14 +18,16 @@
             {% include "header.html.twig"%}
         </div>
         <div id="content">
-            {% block body %}{% endblock %}
+            {% block body %}
+            {% endblock %}
         </div>
         <div id="footer">
             {% include "footer.html.twig"%}
         </div>
         {% block javascripts %}
-            <script src="{{ asset('public/js/jquery-3.1.0.min.js')}}"></script>
-            <script src="{{ asset('public/js/bootstrap.js')}}"  </script>
+            <script src= "{{ asset('/web/public/js/jquery-3.1.0.min.js') }}"></script>
+            <script src= "{{ asset('/web/public/js/bootstrap.js') }}"> </script>
+            <script src= "{{ asset('/web/public/js/crgourmetcoffee.js') }}"> </script>
        {% endblock %}
     </body>
 </html>
