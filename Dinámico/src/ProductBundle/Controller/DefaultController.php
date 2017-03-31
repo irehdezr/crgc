@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
-{
-    public function productAction($product, $presentation)
-    {
+class DefaultController extends Controller{
+
+    
+    public function productAction($product, $presentation){
     	$em = $this->getDoctrine();
     	$template = $em->getRepository('PageBundle:Product_T')->find(1); // depends on the language
     	$product = $em->getRepository('ProductBundle:Product_I')->find($product);
@@ -36,19 +36,51 @@ class DefaultController extends Controller
 		    return $this->render('PageBundle:Default:error.html.twig');//Product doesnt exist
 		}
     }
-    public function addToCartAction(Request $request, $presentation){
+
+
+    public function addToCartAction(Request $request){
+        $reponse = $this->generateUrl('page_homepage', array('name' => 'error'));
         if($request->isXMLHttpRequest()){
+            $presentation = $request->request->get("id");
             $em = $this->getDoctrine();
-            $presentation = $em->getRepository('ProductBundle:Presentation')->find($presentation); // search the presentation requested
-            if(! $presentation){
-                return $this->render('PageBundle:Default:error.html.twig');// Presentation requested not found          
-            }else{
+            $presentation = $em->getRepository('ProductBundle:Presentation')->find($presentation); 
+            if($presentation){
                 $session = new Session();
-                $session->set('itemsOnCart',$session->get('itemsOnCart')+1);
-                return new Response($this->generateUrl('page_homepage', array('name' => 'shoppingCart')));
+                if(!$session->get('productsOnCart')){
+                    $session->set('productsOnCart',array($presentation));
+                }else{
+                     $session->set('productsOnCart',array_merge($session->get('productsOnCart'),array($presentation)));
+                }
+                $this->addItemToCart();
+                $response =$this->generateUrl('page_homepage', array('name' => 'shoppingCart'));
             }
-        }else{              
-            return $this->render('PageBundle:Default:error.html.twig');// it was not requested
         }
+        return new Response($response);
+        
+    }
+
+
+    public function searchPresentationAction(Request $request){
+        $response = 'false';
+        if($request->isXMLHttpRequest()){
+            $product = $request->request->get('product');
+            $roastDescription = $request->request->get('roast');
+            $weight = $request->request->get('weight');
+            $grindDescription = $request->request->get('grind');
+            $em = $this->getDoctrine();            
+            $roast = ($em->getRepository('ProductBundle:Roast')->findOneBy(array('description' => $roastDescription )))->getId();
+            $grind = ($em->getRepository('ProductBundle:Grind')->findOneBy(array('description' => $grindDescription )))->getId();
+            $presentation = $em->getRepository('ProductBundle:Presentation')->findOneBy(array('product' => $product, 'roast' => $roast,'weight' => $weight, 'grind' => $grind));
+            if($presentation){
+                $response = $presentation->getId();    
+            }        
+        }
+        return new Response($response);  
+    }
+
+
+    public function addItemToCart(){
+        $session = new Session();
+        $session->set('itemsOnCart',$session->get('itemsOnCart')+1);
     }
 }

@@ -20,7 +20,14 @@ class DefaultController extends Controller
         		return $this->render('PageBundle:Default:home.html.twig', array('template' => $template, 'products' => $products));
     			break;
             case 'shoppingCart':
-                return $this->render('PageBundle:Default:shopping_cart.html.twig');
+    			$products = array();
+    			if($session->get("productsOnCart")){
+    				$temp = array($session->get("productsOnCart"));
+	            	foreach($temp[0] as $presentation){
+						array_push($products,$em->getRepository('ProductBundle:Presentation')->find($presentation));	
+	            	}
+    			}
+                return $this->render('PageBundle:Default:shopping_cart.html.twig',array("productsOnCart" => $products));
                 break;
     		case 'onDevelopment':
         		return $this->render('PageBundle:Default:onDevelopment.html.twig');

@@ -139,11 +139,15 @@
     font-size: 1.25em;
     text-align: center;
 }
-/* home porduct details*/
 #cupMap {
     padding: 4%;
 }
 #cupMap img {
     width: 100%;
 }
-/**Carousel Section End**/
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+    background-image: url("../imgs/check.svg");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 5px 9px;
+}

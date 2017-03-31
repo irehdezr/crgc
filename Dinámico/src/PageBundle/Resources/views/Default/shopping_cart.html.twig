@@ -4,7 +4,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('/web/public/css/product_information.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/web/public/css/shoppingCart.css') }}" />
 {% endblock %}
 
 {% block body %}
@@ -15,18 +15,19 @@
 				Shopping Cup		
 			</h2>
 		</center>
-		<div  class='col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6'>
+		<div  class='col-md-offset-1 col-md-10'>
 			<center>
 				<h3>
 					Your products
 				</h3>
 			</center>
-			<div  id='carouselHeading' class="table-responsive">
+			{% if app.session.get("productsOnCart")|length > 0 %}
+			<div class="table-responsive">
 	            <table class="table">
 	                <thead class="thead-inverse">
 	                    <tr>
-	                        <th>Farm</th>
 	                        <th>Product</th>
+	                        <th>Farm</th>
 	                        <th>Description</th>
 	                        <th>Unit price</th>
 	                        <th>Quantity</th>
@@ -35,43 +36,50 @@
 	                    </tr>
 	                </thead>
 	                <tbody>
+					{% for presentation in productsOnCart %}
 	                    <tr>
-	                        <td>Tortuga</td>
-	                        <td>Solela</td>
-	                        <td>Whole Bean</td>
-	                        <td>$20.00</td>
-	                        <td>1</td>
-	                        <td>$20.00</td>
-	                        <td>Remove</td>
+	                         <td>
+	                         	<img src="{{ presentation.getProduct().getImage() }}"></img>
+	                         </td>
+	                         <td>{{ presentation.getProduct().getFarm().getName() }}</td>
+	                         <td>{{ presentation.getProduct().getName() }}</td>
+	                         <td>{{ presentation.getPrice() }}</td>
+	                         {% set quantity = 1 %}
+	                         <td>{{ quantity }}</td>
+	                         <td>{{ presentation.getPrice() * quantity }}</td>
+	                         <td> 
+	                    		<button class="btn btn-danger" data-presentation-id="{{ presentation.getId() }}">Remove</button>
+	                         </td>
 	                    </tr>
-	                    <tr>
-	                        <td>Yigarcheffe</td>
-	                        <td>Cumbal Coffee</td>
-	                        <td>Whole Bean</td>
-	                        <td>$24.99</td>
-	                        <td>1</td>
-	                        <td>$24.99</td>
-	                        <td>Remove</td>
-	                    </tr>
+						{% endfor %}	                 
 	                    <tr>
 	                        <td></td>
 	                        <td></td>
 	                        <td></td>
 	                        <td></td>
 	                        <td>Total</td>
-	                        <td>$44.99</td>
+	                        <td></td>
 	                        <td></td>
 	                    </tr>
 	                </tbody>
 	            </table>
        		</div>
-       	<div id="test"></div>
-		<a class='btn btn-success'  href="{{ path('page_homepage', {'name': 'home'}) }}">
-			Continue Shopping
-		</a> 
-        <a class='btn btn-success pull-right' href="{{ path('page_homepage', {'name': 'shoppingCart'}) }}">
-        	Check Out
-        </a> 
+			<a class='btn btn-success'  href="{{ path('page_homepage', {'name': 'home'}) }}">
+				Continue Shopping
+			</a> 
+	        <a class='btn btn-success pull-right' href="{{ path('page_homepage', {'name': 'shoppingCart'}) }}">
+	        	Check Out
+	        </a> 
+       		{% else %}
+			<center>
+				<h3>
+					You have no products on your shopping cup
+				</h3>
+				<a class='btn btn-success'  href="{{ path('page_homepage', {'name': 'home'}) }}">
+					Continue Shopping
+				</a> 
+			</center>
+       		{% endif %}
 		</div> 
 	</section>
 </main>
