@@ -1,0 +1,3 @@
+farm_information:
+    path:     /{farm_id}
+    defaults: { _controller: FarmBundle:Default:farm, farm_id: 0 }

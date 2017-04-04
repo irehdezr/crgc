@@ -1,0 +1,15 @@
+ProductBundle\Entity\Roast:
+    type: entity
+    table: Roast
+    repositoryClass: ProductBundle\Repository\RoastRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: string
+            length: 100
+    lifecycleCallbacks: {  }

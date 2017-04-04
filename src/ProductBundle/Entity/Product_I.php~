@@ -1,0 +1,10 @@
+<?php
+
+namespace ProductBundle\Entity;
+
+/**
+ * Product_I
+ */
+class Product_I{
+
+}

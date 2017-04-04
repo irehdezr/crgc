@@ -1,0 +1,16 @@
+FarmBundle\Entity\Cultivar:
+    type: entity
+    table: Cultivar
+    repositoryClass: FarmBundle\Repository\CultivarRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: string
+            length: '100'
+            unique: true
+    lifecycleCallbacks: {  }

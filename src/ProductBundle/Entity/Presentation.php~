@@ -1,0 +1,9 @@
+<?php
+
+namespace ProductBundle\Entity;
+
+/**
+ * Presentation
+ */
+class Presentation{
+}

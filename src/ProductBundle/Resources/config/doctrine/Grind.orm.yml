@@ -1,0 +1,15 @@
+ProductBundle\Entity\Grind:
+    type: entity
+    table: Grind
+    repositoryClass: ProductBundle\Repository\GrindRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: string
+            length: '100'
+    lifecycleCallbacks: {  }

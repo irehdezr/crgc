@@ -1,0 +1,20 @@
+FarmBundle\Entity\Award:
+    type: entity
+    table: Award
+    repositoryClass: FarmBundle\Repository\AwardRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: string
+            length: '100'
+            unique: true
+    oneToMany:
+        farm_awards:
+          targetEntity: Farm_Award
+          mappedBy: award
+    lifecycleCallbacks: {  }

@@ -1,0 +1,16 @@
+ProductBundle\Entity\Flavor:
+    type: entity
+    table: Flavor
+    repositoryClass: ProductBundle\Repository\FlavorRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        notes:
+            type: string
+            length: '100'
+            unique: true
+    lifecycleCallbacks: {  }

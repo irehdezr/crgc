@@ -1,0 +1,3 @@
+page_homepage:
+    path:     /{name}
+    defaults: { _controller: PageBundle:Default:page, name: home }

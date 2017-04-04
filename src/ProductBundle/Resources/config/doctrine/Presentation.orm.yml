@@ -1,0 +1,34 @@
+ProductBundle\Entity\Presentation:
+    type: entity
+    table: Product_Presentation
+    repositoryClass: ProductBundle\Repository\PresentationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        price:
+            type: float
+        weight:
+            type: integer
+            lenght: '2'
+    manyToOne:
+        product:
+            targetEntity: Product_I
+            inversedBy: presentations
+            joinColumn:
+                name: product_id
+                referencedColumnName: id
+        roast:
+            targetEntity: Roast
+            joinColumn:
+                name: roast_id
+                referencedColumnName: id
+        grind:
+            targetEntity: Grind
+            joinColumn:
+                name: grind_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }
