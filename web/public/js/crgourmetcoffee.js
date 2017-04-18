@@ -1,4 +1,3 @@
-
 $.ajaxSetup({
 
   error: function( jqXHR, textStatus, errorThrown ) {
@@ -40,9 +39,10 @@ function addToCart(presentation){
 	var url = "/product/addToCart";
 	$.post({
 		url: url,
+    async: false,
 		data: {id: presentation}
 	})
 	.done( function(result) {
-    	location.href = result;
-	});	
+    location.href = result;
+  });	
 }

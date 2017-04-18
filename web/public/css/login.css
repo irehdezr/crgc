@@ -8,7 +8,7 @@ body{
   padding-top: 20px !important;
 }
 #content{
-  height: 84%;
+  height: 88.9%;
 }
 #login-modal{
   padding-top: 80px;
@@ -31,7 +31,7 @@ body{
   font-size: 1.8em;
 }
 
-.loginmodal-container input[type=submit] {
+.loginmodal-container input[type=submit], input[type=button] {
   width: 100%;
   display: block;
   margin-bottom: 10px;

@@ -18,10 +18,10 @@ $(document).ready(function(){
     var grind = $("#grindSection").find(".active").text();
     var presentation = findPresentation(product,roast,weight,grind);
     if(presentation){
-      addToCart(presentation)
+      addToCart(presentation);
     }
   });
-});
+}); 
 
 
 function findPresentation(product,roast,weight,grind){
