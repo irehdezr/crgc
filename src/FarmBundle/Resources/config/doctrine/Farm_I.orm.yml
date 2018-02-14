@@ -46,16 +46,6 @@ FarmBundle\Entity\Farm_I:
                 inverseJoinColumns:
                     certification_id:
                         referencedColumnName: id
-        species:
-            targetEntity: Species
-            joinTable:
-                name: Farm_Species
-                joinColumns:
-                    farm_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    species_id:
-                        referencedColumnName: id
         cultivars:
             targetEntity: Cultivar
             joinTable:

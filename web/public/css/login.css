@@ -6,9 +6,7 @@ html,body,main{
 }
 body{
   padding-top: 20px !important;
-}
-#content{
-  height: 88.9%;
+  background-image:url('/web/public/imgs/coffeeGrains.png');
 }
 #login-modal{
   padding-top: 80px;

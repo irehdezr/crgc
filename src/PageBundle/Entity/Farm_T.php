@@ -511,4 +511,33 @@ class Farm_T
     {
         return $this->moreInfoTitle;
     }
+    /**
+     * @var string
+     */
+    private $contactBtnTitle;
+
+
+    /**
+     * Set contactBtnTitle
+     *
+     * @param string $contactBtnTitle
+     *
+     * @return Farm_T
+     */
+    public function setContactBtnTitle($contactBtnTitle)
+    {
+        $this->contactBtnTitle = $contactBtnTitle;
+    
+        return $this;
+    }
+
+    /**
+     * Get contactBtnTitle
+     *
+     * @return string
+     */
+    public function getContactBtnTitle()
+    {
+        return $this->contactBtnTitle;
+    }
 }

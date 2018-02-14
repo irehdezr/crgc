@@ -1,6 +1,11 @@
 DROP TABLE `Home_T`;
 DROP TABLE `Farm_T`;
 DROP TABLE `Product_T`;
+DROP TABLE `Shopping_Cart_T`;
+DROP TABLE `Country`;
+DROP TABLE `User_Products`;
+DROP TABLE `Address`;
+DROP TABLE `User`;
 DROP TABLE `Farm_Certification`;
 DROP TABLE `Farm_Cultivar`;
 DROP TABLE `Farm_Award`;
@@ -39,7 +44,19 @@ CREATE TABLE IF NOT EXISTS `Certification` (
 
 CREATE TABLE IF NOT EXISTS `Region` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`name` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL UNIQUE,
+	`name` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL ,
+	`image1` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL ,
+	`image_description1` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
+	`image2` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL ,
+	`image_description2` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
+	`image3` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL ,
+	`image_description3` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
+	`description` text COLLATE utf8mb4_spanish_ci NOT NULL,
+	`organoleptic_characteristics` text COLLATE utf8mb4_spanish_ci NOT NULL,
+	`information` text COLLATE utf8mb4_spanish_ci NOT NULL,
+	`latitude` float NOT NULL,
+	`longitude` float NOT NULL,
+	`zoom` int(2) NOT NULL,
 	PRIMARY KEY `PK_Region` (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci AUTO_INCREMENT=1 ;
 
@@ -155,6 +172,72 @@ CREATE TABLE IF NOT EXISTS `Farm_Certification` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 
+CREATE TABLE IF NOT EXISTS `User` (
+	`email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`lastname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	PRIMARY KEY `PK_User` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `Address` (
+	`fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`line_1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`line_2` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`city` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`state` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`country` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`zip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`user_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	PRIMARY KEY `PK_Address` (`fullname`,`user_id`),
+	FOREIGN KEY `FK_Address_User`  (`user_id`) REFERENCES `User` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+
+CREATE TABLE IF NOT EXISTS `User_Products` (
+	`user_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`presentation_id` int(11) NOT NULL,
+	PRIMARY KEY `FK_User_Products`  (`user_id`,`presentation_id`),
+	FOREIGN KEY `FK_User_Products_User`  (`user_id`) REFERENCES `User` (`email`),
+	FOREIGN KEY `FK_User_Products_Presentation` (`presentation_id`) REFERENCES `Product_Presentation` (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+
+CREATE TABLE IF NOT EXISTS `Country` (
+	`code_2` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`code_3` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`code_number` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`name_spanish` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`name_english` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	PRIMARY KEY `PK_Country` (`code_2`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `Shopping_Cart_T` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `cart_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `product_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `farm_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `description_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `weight_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `roast_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `grind_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `unit_price_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `quantity_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `sub_total_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `total_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `action_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `remove_button` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `shipping_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `continue_button` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `check_out_button` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `empty_cart_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+	PRIMARY KEY `PK_Shopping_Cart_T` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+
 CREATE TABLE IF NOT EXISTS `Product_T` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `page_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -172,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `Product_T` (
   `weight_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `grind_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `cup_scoring_title` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
+	PRIMARY KEY `PK_Product_T` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 
@@ -195,6 +278,7 @@ CREATE TABLE IF NOT EXISTS `Farm_T` (
 	`order_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
 	`more_info_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
 	`reviews_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+	`contact_btn_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
 	PRIMARY KEY `PK_Farm_T` (`id`)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
   

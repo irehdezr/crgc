@@ -9,56 +9,52 @@ html{
 
 body {
     margin: 0 auto;
-    padding: 50px 0 0;
     min-height: 100%;
 }
 #content{
-  min-height: 88.9%;
+    margin-top: 5vh;
 }
 a {
     text-decoration: none;
 }
 
-p{
-    text-align: justify;
-}
 .clearfix {
     clear: both;
 }
 
 /**Header Classes**/
-header {
+#header {
     background-color: #0e0604 !important;
     padding: 0;
     width: 100%;
 }
-header #navBar {
+#header #navBar {
     font-size: 16px;
 }
-header .navbar {
+#header .navbar {
     margin-bottom: 0;
 }
-header .navbar-inverse {
+#header .navbar-inverse {
     background-color: #0e0604 !important; 
     border-color: #0e0604 !important;
 }
-header #mainMenu li a:hover { 
+#header #mainMenu li a:hover { 
     color: #ddb26e;
 }
-header .navbar-inverse .navbar-brand {
+#header .navbar-inverse .navbar-brand {
     color: #fff;
 }
-header .navbar-inverse .navbar-brand span:nth-child(1) {
+#header .navbar-inverse .navbar-brand span:nth-child(1) {
     font-weight: bold;
 }
-header .navbar-inverse .navbar-brand span:nth-child(2) {
+#header .navbar-inverse .navbar-brand span:nth-child(2) {
     font-weight: bold;
     color: #ddb26e;
 }
-header .navbar-inverse .navbar-nav>li>a {
+#header .navbar-inverse .navbar-nav>li>a {
     color: #fff;
 }
-header .navbar{
+#header .navbar{
     -webkit-box-shadow: 0 4px 15px -11px #333;
     -moz-box-shadow: 0 4px 15px -11px #333;
     box-shadow: 0 4px 15px -11px #333;
@@ -77,9 +73,8 @@ header .navbar{
 }
 @media (max-width: 764px){ 
     #shopping-cup {
-        background-image: url( /web/public/imgs/shopping-cup.svg);
         background-repeat: no-repeat;
-        background-size: 150% auto;
+        background-size: 3em auto;
         background-position: 0.5% 45%;
         margin-right: 15px;
         padding: 12px 15px 13px 21px;
@@ -97,7 +92,7 @@ header .navbar{
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 100% auto;
-    height: 15vw;
+    height: 10vw;
     text-align: center;
     width: 100%;
 }
@@ -116,9 +111,9 @@ header .navbar{
     padding: 5px;
 }
 
-#siteLogo {
-    margin: 6% auto;
-    width: 60%;
+#logoSite {
+    margin: 2vh;
+    width: 15vw;
 }
 /**Banner End**/
 

@@ -7,3 +7,9 @@ farm:
 product:
     resource: "@ProductBundle/Resources/config/routing.yml"
     prefix:   /product
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /user
+region:
+    resource: "@RegionBundle/Resources/config/routing.yml"
+    prefix:   /region

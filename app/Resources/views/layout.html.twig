@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="header">
-            {% include "header.html.twig"%}
+            {{ render(controller('PageBundle:Default:header' )) }}
         </div>
         <div id="content">
             {% block body %}

@@ -1,15 +1,26 @@
+/**Farm Info Classes**/
 #farmInfoSection {
     background-color: #fff;
-    margin-top: 25px;
+    margin-top: 10px;
+}
+#farmInfoSection h2 {
+    color: #333;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 1.5% 0;
 }
 #farmPic {
     border: 1px solid #e0e0e0;
     border-radius: 50%;
-    margin: 1% 0 5%;
+    margin: 1% 0;
     width: 90%;
 }
 #farmPicContainer {
     text-align: center;
+}
+
+#farmInfoContainer #farmPicContainer .farmInfoCards {
+    text-align: justify;
 }
 #farmInfoContainer {
     background-color: #fff;
@@ -30,38 +41,41 @@
     margin: 0;
     padding: 5px;
 }
-#farmInfoDetailsContainer h4 {
+#farmInfoDetailsContainer {
+    margin-bottom:2%;  
+}
+#farmInfoDetailsContainer h4, #farmInfoContainer #farmPicContainer .farmInfoCards h4 {
     color: #73502a;
     font-weight: bold;
-    margin: 5% 0;
+    margin: 2% 0 5%;
     text-align: center;
 }
 .farmInfoIcons {
     text-align: center;
 }
 .farmInfoIcons img {
-    width: 25%;
+    margin: 10px auto 3px;
+    width: 40px;
 }
 .farmInfoCards span {
     font-weight: bold;
 }
-#mapImg {
+#farm_map{
+    height: 50vh;   
     width: 100%;
-}
-.farmInfoCards:nth-child(4) {
-    margin-bottom: 4%;
+    vertical-align: middle;
 }
 
-
+/**Farm Info End**/
 
 /**Carousel Section Classes**/
 .well {
     background-color: #fff;
     border: medium none;
     box-shadow: none;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     min-height: 20px;
-    padding: 19px;
+    padding: 19px 19px 0;
 }
 .carousel-control {
     background-color: rgba(0, 0, 0, 0);
@@ -75,7 +89,6 @@
     text-align: center;
     text-shadow: none;
     top: 0;
-    width: 5%;
 }
 .carousel-control:hover {
     color: #0e0604;
@@ -85,25 +98,25 @@
     font-weight: bold;
     text-align: center;
 }
-#carouselHeading h3 {
-    background-color: #73502a;
-    color: #fff;
+#carouselHeading h4 {
+    color: #73502a;
     font-weight: bold;
-    margin: 0;
-    padding: 5px;
-    width: 90%;
+    margin: 5px 0;
+    text-align: center;
 }
 .carousel-control.left {
     background-image: url("../imgs/leftIcon.png");
     background-position-y: 50%;
     background-repeat: no-repeat;
     background-size: 100% auto;
+    right: -1vw;
 }
 .carousel-control.right {
     background-image: url("../imgs/rightIcon.png");
     background-position-y: 50%;
     background-repeat: no-repeat;
     background-size: 100% auto;
+    right: -1vw;
 }
 .carousel-indicators li {
     border: 1px solid #73502a;
@@ -111,18 +124,66 @@
 .carousel-indicators .active {
     background-color: #73502a;
 }
-
-
-.productThumbnailsHeadings {
-    background-color: transparent !important;
-    padding: none;
-    margin: none;
-} 
-#farm_map{
-    height: 30vh;
-    vertical-align: middle;
+.rating > span {
+    color: #ddb26e;
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
 }
 
+/* home porduct details*/
+.productThumbnails {
+    text-align: center;
+    color: #222;
+    margin: 2% 0 0;
+    padding: 0;
+}
+.prodThumbInside {
+    border: 1px solid #e0e0e0;
+    margin: 2%;
+}
+.prodThumbInside img {
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    padding: 7%;
+    margin-bottom: 2%;
+    width: 75%;
+}
+.prodThumbInside p:nth-child(4) {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 3%;
+}
+/*
+.productThumbnailsHeadings {
+    background-color: #ddb26e;
+    padding: 0.5px;
+    margin: 0 auto 10px;
+} */
+.productDetails {
+    text-decoration: none;
+    color: #333;
+}
+.productDetails:nth-child(odd) {
+    text-align: left !important;
+}
+.productDetails:nth-child(even) {
+    text-align: right !important;
+}
+.productThumbnailsHeadings h4 {
+    color: #333 !important;
+}
+.price {
+    font-weight: bold;
+}
+#contactButton {
+    margin-bottom: 10px;
+}
+/* home porduct details*/
+
+/**Carousel Section End**/
+
+/**Product Information Section**/
 .prodInfoIconHeadings button {
     background-color: #ddb26e;
     border: 1px solid #ddb26e;
@@ -131,9 +192,4 @@
     background-color: #73502a;
     border: 1px solid #73502a;
 }
-.prodInfoIconHeadings button span {
-    margin-right: 5px;
-}
-.btn-info{
-    text-align: right !important;
-}
+/**Product Information Section End**/

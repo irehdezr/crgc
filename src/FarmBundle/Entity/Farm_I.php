@@ -5,17 +5,12 @@ namespace FarmBundle\Entity;
 /**
  * Farm_I
  */
-class Farm_I
-{
+class Farm_I{
+    
     /**
-     * @var int
+     * @var integer
      */
     private $id;
-
-    /**
-     * @var int
-     */
-    private $region;
 
     /**
      * @var string
@@ -51,31 +46,32 @@ class Farm_I
      * @var float
      */
     private $longitude;
-  
+
     /**
-     * @var ArrayCollection
+     * @var \Doctrine\Common\Collections\Collection
      */
     private $products;
-  
+
     /**
-     * @var ArrayCollection
-     */
-    private $certifications;
-   
-    /**
-     * @var ArrayCollection
+     * @var \Doctrine\Common\Collections\Collection
      */
     private $farm_awards;
-  
+
     /**
-     * @var ArrayCollection
+     * @var \FarmBundle\Entity\Region
      */
-    private $species;
-  
+    private $region;
+
     /**
-     * @var ArrayCollection
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $certifications;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
      */
     private $cultivars;
+
     /**
      * Constructor
      */
@@ -84,7 +80,6 @@ class Farm_I
         $this->products = new \Doctrine\Common\Collections\ArrayCollection();
         $this->farm_awards = new \Doctrine\Common\Collections\ArrayCollection();
         $this->certifications = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->species = new \Doctrine\Common\Collections\ArrayCollection();
         $this->cultivars = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -108,7 +103,7 @@ class Farm_I
     public function setName($name)
     {
         $this->name = $name;
-
+    
         return $this;
     }
 
@@ -132,7 +127,7 @@ class Farm_I
     public function setImage($image)
     {
         $this->image = $image;
-
+    
         return $this;
     }
 
@@ -156,7 +151,7 @@ class Farm_I
     public function setDescription($description)
     {
         $this->description = $description;
-
+    
         return $this;
     }
 
@@ -180,7 +175,7 @@ class Farm_I
     public function setElevation($elevation)
     {
         $this->elevation = $elevation;
-
+    
         return $this;
     }
 
@@ -204,7 +199,7 @@ class Farm_I
     public function setHarvest($harvest)
     {
         $this->harvest = $harvest;
-
+    
         return $this;
     }
 
@@ -228,7 +223,7 @@ class Farm_I
     public function setLatitude($latitude)
     {
         $this->latitude = $latitude;
-
+    
         return $this;
     }
 
@@ -252,7 +247,7 @@ class Farm_I
     public function setLongitude($longitude)
     {
         $this->longitude = $longitude;
-
+    
         return $this;
     }
 
@@ -276,7 +271,7 @@ class Farm_I
     public function addProduct(\ProductBundle\Entity\Product_I $product)
     {
         $this->products[] = $product;
-
+    
         return $this;
     }
 
@@ -310,7 +305,7 @@ class Farm_I
     public function addFarmAward(\FarmBundle\Entity\Farm_Award $farmAward)
     {
         $this->farm_awards[] = $farmAward;
-
+    
         return $this;
     }
 
@@ -344,7 +339,7 @@ class Farm_I
     public function setRegion(\FarmBundle\Entity\Region $region = null)
     {
         $this->region = $region;
-
+    
         return $this;
     }
 
@@ -368,7 +363,7 @@ class Farm_I
     public function addCertification(\FarmBundle\Entity\Certification $certification)
     {
         $this->certifications[] = $certification;
-
+    
         return $this;
     }
 
@@ -393,40 +388,6 @@ class Farm_I
     }
 
     /**
-     * Add species
-     *
-     * @param \FarmBundle\Entity\Species $species
-     *
-     * @return Farm_I
-     */
-    public function addSpecy(\FarmBundle\Entity\Species $species)
-    {
-        $this->species[] = $species;
-
-        return $this;
-    }
-
-    /**
-     * Remove species
-     *
-     * @param \FarmBundle\Entity\Species $species
-     */
-    public function removeSpecy(\FarmBundle\Entity\Species $species)
-    {
-        $this->species->removeElement($species);
-    }
-
-    /**
-     * Get species
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getSpecies()
-    {
-        return $this->species;
-    }
-
-    /**
      * Add cultivar
      *
      * @param \FarmBundle\Entity\Cultivar $cultivar
@@ -436,7 +397,7 @@ class Farm_I
     public function addCultivar(\FarmBundle\Entity\Cultivar $cultivar)
     {
         $this->cultivars[] = $cultivar;
-
+    
         return $this;
     }
 

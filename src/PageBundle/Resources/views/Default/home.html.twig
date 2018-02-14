@@ -7,51 +7,50 @@
     <link rel="stylesheet" href="{{ asset('/web/public/css/product.css')}}" />{% endblock %}
 {% block body %}
 <main>
-		<section id='mainBanner'>
-			<div id='banner' style='background-image: url( {{ template.getBannerImage() }} )'>
-			</div>
-		</section>
-		<div class='clearfix'></div>
-		<center>
-			<h2>
-				{{ template.getFeaturedProductsTitle() }}		
-			</h2>
-		</center>
-		<section id='productsShowcase'>
-			<div class="col-xs-12 col-md-10 col-md-offset-1">
-				{% for product in products %}
-				<div class="productThumbnails col-xs-6 col-md-6 col-lg-4">
-					<div class='prodThumbInside'>
-						<div class="productThumbnailsHeadings">
-							<h4>{{ product.getName() }}</h4>
-						</div> 
-						<a href="{{ path('product_information', {'farm': product.getFarm().getId(),'product': product.getId(),'presentation': product.getPresentations()|first.getId()  }) }}">
-							<img src=" {{ product.getImage() }}">
-						</a>
-						<p>
-							<center>
-								{{ template.getProductFarmTitle() }} 
-								<a href="{{ path('farm_information', {'farm_id': product.getFarm().getId()}) }}"> {{ product.getFarm().getName }} </a>
-							</center>						
-						</p>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</section>
-		<div class='clearfix'></div>
-		<section id='siteInfoSection' class='container-fluid'>
-			<div class="row">
-				<div id='siteInfo' class="col-xs-12 col-md-8" style='background-image: url({{ template.getFarm().getImage()  }} )'></div>
-				<div id='siteInfoText' class="col-xs-12 col-md-4">
-					<h3>
-                        {{ template.getDescriptionTitle() }}
-					</h3>	
-					<h4>
-                        {{ template.getDescriptionInfo() }}
-                    </h4>
+    <div id='banner' style='background-image: url( {{ template.getBannerImage() }} )'>
+        <img id="logoSite" src="{{asset('/web/public/imgs/logo_final_v1_osc.svg')}}"> 
+	</div>
+	</section>
+	<div class='clearfix'></div>
+	<center>
+		<h2>
+			{{ template.getFeaturedProductsTitle() }}		
+		</h2>
+	</center>
+	<section id='productsShowcase'>
+		<div class="col-xs-12 col-md-10 col-md-offset-1">
+			{% for product in products %}
+			<div class="productThumbnails col-xs-6 col-md-6 col-lg-4">
+				<div class='prodThumbInside'>
+					<div class="productThumbnailsHeadings">
+						<h4>{{ product.getName() }}</h4>
+					</div> 
+					<a href="{{ path('product_information', {'farm': product.getFarm().getId(),'product': product.getId(),'presentation': product.getPresentations()|first.getId()  }) }}">
+						<img src=" {{ product.getImage() }}">
+					</a>
+					<p>
+						<center>
+							{{ template.getProductFarmTitle() }} 
+							<a href="{{ path('farm_information', {'farm_id': product.getFarm().getId()}) }}"> {{ product.getFarm().getName }} </a>
+						</center>						
+					</p>
 				</div>
 			</div>
-		</section>
-	</main>
+			{% endfor %}
+		</div>
+	</section>
+	<div class='clearfix'></div>
+	<section id='siteInfoSection' class='container-fluid'>
+		<div class="row">
+			<div id='siteInfo' class="col-xs-12 col-md-8" style='background-image: url({{ template.getFarm().getImage()  }} )'></div>
+			<div id='siteInfoText' class="col-xs-12 col-md-4">
+				<h3>
+                    {{ template.getDescriptionTitle() }}
+				</h3>	
+				<h4>
+                    {{ template.getDescriptionInfo() }}
+                </h4>
+			</div>
+		</div>
+</main>
 {% endblock %}

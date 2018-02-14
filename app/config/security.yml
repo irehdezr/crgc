@@ -3,22 +3,36 @@
 security:
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+
     providers:
-        in_memory:
-            memory: ~
+        db_provider:
+            entity:
+                class: UserBundle:User
+                property:  email
 
     firewalls:
+        main:
+            anonymous: ~
+            http_basic: ~
+            form_login:
+                use_referer: true
+                login_path: /user/signin
+                check_path: /user/signin
+                #field names for the email and password fields:
+                username_parameter: _username
+                password_parameter: _password
+            logout:
+                path: /user/signout
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+            
+    access_control:
+        - { path: ^/user/signin, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/user/addressBook/, roles: IS_AUTHENTICATED_FULLY, requires_channel: https }
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
-
-            # http_basic: ~
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    encoders:
+        UserBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12

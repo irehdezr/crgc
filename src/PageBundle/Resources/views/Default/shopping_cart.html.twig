@@ -2,85 +2,96 @@
 
 {% block title%} Shopping Cup {% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('/web/public/css/shoppingCart.css') }}" />
-{% endblock %}
 
 {% block body %}
 <main>
 	<section>
 		<center>
 			<h2>
-				Shopping Cup		
+				{{ template.getPageTitle() }}		
 			</h2>
 		</center>
 		<div  class='col-md-offset-1 col-md-10'>
 			<center>
 				<h3>
-					Your products
+				{{ template.getCartTitle() }}	
 				</h3>
 			</center>
 			{% if app.session.get("productsOnCart")|length > 0 %}
 			<div class="table-responsive">
-	            <table class="table">
+	            <table id="shoppingCart" class="table">
 	                <thead class="thead-inverse">
 	                    <tr>
-	                        <th>Product</th>
-	                        <th>Farm</th>
-	                        <th>Description</th>
-	                        <th>Unit price</th>
-	                        <th>Quantity</th>
-	                        <th>Subtotal</th>
-	                        <th>Action</th>
+	                        <th>{{ template.getProductTitle() }}</th>
+	                        <th>{{ template.getFarmTitle() }}</th>
+	                        <th>{{ template.getDescriptionTitle() }}</th>
+	                        <th>{{ template.getUnitPriceTitle() }}</th>
+	                        <th>{{ template.getQuantityTitle() }}</th>
+	                        <th>{{ template.getSubTotalTitle() }}</th>
+	                        <th>{{ template.getActionTitle() }}</th>
 	                    </tr>
 	                </thead>
 	                <tbody>
-					{% for presentation in productsOnCart %}
-	                    <tr>
-	                         <td>
-	                         	<img src="{{ presentation.getProduct().getImage() }}"></img>
-	                         </td>
-	                         <td>{{ presentation.getProduct().getFarm().getName() }}</td>
-	                         <td>{{ presentation.getProduct().getName() }}</td>
-	                         <td>{{ presentation.getPrice() }}</td>
-	                         {% set quantity = 1 %}
-	                         <td>{{ quantity }}</td>
-	                         <td>{{ presentation.getPrice() * quantity }}</td>
-	                         <td> 
-	                    		<button class="btn btn-danger" data-presentation-id="{{ presentation.getId() }}">Remove</button>
-	                         </td>
+					{% for product in productsOnCart %}
+	                    <tr data-item-id="{{ product['presentation'].getId() }}">
+	                        <td>
+	                        	<center>
+	                         		{{ product['presentation'].getProduct().getName() }}</br>
+	                         		<img src="{{ product['presentation'].getProduct().getImage() }}"></img>
+	                         	</center>
+	                        </td>
+	                        <td>{{ product['presentation'].getProduct().getFarm().getName() }}</td>
+	                        <td>
+	                         	<strong>{{ template.getWeightTitle() }}: </strong>{{ product['presentation'].getWeight }}g </br>
+		                        <strong>{{ template.getRoastTitle() }}: </strong>{{ product['presentation'].getRoast().getDescription() }}</br>
+		                        <strong>{{ template.getGrindTitle() }}: </strong>{{ product['presentation'].getGrind().getDescription() }}</br>
+		                    </td>
+	                        <td class="unit-price">US$ 
+	                        	<span class="price">{{ product['presentation'].getPrice() }}</span>
+	                        </td>
+	                        <td data-test="td">
+	                        	<input type="number" class="presentation-quantity" value="{{ product['quantity'] }}" min="1"> 
+	                        </td>
+	                        <td>
+	                        	<p> US$ <span class="presentation-total"></span></p>
+	                        </td>
+	                        <td> 
+	                    		<button class="remove-item btn btn-danger">{{ template.getRemoveButton() }}</button>
+	                        </td>
 	                    </tr>
 						{% endfor %}	                 
 	                    <tr>
-	                        <td></td>
-	                        <td></td>
-	                        <td></td>
-	                        <td></td>
+	                        <td colspan="4">{{ template.getShippingTitle() }}</td>   
 	                        <td>Total</td>
-	                        <td></td>
+	                        <td>
+	                        	<p>US$ <span id="cart-total"></span></p>
+	                        </td>
 	                        <td></td>
 	                    </tr>
 	                </tbody>
 	            </table>
        		</div>
-			<a class='btn btn-success'  href="{{ path('page_homepage', {'name': 'home'}) }}">
-				Continue Shopping
-			</a> 
-	        <a class='btn btn-success pull-right' href="{{ path('page_homepage', {'name': 'shoppingCart'}) }}">
-	        	Check Out
-	        </a> 
+			<button class='continue-shopping btn btn-success'>
+				{{ template.getContinueButton() }}
+			</button> 
+	        <button class='check-out btn btn-success pull-right'>
+	        	{{ template.getCheckOutButton() }}
+	        </button>
        		{% else %}
 			<center>
 				<h3>
-					You have no products on your shopping cup
+					{{ template.getEmptyCartTitle() }}
 				</h3>
-				<a class='btn btn-success'  href="{{ path('page_homepage', {'name': 'home'}) }}">
-					Continue Shopping
-				</a> 
+				<button class='continue-shopping btn btn-success'>
+					{{ template.getContinueButton() }}
+				</button> 
 			</center>
        		{% endif %}
 		</div> 
 	</section>
 </main>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('/web/public/js/shopping_cart.js') }}" type="text/javascript"></script> 
 {% endblock %}

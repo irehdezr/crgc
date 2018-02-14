@@ -94,4 +94,8 @@ PageBundle\Entity\Farm_T:
             length: '50'
             column: more_info_title
 
+        contactBtnTitle:
+            type: string
+            length: '50'
+            column: contact_btn_title
     lifecycleCallbacks: {  }

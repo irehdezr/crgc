@@ -9,3 +9,11 @@ product_add_presentation_to_cart:
 product_search_presentation:
     path:     /searchPresentation
     defaults: { _controller: ProductBundle:Default:searchPresentation}
+
+product_remove_presentation:
+    path:     /removePresentation
+    defaults: { _controller: ProductBundle:Default:removePresentation}
+
+product_presentation_price:
+    path:     /presentation/getPrice
+    defaults: { _controller: ProductBundle:Default:presentationGetPrice}
