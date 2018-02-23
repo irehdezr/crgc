@@ -1,0 +1,15 @@
+UserBundle\Entity\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+    properties:
+        username:
+            - NotBlank: ~
+        lastname:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email:
+                message: The email "{{ value }}" is not a valid email.
+                checkMX: true
+        password:
+            - NotBlank: ~

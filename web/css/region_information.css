@@ -1,0 +1,288 @@
+/**Overall Classes**/
+body, html { 
+    overflow-x:hidden; /*Agregar a 3era version*/  /* NUEVO (v3) (03-05-17)*/
+}
+a {
+    text-decoration: none;
+}
+.clearfix {
+    clear: both;
+}
+
+/**Overall End**/
+
+/**Header Classes**/
+header {
+    background-color: #0e0604 !important;
+    padding: 0;
+    width: 100%;
+}
+header #navBar {
+    font-size: 16px;
+}
+header .navbar {
+    margin-bottom: 0;
+}
+header .navbar-inverse {
+    background-color: #0e0604 !important; 
+    border-color: #0e0604 !important;
+}
+header #mainMenu li a:hover { /* NUEVO (v3) (03-05-17)*/
+    color: #ddb26e;
+}
+header .navbar-inverse .navbar-brand {
+    color: #fff;
+}
+header .navbar-inverse .navbar-brand span:nth-child(1) {
+    font-weight: bold;
+}
+header .navbar-inverse .navbar-brand span:nth-child(2) {
+    font-weight: bold;
+    color: #ddb26e;
+}
+header .navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+header .navbar/*, #prodInfoRow*/ {
+    -webkit-box-shadow: 0 4px 15px -11px #333;
+    -moz-box-shadow: 0 4px 15px -11px #333;
+    box-shadow: 0 4px 15px -11px #333;
+}
+#shopping-cup {
+    background-image: url(../imgs/shopping-cup.svg); /* NUEVO (v3) (03-05-17)*/
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 50% 45%;
+    margin-right: 15px;
+    padding: 12px 15px 13px 15px;
+}
+#shopping-cup span {  /* NUEVO (v3) (03-05-17)*/
+    font-size: 0.75em;
+    padding: 1px;
+}
+@media (max-width: 764px){ /* NUEVO (v3) (03-05-17)*/
+    #shopping-cup {
+        background-image: url(../imgs/shopping-cup.svg);
+        background-repeat: no-repeat;
+        background-size: 16.5% auto;
+        background-position: 0.5% 45%;
+        margin-right: 15px;
+        padding: 12px 15px 13px 21px;
+    }
+    #shopping-cup span {  /* NUEVO (v3) (03-05-17)*/
+        font-size: 0.75em;
+        padding: 1px;
+    }
+}
+/**Header End**/
+
+/**region Info Classes**/
+#regionInfoSection {
+    background-color: #fff;
+    margin-top: 10px;
+}
+#regionInfoSection h2 {
+    color: #333;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 1.5% 0;
+}
+.regionPics {
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    margin: 1% 0;
+    width: 90%;
+}
+.regionText{
+    text-align: justify;
+}
+#regionPicContainer {
+    text-align: justify !important;
+}
+#regionInfoContainer #regionPicContainer .regionInfoCards {
+    text-align: justify !important;
+}
+#regionInfoContainer {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    margin: 0 auto 5%;
+    padding: 0;
+    width: 90%;
+}
+#regionInfoHeading {
+    background-color: #ddb26e;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 auto 1%;
+    padding: 0;
+}
+#regionInfoHeading h3 {
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+}
+#regionInfoDetailsContainer {
+    margin-bottom:2%;  
+}
+#regionInfoDetailsContainer h4, .regionInfoCards h4 {
+    color: #73502a;
+    font-weight: bold;
+    margin: 5px 0 15px;
+    text-align: center;
+}
+.regionInfoIcons {
+    text-align: center;
+}
+.regionInfoIcons img {
+    margin: 10px auto 3px;
+    width: 40px;
+}
+.regionInfoCards span {
+    font-weight: bold;
+}
+#mapImg {
+    margin-bottom: 30px;
+    width: 100%;
+}
+.regionPics {
+    height: 270px;
+}
+
+#region_map{
+    height: 80vh;   
+    width: 100%;
+    vertical-align: middle;
+}
+/**region Info End**/
+
+/**Carousel Section Classes**/
+.well {
+    background-color: #fff;
+    border: medium none;
+    box-shadow: none;
+    margin-bottom: 10px;
+    min-height: 20px;
+    padding: 19px 19px 0;
+}
+.carousel-control {
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 0;
+    color: #73502a;
+    font-size: 70px;
+    left: 0;
+    opacity: 1;
+    padding: 5% 2%;
+    position: absolute;
+    text-align: center;
+    text-shadow: none;
+    top: 0;
+    width: 4%;
+}
+.carousel-control:hover {
+    color: #0e0604;
+}
+.carouselCards h4 {
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+#carouselHeading h4 {
+    color: #73502a;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+.carousel-control.left {
+    background-image: url("../imgs/leftIcon.png");
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    /*left: -1vw;*/
+}
+.carousel-control.right {
+    background-image: url("../imgs/rightIcon.png");
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    /*right: -1vw;*/
+}
+.carousel-indicators li {
+    border: 1px solid #73502a;
+}
+.carousel-indicators .active {
+    background-color: #73502a;
+}
+.carousel-caption {
+    color: #333;
+    padding: 0 20px;
+    position: static;
+    text-align: justify !important;
+    text-shadow: none;
+    z-index: 10;
+}
+.carousel-caption h3 {
+    margin-top: 10px;
+    text-align: center !important;
+
+}
+/**Carousel Section End**/
+
+/**Footer Section Classes**/
+
+.footer {
+    /* background-color: #ddb26e; */
+    background-color: #0e0604 !important;
+}
+.footer .container-fluid {
+    text-align: center;
+}
+footer .navbar {             /* NUEVO (v3) (03-05-17)*/
+    margin-bottom: 0;
+}
+footer .navbar-inverse {     /* NUEVO (v3) (03-05-17)*/
+    background-color: #0e0604 !important;
+    border-color: #0e0604 !important;
+}
+#quickLinks li a, .socialIcon { /* NUEVO (v3) (03-05-17)*/
+    color: #fff;
+    font-weight: bold;
+}
+#quickLinks li a:hover, .socialIcon:hover {  /* NUEVO (v3) (03-05-17)*/
+    color: #ddb26e;
+    font-weight: bold;
+}
+.socialIcon {  /* NUEVO (v3) (03-05-17)*/
+    margin: 10px;
+}
+#facebook {     /* NUEVO (v3) (03-05-17)*/
+    background-image: url("../imgs/facebook.svg");  
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+#twitter {  /* NUEVO (v3) (03-05-17)*/
+    background-image: url("../imgs/twitter.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+@media (max-width: 764px){ /* NUEVO (v3) (03-05-17)*/
+    #facebook {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 6.5% auto;
+        padding: 4% 0;
+    }
+    #twitter {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 6.5% auto;
+        padding: 4% 0;
+    }
+}
+#credits {
+    background-color: #4d4d4d;
+    color: #fff;
+    min-height: 50px;
+    padding: 15px;
+    width: 100%;
+}
+/**Footer Section End**/

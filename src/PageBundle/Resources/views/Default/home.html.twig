@@ -1,14 +1,14 @@
- {% extends "layout.html.twig" %}
+{% extends "layout.html.twig" %}
 
 {% block title%}CR Gourmet Coffee{% endblock %}
 
 {% block stylesheets%}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('/web/public/css/product.css')}}" />{% endblock %}
+    <link rel="stylesheet" href="{{ asset('css/product.css')}}" />{% endblock %}
 {% block body %}
 <main>
     <div id='banner' style='background-image: url( {{ template.getBannerImage() }} )'>
-        <img id="logoSite" src="{{asset('/web/public/imgs/logo_final_v1_osc.svg')}}"> 
+        <img id="logoSite"> 
 	</div>
 	</section>
 	<div class='clearfix'></div>
