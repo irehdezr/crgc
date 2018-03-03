@@ -1,82 +1,148 @@
-/**Overall Classes**/
-html{ 
-    overflow-x:hidden; 
+/*************Desktop Version*****************/
+/*********************************************/
+
+/*----- ----- Overall HTML Clases ----- -----*/
+html,body{ 
+    overflow-x:auto; 
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
+    font-size: 16px;
 }
 
-body {
-	height: inherit;
+header {
+    background-color: #0e0604 !important;
+    width: 100vw;
+	height: 5vh;
 }
-header{
-	max-height:5vh;
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
 }
-footer{
-	max-height:10vh;
+
+.navbar-inverse .navbar-brand span:nth-child(1) {
+    font-weight: bold;
 }
-#content{
-	margin-top:4.3vh;
-	height: 85vh;
+
+.navbar-inverse .navbar-brand span:nth-child(2) {
+    font-weight: bold;
+    color: #ddb26e;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
+#shopping-cup {
+    background-image: url("../imgs/shopping-cup.svg"); 
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin-right: 15px;
+    padding: 13px 20px 13px 20px; 
+}
+#shopping-cup span {  
+    font-size: 0.80em;
+}
+
+main{
+	width: 100vw;
+	min-height: 85vh;
+}
+h1,h2,h3{
+	margin: 0px;
 }
 a {
     text-decoration: none;
 }
-
-.clearfix {
-    clear: both;
+a:hover { 
+    color: #ddb26e !important;
+	text-decoration: none;
 }
 
-/**Header Classes**/
-#header {
+footer{
+	width: 100vw;
+	height: 10vh;
     background-color: #0e0604 !important;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+	bottom: 0;
+}
+
+
+/**Footer Section Classes**/
+    
+    .footer {
+        /* background-color: #ddb26e; */
+        background-color: #0e0604 !important;
+    }
+    .footer .container-fluid {
+        text-align: center;
+    }
+    footer .navbar {             /* NUEVO (v3) (03-05-17)*/
+        margin-bottom: 0;
+    }
+    footer .navbar-inverse {     /* NUEVO (v3) (03-05-17)*/
+        background-color: #0e0604 !important;
+        border-color: #0e0604 !important;
+    }
+    #credits {
+        background-color: #4d4d4d;
+        color: #fff;
+        min-height: 50px;
+        padding: 15px;
+        width: 100%;
+    }
+/**Footer Section End**/
+/*----- ----- Overall HTML Clases ----- -----*/
+
+
+/*********************************************/
+/*********************************************/
+
+
+/*------------Overall Classes----------------*/
+
+.navbar{
+	min-height:0px;	/*overwrite ---- already exist on bootstrap*/
+}
+
+.navbar-inverse {
+    background-color: #0e0604 !important;	/*overwrite ---- already exist on bootstrap*/
+    border-color: #0e0604 !important;	/*overwrite ---- already exist on bootstrap*/
+}
+
+.navbar li a:hover { 
+    color: #ddb26e;
+}
+.pageTitle{
+	text-align: center;
+    font-weight: bold;
+	margin: 3vh 0vw 3vh 0vw;
+}
+.pageHeading {
+    background-color: #ddb26e;
+    color: #ffff;
+    font-weight: bold;
+    margin: 0 auto 1%;
     padding: 0;
-    width: inherit;
+    margin-top: 50px;
 }
-#header #navBar {
-    font-size: 16px;
-}
-#header .navbar {
-    margin-bottom: 0;
-}
-#header .navbar-inverse {
-    background-color: #0e0604 !important; 
-    border-color: #0e0604 !important;
-}
-#header #mainMenu li a:hover { 
-    color: #ddb26e;
-}
-#header .navbar-inverse .navbar-brand {
-    color: #fff;
-}
-#header .navbar-inverse .navbar-brand span:nth-child(1) {
+.pageHeading h3 {
     font-weight: bold;
+    margin: 0;
+    padding: 5px;
 }
-#header .navbar-inverse .navbar-brand span:nth-child(2) {
-    font-weight: bold;
-    color: #ddb26e;
-}
-#header .navbar-inverse .navbar-nav>li>a {
-    color: #fff;
-}
-#header .navbar{
-    -webkit-box-shadow: 0 4px 15px -11px #333;
-    -moz-box-shadow: 0 4px 15px -11px #333;
-    box-shadow: 0 4px 15px -11px #333;
-}
-#shopping-cup {
-    background-image: url("../imgs/shopping-cup.svg"); 
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: 50% 45%;
-    margin-right: 15px;
-    padding: 12px 15px 13px 15px;
-}
-#shopping-cup span {  
-    font-size: 0.75em;
-    padding: 1px;
-}
+/*------------Overall Classes----------------*/
+
+
+/*********************************************/
+/*************Desktop Version*****************/
+
+
+
 @media (max-width: 764px){ 
     #shopping-cup {
         background-repeat: no-repeat;
@@ -90,119 +156,3 @@ a {
         padding: 1px;
     }
 }
-/**Header End**/
-
-
-/**Banner Classes**/
-#banner {
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    height: 10vw;
-    text-align: center;
-    width: 100%;
-}
-
-#pageInfoHeading {
-    background-color: #ddb26e;
-    color: #ffff;
-    font-weight: bold;
-    margin: 0 auto 1%;
-    padding: 0;
-    margin-top: 50px;
-}
-#pageInfoHeading h3 {
-    font-weight: bold;
-    margin: 0;
-    padding: 5px;
-}
-
-#logoSite {
-    margin: 2vh;
-    width: 15vw;
-	background-image: url("../imgs/logo_final_v1_osc.svg");
-}
-/**Banner End**/
-
-/**Info Section Classes**/
-#siteInfoSection {
-    margin: 2% 0 0;
-}
-
-#siteInfo {
-    background-position: 98% 30%;
-    background-repeat: no-repeat;
-    height: 40vh;
-    text-align: center;
-}
-
-#siteInfoText {
-    background-color: #73502a;
-    color: #fff;
-    height: 40vh;
-    overflow: hidden;
-    padding: 2% 3%;
-    text-align: right;
-}
-/**Info Section End**/
-
-
-/**Footer Section Classes**/
-
-.footer {
-    /* background-color: #ddb26e; */
-    background-color: #0e0604 !important;
-}
-.footer .container-fluid {
-    text-align: center;
-}
-footer .navbar {             /* NUEVO (v3) (03-05-17)*/
-    margin-bottom: 0;
-}
-footer .navbar-inverse {     /* NUEVO (v3) (03-05-17)*/
-    background-color: #0e0604 !important;
-    border-color: #0e0604 !important;
-}
-#quickLinks li a, .socialIcon { /* NUEVO (v3) (03-05-17)*/
-    color: #fff;
-    font-weight: bold;
-}
-#quickLinks li a:hover, .socialIcon:hover {  /* NUEVO (v3) (03-05-17)*/
-    color: #ddb26e;
-    font-weight: bold;
-}
-.socialIcon {  /* NUEVO (v3) (03-05-17)*/
-    margin: 10px;
-}
-#facebook {     /* NUEVO (v3) (03-05-17)*/
-    background-image: url("../imgs/facebook.svg");  
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-}
-#twitter {  /* NUEVO (v3) (03-05-17)*/
-    background-image: url("../imgs/twitter.svg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-}
-@media (max-width: 764px){ /* NUEVO (v3) (03-05-17)*/
-    #facebook {
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: 6.5% auto;
-        padding: 4% 0;
-    }
-    #twitter {
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: 6.5% auto;
-        padding: 4% 0;
-    }
-}
-#credits {
-    background-color: #4d4d4d;
-    color: #fff;
-    min-height: 50px;
-    padding: 15px;
-    width: 100%;
-}
-/**Footer Section End**/

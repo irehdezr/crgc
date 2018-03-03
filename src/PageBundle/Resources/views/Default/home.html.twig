@@ -4,19 +4,18 @@
 
 {% block stylesheets%}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/product.css')}}" />{% endblock %}
+    <link rel="stylesheet" href="{{ asset('css/homepage.css')}}" />{% endblock %}
 {% block body %}
 <main>
     <div id='banner' style='background-image: url( {{ template.getBannerImage() }} )'>
-        <img id="logoSite"> 
+        <div id="logoSite"> </div> 
 	</div>
 	</section>
-	<div class='clearfix'></div>
-	<center>
-		<h2>
-			{{ template.getFeaturedProductsTitle() }}		
-		</h2>
-	</center>
+		<div class="pageTitle">
+			<h2>
+				{{ template.getFeaturedProductsTitle() }}		
+			</h2>
+		</div>
 	<section id='productsShowcase'>
 		<div class="col-xs-12 col-md-10 col-md-offset-1">
 			{% for product in products %}

@@ -165,10 +165,10 @@
     color: #333;
 }
 .productDetails:nth-child(odd) {
-    text-align: left !important;
+    text-align: right !important;
 }
 .productDetails:nth-child(even) {
-    text-align: right !important;
+    text-align: left !important;
 }
 .productThumbnailsHeadings h4 {
     color: #333 !important;

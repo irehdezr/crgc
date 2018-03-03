@@ -8,10 +8,11 @@
 
 {% block body %}
 <main>
-	<div class='clearfix'></div>
+	<div class='pageTitle'>
 		<center>
 			<h2>{{ template.getPageTitle() }}</h2>
 		</center>
+	</div>
 	<section id='farmInfoSection'>
 		<div class='container-fluid'>
 			<div id='farmInfoContainer' class='row'>
@@ -131,28 +132,39 @@
 																	<a href="{{ path('product_information', {'farm': product.getFarm().getId(),'product': product.getId(),'presentation':product.getPresentations()|first.getId()  }) }}">
 																		<img src="{{product.getImage()}}"/>
 																	</a>
-																	<p class="price">${{ product.getPresentations()|first.getPrice() }}</p>
-																	<a href="{{ path('product_information', {'farm': product.getFarm().getId(),'product': product.getId(),'presentation': product.getPresentations()|first.getId() }) }}"><p>{{ template.getMoreInfoTitle() }}</p></a> 
+																	<p class="price">$50</p>
+																	<a href="/product/1/5/49"><p>More info/options</p></a> 
 																	<div class='productDetailsContainer row'>
-																		<div class='productDetails col-xs-5 col-xs-offset-1'>
-																			<p>{{ product.getPresentations()|first.getWeight() }}g/{{product.getPresentations()|first.getWeight() *0.04 }}oz</p>
-																		</div>
 																		<div class='productDetails col-xs-4 col-xs-offset-1'>
-																		    <p class="rating">{{ product.getRank() }}/5<span>&#x2605;</span></p>
+																		    <p>Weight:</p>
+																		</div>
+																		<div class='productDetails col-xs-7'>
+																		    <p>300g/12oz</p>
+																		</div>
+																	</div>
+																	<div class='productDetailsContainer row'>
+																		<div class='productDetails col-xs-4 col-xs-offset-1'>
+																		    <p>Grind:</p>
 																	    </div>
+																		<div class='productDetails col-xs-7'>
+																			<p>Whole Bean</p>
+																		</div>
 																	</div>
 																	<div class='productDetailsContainer row'>
-																		<div class='productDetails col-xs-5 col-xs-offset-1'>
-																			<p>{{ product.getPresentations()|first.getGrind().getDescription() }}</p>
-																		</div>
 																		<div class='productDetails col-xs-4 col-xs-offset-1'>
-																			<p>{{product.getReviews()}} {{ template.getReviewsTitle() }}</p>
+																		    <p>Roast:</p>
+																		</div>
+																		<div class='productDetails col-xs-7'>
+																        	<p>Light</p>
 																		</div>
 																	</div>
-																	
 																	<div class='productDetailsContainer row'>
-																		<div class='productDetails col-xs-5 col-xs-offset-1'>
-																			<p>{{ product.getPresentations()|first.getRoast().getDescription() }}</p>
+																		<div class='productDetails col-xs-4 col-xs-offset-1'>
+																		    <p>Rating:</p>
+																		</div>
+																		<div class='productDetails col-xs-7'>
+																            <p class="rating">4/5<span>&#x2605;</span> <a>Reviews</a></p>
+																            
 																		</div>
 																	</div>
 																</div>

@@ -14,16 +14,16 @@
         {% endblock %}
     </head>
     <body>
-        <div id="header">
+        <header>
             {{ render(controller('PageBundle:Default:header' )) }}
-        </div>
-        <div id="content">
+        </header>
+        <main>
             {% block body %}
             {% endblock %}
-        </div>
-        <div id="footer">
+        </main>
+        <footer>
             {% include "footer.html.twig"%}
-        </div>
+        </footer>
         {% block javascripts %}
             <script src= "{{ asset('js/jquery-3.1.0.min.js') }}"></script>
             <script src= "{{ asset('js/bootstrap.js') }}"> </script>
