@@ -132,39 +132,38 @@
 																	<a href="{{ path('product_information', {'farm': product.getFarm().getId(),'product': product.getId(),'presentation':product.getPresentations()|first.getId()  }) }}">
 																		<img src="{{product.getImage()}}"/>
 																	</a>
-																	<p class="price">$50</p>
-																	<a href="/product/1/5/49"><p>More info/options</p></a> 
+																	<p class="price">${{ product.getPresentations()|first.getPrice() }}</p>
+																	<a href="{{ path('product_information', {'farm': product.getFarm().getId(),'product': product.getId(),'presentation': product.getPresentations()|first.getId() }) }}"><p>{{ template.getMoreInfoTitle() }}</p></a> 
 																	<div class='productDetailsContainer row'>
-																		<div class='productDetails col-xs-4 col-xs-offset-1'>
+																		<div class='productDetails col-md-6'>
 																		    <p>Weight:</p>
-																		</div>
-																		<div class='productDetails col-xs-7'>
-																		    <p>300g/12oz</p>
+																			</div>
+																		<div class='productDetails col-md-6'>
+																		    <p>{{ product.getPresentations()|first.getWeight() }}g/{{product.getPresentations()|first.getWeight() *0.04 }}oz</p>
 																		</div>
 																	</div>
 																	<div class='productDetailsContainer row'>
-																		<div class='productDetails col-xs-4 col-xs-offset-1'>
+																		<div class='productDetails col-md-6'>
 																		    <p>Grind:</p>
 																	    </div>
-																		<div class='productDetails col-xs-7'>
-																			<p>Whole Bean</p>
+																		<div class='productDetails col-md-6'>
+																			<p>{{ product.getPresentations()|first.getGrind().getDescription() }}</p>
 																		</div>
 																	</div>
 																	<div class='productDetailsContainer row'>
-																		<div class='productDetails col-xs-4 col-xs-offset-1'>
+																		<div class='productDetails col-md-6'>
 																		    <p>Roast:</p>
 																		</div>
-																		<div class='productDetails col-xs-7'>
-																        	<p>Light</p>
+																		<div class='productDetails col-md-6'>
+																        	<p>{{ product.getPresentations()|first.getRoast().getDescription() }}</p>
 																		</div>
 																	</div>
 																	<div class='productDetailsContainer row'>
-																		<div class='productDetails col-xs-4 col-xs-offset-1'>
+																		<div class='productDetails col-md-6'>
 																		    <p>Rating:</p>
 																		</div>
-																		<div class='productDetails col-xs-7'>
-																            <p class="rating">4/5<span>&#x2605;</span> <a>Reviews</a></p>
-																            
+																		<div class='productDetails col-md-6'>
+																            <p class="rating">{{ product.getRank() }}/5<span>&#x2605;</span><a>Reviews</a></p>
 																		</div>
 																	</div>
 																</div>
