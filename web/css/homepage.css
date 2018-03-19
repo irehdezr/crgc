@@ -17,10 +17,8 @@
 
 #logoSite {
     background-image: url("../imgs/logo_final_v1_osc.svg"); 
-    background-repeat: no-repeat;
-    background-position: 50%;
-	width: 100vw;
-	height: 20vh;
+	height: 16vh;
+	margin-top: 3vh;
 }
 
 
