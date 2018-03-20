@@ -229,6 +229,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
+            // user_clear_cart
+            if ($pathinfo === '/user/clearCart') {
+                return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::clearCartAction',  '_route' => 'user_clear_cart',);
+            }
+
         }
 
         // region_homepage

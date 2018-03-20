@@ -237,5 +237,37 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-	<script src="{{ asset('js/product_information.js.twig')}}"></script>
+	<script>
+		function findPresentation(product,roast,weight,grind){
+			var route = "../../searchPresentation";
+			var response = null;
+			$.post({
+				url: "{{ path('product_search_presentation') }}",
+				async: false,
+				data: {product: product, roast:roast, weight: weight, grind:grind}
+			})
+			.done( function(result) {
+				response = result;
+			}); 
+			return response;
+		}
+
+		function getPrice(presentation){
+			var route = "../../presentation/getPrice";
+			var response = null;
+			$.post({
+				url: "{{ path('product_presentation_price') }}",
+				type: 'POST',
+				async: false,
+				data: {id: presentation}
+			})
+			.done( function(result) {
+				response = result;
+			}); 
+			return response;
+		}
+	</script>
+	<script src="{{ asset('js/product_information.js')}}"></script>
+	
+	
 {% endblock %}

@@ -15,8 +15,8 @@ class __TwigTemplate_3bbb68abb2953af6a9f7874d30d9671b42a1a875bd78f19406b873c363f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7036d338b224ade23162b4de6a14df0007ceedac2d529f14c35ce2344c8fc068 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7036d338b224ade23162b4de6a14df0007ceedac2d529f14c35ce2344c8fc068->enter($__internal_7036d338b224ade23162b4de6a14df0007ceedac2d529f14c35ce2344c8fc068_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PageBundle:Default:header.html.twig"));
+        $__internal_c8193b65a667629264648d008613111ad0d7a3402451db228c2c4b25717f5e84 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c8193b65a667629264648d008613111ad0d7a3402451db228c2c4b25717f5e84->enter($__internal_c8193b65a667629264648d008613111ad0d7a3402451db228c2c4b25717f5e84_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PageBundle:Default:header.html.twig"));
 
         // line 1
         echo "<nav class=\"navbar navbar-inverse navbar-fixed-top\">
@@ -136,7 +136,7 @@ class __TwigTemplate_3bbb68abb2953af6a9f7874d30d9671b42a1a875bd78f19406b873c363f
     </div>
 </nav>";
         
-        $__internal_7036d338b224ade23162b4de6a14df0007ceedac2d529f14c35ce2344c8fc068->leave($__internal_7036d338b224ade23162b4de6a14df0007ceedac2d529f14c35ce2344c8fc068_prof);
+        $__internal_c8193b65a667629264648d008613111ad0d7a3402451db228c2c4b25717f5e84->leave($__internal_c8193b65a667629264648d008613111ad0d7a3402451db228c2c4b25717f5e84_prof);
 
     }
 

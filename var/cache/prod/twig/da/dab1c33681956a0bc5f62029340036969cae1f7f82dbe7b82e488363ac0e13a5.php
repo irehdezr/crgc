@@ -15,8 +15,8 @@ class __TwigTemplate_b96c4275ec8b68ed4fc8abd0da86dc65e1bc944d2a0b6d9cbf8234d9f15
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_008f579719fffb7f7285dbfa2990edaa7ab84c7544a584b0241ffae80021b947 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_008f579719fffb7f7285dbfa2990edaa7ab84c7544a584b0241ffae80021b947->enter($__internal_008f579719fffb7f7285dbfa2990edaa7ab84c7544a584b0241ffae80021b947_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "footer.html.twig"));
+        $__internal_af82837d7082b265394666ba7e50721451c2bfb571c6f8dfb0e5369221630faa = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_af82837d7082b265394666ba7e50721451c2bfb571c6f8dfb0e5369221630faa->enter($__internal_af82837d7082b265394666ba7e50721451c2bfb571c6f8dfb0e5369221630faa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "footer.html.twig"));
 
         // line 1
         echo "<nav id=\"footerOptions\"class=\"navbar navbar-inverse \">
@@ -51,7 +51,7 @@ class __TwigTemplate_b96c4275ec8b68ed4fc8abd0da86dc65e1bc944d2a0b6d9cbf8234d9f15
     <center>Copyright &#169; Universidad Nacional de Costa Rica, 2017-2018</center>
 </div>";
         
-        $__internal_008f579719fffb7f7285dbfa2990edaa7ab84c7544a584b0241ffae80021b947->leave($__internal_008f579719fffb7f7285dbfa2990edaa7ab84c7544a584b0241ffae80021b947_prof);
+        $__internal_af82837d7082b265394666ba7e50721451c2bfb571c6f8dfb0e5369221630faa->leave($__internal_af82837d7082b265394666ba7e50721451c2bfb571c6f8dfb0e5369221630faa_prof);
 
     }
 
