@@ -8,50 +8,49 @@
 {% endblock %}
 {% block body %}
 <main>    
-  <section id="pageTitle">
-    <center>
-      <h2>Address book</h2>
-    </center>
-  </section>
-  <div class='container-fluid'>
-      <div id='farmInfoContainer' class='row'>
-        <div id='farmInfoHeading' class='col-xs-12'>
-          <center>
-            <h3>{{ user.getUsername() }} {{ user.getLastname() }}</h3>
-          </center>
-        </div>
-        <div class="row" >
-        {% for address in addresses %}
-          <div class="col-xs-12 col-sm-6 col-lg-4">
-            <div class="box">      
-              <h3 class="title"><p id="addressName">{{ address.getFullname() }}</p></h3>
-              <p>Country: {{ address.getCountry() }}</p>
-              <p>State:{{ address.getState() }}</p>
-              <p>City :{{ address.getCity() }}</p>
-              <p>Line 1:{{ address.getLine1() }}</p>
-              <p>Line 2:{{ address.getLine2() }}</p>
-              <p>Zip code:{{ address.getZip() }}</p>
-              <button  class="btn btn-success setAddress pull-left"> 
-                Use this address
-              </button>
-              <button class="btn btn-warning editAddress center"> 
-                Edit
-              </button>
-              <button class="btn btn-danger deleteAddress pull-right"> 
-                Delete
-              </button>
-            </div> 
-          </div>
-        {% endfor%}
-        </div>
-      </div>
-    </div>
-  <button id="btn-new-address" class="btn btn-success pull-right">Add new address</button>
-
+	<section id="pageTitle">
+    	<center>
+      		<h2>Address book</h2>
+    	</center>
+  	</section>
+  	<div class='container-fluid'>
+    	<div id='farmInfoContainer' class='row'>
+        	<div id='farmInfoHeading' class='col-xs-12'>
+	          	<center>
+	            	<h3>{{ user.getUsername() }} </h3>
+          		</center>
+        	</div>
+	        <div class="row" >
+	        	{% for address in addresses %}
+	          		<div class="col-xs-12 col-sm-6 col-lg-4">
+		            	<div class="box">      
+		              		<h3 class="title">
+		              				<p id="addressName">{{ address.getFullname() }}</p>
+		              		</h3>
+		             		<p>Country: {{ address.getCountry() }}</p>
+		              		<p>State:{{ address.getState() }}</p>
+		              		<p>City :{{ address.getCity() }}</p>
+		              		<p>Line 1:{{ address.getLine1() }}</p>
+		              		<p>Line 2:{{ address.getLine2() }}</p>
+		              		<p>Zip code:{{ address.getZip() }}</p>
+		              		<button  class="btn btn-success setAddress pull-left">Use this address</button>
+		              		<button class="btn btn-warning editAddress center">Edit</button>
+		              		<button class="btn btn-danger deleteAddress pull-right">Delete</button>
+		            	</div> 
+		          	</div>
+		        {% endfor%}
+		    </div>
+	    </div>
+	</div>
+  	<button id="btn-new-address" class="btn btn-success pull-right">Add new address</button>
 </main>
 {% endblock %}
 
 {% block javascripts %}
-  {{ parent() }}
-  <script src="{{ asset('js/address_book.js')}}"></script>
+  	{{ parent() }}
+ 	<script>
+ 		var addNewAddressUrl = "{{ path('user_address_new')|escape('js') }}";
+ 		var setCurrentAddressUrl = "{{ path('user_address_setCurrent')|escape('js') }}";
+ 	</script>
+  	<script src="{{ asset('js/address_book.js')}}"></script>
 {% endblock %}

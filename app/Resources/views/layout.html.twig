@@ -25,9 +25,13 @@
             {% include "footer.html.twig"%}
         </footer>
         {% block javascripts %}
+			<script>
+				var addToCartUrl = "{{ path('product_add_presentation_to_cart')|escape('js') }}";
+                var homeUrl = "{{ path('page_homepage')|escape('js') }}";
+			</script>
             <script src= "{{ asset('js/jquery-3.1.0.min.js') }}"></script>
             <script src= "{{ asset('js/bootstrap.js') }}"> </script>
-            <script src= "{{ asset('js/crgourmetcoffee.js.twig') }}"> </script>
+            <script src= "{{ asset('js/crgourmetcoffee.js') }}"> </script>
        {% endblock %}
     </body>
 </html>

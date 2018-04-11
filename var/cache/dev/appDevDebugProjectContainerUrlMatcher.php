@@ -150,8 +150,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // user_form
-            if ($pathinfo === '/user/signup') {
+            if ($pathinfo === '/user/form') {
                 return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::userFormAction',  '_route' => 'user_form',);
+            }
+
+            // user_signup
+            if ($pathinfo === '/user/signup') {
+                return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::signUpAction',  '_route' => 'user_signup',);
             }
 
             // user_create
@@ -159,17 +164,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::createUserAction',  '_route' => 'user_create',);
             }
 
-            if (0 === strpos($pathinfo, '/user/address')) {
-                // user_address_add
-                if ($pathinfo === '/user/address/add') {
-                    return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::addressFormAction',  '_route' => 'user_address_add',);
-                }
-
-                // user_address_create
-                if ($pathinfo === '/user/address/create') {
-                    return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::createAddressAction',  '_route' => 'user_address_create',);
-                }
-
+            // user_address_add
+            if ($pathinfo === '/user/address/add') {
+                return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::addressFormAction',  '_route' => 'user_address_add',);
             }
 
             if (0 === strpos($pathinfo, '/user/sign')) {
@@ -186,6 +183,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             if (0 === strpos($pathinfo, '/user/address')) {
+                // user_address_create
+                if ($pathinfo === '/user/address/create') {
+                    return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::createAddressAction',  '_route' => 'user_address_create',);
+                }
+
                 // user_address_book
                 if (0 === strpos($pathinfo, '/user/addressBook') && preg_match('#^/user/addressBook/(?P<user>[^/]++)$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_address_book')), array (  '_controller' => 'UserBundle\\Controller\\DefaultController::addressBookAction',));

@@ -1,9 +1,8 @@
 $(document).ready(function(){
 	$( "#btn-continue" ).click(function(e){
     var courier = $("input[name='shipping_option']:checked").val();
-  	var url = "/user/shoppingCart/setCourier";
   	$.post({
-  		url: url,
+  		url: setCurriertUrl,
       data: {option: courier},
   		async: false
   	})

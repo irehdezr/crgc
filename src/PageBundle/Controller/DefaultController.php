@@ -34,9 +34,6 @@ class DefaultController extends Controller
     		case 'onDevelopment':
         		return $this->render('PageBundle:Default:onDevelopment.html.twig');
     			break;
-            case 'signup':
-                return new Response($this->generateUrl('user_form'));
-                break;
             case 'test':
                 return $this->render('PageBundle:Default:test.html.twig');
                 break;

@@ -1,9 +1,8 @@
 $(document).ready(function(){
   $(".check-out").click(function(e){
     e.preventDefault();
-  	var url = "/user/checkSession";
   	$.post({
-  		url: url
+  		url: checkSessionmUrl
   	})
   	.done( function(result) {
       	location.href = result;
@@ -14,7 +13,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(".continue-shopping").click(function(e){
     e.preventDefault();
-    location.href = "/home";
+    location.href = homeUrl;
   });
 });
 
@@ -64,9 +63,8 @@ $(document).ready(function(){
 });
 
 function removeItem(item){
-  var url = "/product/removePresentation";
   $.post({
-    url: url,
+    url: removeItemUrl,
     data: {id: item}
   })
   .done( function(result) {

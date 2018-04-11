@@ -1,61 +1,60 @@
 {% extends "security.html.twig" %}
-{% block title%} Shipping {% endblock %}
+{% block title%} Currier {% endblock %}
 {% block stylesheets %}
-{{ parent() }}
-<link rel="stylesheet" href="{{ asset('css/address_book.css') }}" />
+   {{ parent() }}
+   <link rel="stylesheet" href="{{ asset('css/address_book.css') }}" />
 {% endblock %}
 {% block body %}
-<main>
-   <section id="pageTitle">
-      <center>
-         <h2>Shipping options</h2>
-      </center>
-   </section>
-   <div class='container-fluid'>
-      <div id='farmInfoContainer' class='row'>
-         <div id='farmInfoHeading' class='col-xs-12'>
-            <center>
-               <h3>Choose a delivery option:</h3>
-            </center>
-         </div>
-         <div class="row" >
-            <div class="col-xs-12 col-sm-6 col-lg-6">
-               <div class="box">
+   <main>
+      <section id="pageTitle">
+         <center>
+            <h2>Shipping options</h2>
+         </center>
+      </section>
+      <div class='container-fluid'>
+         <div id='farmInfoContainer' class='row'>
+            <div id='farmInfoHeading' class='col-xs-12'>
+               <center>
+                  <h3>Choose a delivery option:</h3>
+               </center>
+            </div>
+            <div class="row" >
+               <div class="col-xs-12 col-sm-6 col-lg-6">
+                  <div class="box">
+                     <h3 class="title">
+                        <p>Address selected</p>
+                     </h3>
+                     <p>Name: {{address.getFullname }}</p>
+                     <p>Country: {{address.getCountry }}</p>
+                     <p>State: {{address.getState }}</p>
+                     <p>City : {{address.getCity }}</p>
+                     <p>Line 1: {{address.getLine1 }}</p>
+                     <p>Line 2: {{address.getLine2 }}</p>
+                     <p>Zip code: {{address.getZip }}</p>
+                     <a href='{{ path("user_address_book", {"user": app.user.email }) }}' class="btn btn-warning center">Change address</a>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-lg-6">
                   <h3 class="title">
-                     <p>Address selected</p>
+                     <p>Choose a delivery option:</p>
                   </h3>
-                  <p>Name: {{address.getFullname }}</p>
-                  <p>Country: {{address.getCountry }}</p>
-                  <p>State: {{address.getState }}</p>
-                  <p>City : {{address.getCity }}</p>
-                  <p>Line 1: {{address.getLine1 }}</p>
-                  <p>Line 2: {{address.getLine2 }}</p>
-                  <p>Zip code: {{address.getZip }}</p>
-                  <a href='{{ path("user_address_book", {"user": app.user.email }) }}' class="btn btn-warning center"> 
-                  Change address
-                  </a>
+                  <p>Correos de Costa  makes international shipping easy by calculating import fees at checkout, as well as clearing customs for you. In addition, you have the visibility to track your packages door-to-door.</p>
+                  <div id="courier_form" method="GET">
+                     <input type="radio" name="shipping_option" value="30" checked> Standard Shipping — get it in 30 days (US$50)<br>
+                     <input type="radio" name="shipping_option" value="15"> Expedited Shipping — get it in 15 days (US$30)<br>
+                     <input type="radio" name="shipping_option" value="7"> Priority Shipping — get it in 7 days (US$15)<br>
+                  </div>
                </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-lg-6">
-               <h3 class="title">
-                  <p>Choose a delivery option:</p>
-               </h3>
-               <p>
-                  Correos de Costa  makes international shipping easy by calculating import fees at checkout, as well as clearing customs for you. In addition, you have the visibility to track your packages door-to-door.
-               </p>
-               <div id="courier_form" method="GET">
-                  <input type="radio" name="shipping_option" value="30" checked> Standard Shipping — get it in 30 days (US$50)<br>
-                  <input type="radio" name="shipping_option" value="15"> Expedited Shipping — get it in 15 days (US$30)<br>
-                  <input type="radio" name="shipping_option" value="7"> Priority Shipping — get it in 7 days (US$15)<br>
-               </div>
-            </div>
+            <button id="btn-continue" class="btn btn-success pull-right">Continue</button>
          </div>
-        <button id="btn-continue" class="btn btn-success pull-right">Continue</button>
       </div>
-   </div>
-</main>
+   </main>
 {% endblock %}
 {% block javascripts %}
-{{ parent() }}
-<script src="{{ asset('js/courier.js')}}"></script>
+   {{ parent() }}
+   <script>
+      var setCurriertUrl = "{{ path('user_shoppingcart_set_courier')|escape('js') }}";
+   </script>
+   <script src="{{ asset('js/courier.js')}}"></script>
 {% endblock %}

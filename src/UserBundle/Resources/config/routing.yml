@@ -1,10 +1,13 @@
 user_check_session:
     path:     /checkSession
     defaults: { _controller: UserBundle:Default:checkSession }
-
 user_form:
-    path:     /signup
+    path:   /form
     defaults: { _controller: UserBundle:Default:userForm }
+    
+user_signup:
+    path:     /signup
+    defaults: { _controller: UserBundle:Default:signUp }
 
 user_create:
     path:     /create
@@ -14,10 +17,6 @@ user_address_add:
     path:     /address/add
     defaults: { _controller: UserBundle:Default:addressForm }
 
-user_address_create:
-    path:     /address/create
-    defaults: { _controller: UserBundle:Default:createAddress }
-
 user_signin:
     path:     /signin
     defaults: { _controller: UserBundle:Security:signin }
@@ -25,32 +24,39 @@ user_signin:
 user_signout:
     path:     /signout
     defaults: { _controller: UserBundle:Default:signOut }
+    
 user_address_create:
     path:     /address/create
     defaults: { _controller: UserBundle:Default:createAddress }
+    
 user_address_book:
     path:     /addressBook/{user}
     defaults: { _controller: UserBundle:Default:addressBook }
+    
 user_address_new:
     path:     /address/new
     defaults: { _controller: UserBundle:Default:getAddressRoute }
+    
 user_address_setCurrent:
     path:     /address/setCurrent
     defaults: { _controller: UserBundle:Default:setCurrentAddress }
+    
 user_shoppingcart_courier:
     path:     /shoppingCart/courier
     defaults: { _controller: UserBundle:Default:courier}
+    
 user_shoppingcart_confirm:
     path:     /shoppingCart/confirm
     defaults: { _controller: UserBundle:Default:confirm}
+    
 user_shoppingcart_set_courier:
     path:     /shoppingCart/setCourier
     defaults: { _controller: UserBundle:Default:setCourier}
+
 user_shoppingcart_payment:
     path:     /shoppingCart/payment
     defaults: { _controller: UserBundle:Default:payment} 
+
 user_clear_cart:
     path:     /clearCart
     defaults: { _controller: UserBundle:Default:clearCart}     
-
-    

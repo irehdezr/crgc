@@ -7,6 +7,9 @@ UserBundle\Entity\User:
         username:
             type: string
             length: '30'
+        firstname:
+            type: string
+            length: '50'
         lastname:
             type: string
             length: '50'

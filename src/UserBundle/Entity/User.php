@@ -13,6 +13,10 @@ class User implements AdvancedUserInterface, \Serializable{
      * @var string
      */
     private $username;
+    /**
+     * @var string
+     */
+    private $firstname;
 
     /**
      * @var string
@@ -70,6 +74,30 @@ class User implements AdvancedUserInterface, \Serializable{
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     *
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
     }
 
     /**
@@ -181,11 +209,11 @@ class User implements AdvancedUserInterface, \Serializable{
     /**
      * Add shoppingCart
      *
-     * @param \UserBundle\Entity\Presentation $shoppingCart
+     * @param \ProductBundle\Entity\Presentation $shoppingCart
      *
      * @return User
      */
-    public function addShoppingCart(\UserBundle\Entity\Presentation $shoppingCart)
+    public function addShoppingCart(\ProductBundle\Entity\Presentation $shoppingCart)
     {
         $this->shoppingCart[] = $shoppingCart;
     
@@ -195,9 +223,9 @@ class User implements AdvancedUserInterface, \Serializable{
     /**
      * Remove shoppingCart
      *
-     * @param \UserBundle\Entity\Presentation $shoppingCart
+     * @param \ProductBundle\Entity\Presentation $shoppingCart
      */
-    public function removeShoppingCart(\UserBundle\Entity\Presentation $shoppingCart)
+    public function removeShoppingCart(\ProductBundle\Entity\Presentation $shoppingCart)
     {
         $this->shoppingCart->removeElement($shoppingCart);
     }
@@ -224,6 +252,7 @@ class User implements AdvancedUserInterface, \Serializable{
     public function serialize(){
             return serialize(array(
                 $this->username,
+                $this->firstname,
                 $this->lastname,
                 $this->email,
                 $this->password
@@ -232,6 +261,7 @@ class User implements AdvancedUserInterface, \Serializable{
     public function unserialize($serialized){
             list(
                 $this->username,
+                $this->firstname,
                 $this->lastname,
                 $this->email,
                 $this->password

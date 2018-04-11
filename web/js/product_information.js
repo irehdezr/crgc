@@ -36,3 +36,30 @@ function setPrice(){
   var price = getPrice(presentation);
   $(".presentation-price").text(price);
 }
+
+function findPresentation(product,roast,weight,grind){
+	var response = null;
+	$.post({
+		url: findPresentationUrl,
+		async: false,
+		data: {product: product, roast:roast, weight: weight, grind:grind}
+	})
+	.done( function(result) {
+		response = result;
+	}); 
+	return response;
+}
+
+function getPrice(presentation){
+	var response = null;
+	$.post({
+		url: getPriceUrl,
+		type: 'POST',
+		async: false,
+		data: {id: presentation}
+	})
+	.done( function(result) {
+		response = result;
+	}); 
+	return response;
+}

@@ -73,8 +73,13 @@ class DefaultController extends Controller{
     public function userFormAction(){
         $user = new User();
         $userForm = $this->createUserForm($user);
-        return $this->render('UserBundle:Default:signUp.html.twig', array('form' => $userForm->createView() ));
+        $view = $userForm->createView();
+        return new Response($this->render('UserBundle:Default:signUp.html.twig', array('form' => $view )));
     }
+    public function signUpAction(){
+        return new Response($this->generateUrl('user_form'));
+    }
+
     public function addressFormAction(){
         $address = new Address();
         $form = $this->createAddressForm($address);

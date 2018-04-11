@@ -11,21 +11,21 @@ $(document).ready(function(){
 });
 
 function addNewAddress(){
-  var url = "/user/address/new";
   var response = null;
+  alert(addNewAddress);
   $.post({
-    url: url,
+    url: addNewAddressUrl,
     async: false,
   })
   .done( function(result) {
+	alert(result);
     location.href=result;
   }); 
 }
 function setAddress(address){
-  var url = "/user/address/setCurrent";
   var response = null;
   $.post({
-    url: url,
+    url: setCurrentAddressUrl,
     async: false,
     data: {addressName:address}
   })

@@ -38,7 +38,7 @@
             <ul class="nav navbar-nav navbar-right">
    				<li>
 					{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ app.user.username }} {{ app.user.lastname() }} <span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ app.user.username  }} <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li>
 								<a href="{{ path('user_signout') }}">Sign out</a>
