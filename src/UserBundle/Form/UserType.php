@@ -4,12 +4,15 @@ namespace UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormEvent;
 
 class UserType extends AbstractType
 {
@@ -19,7 +22,7 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('username',TextType::class, array('label'=>'Nickname'))
+        ->add('username',HiddenType::class)
         ->add('firstname',TextType::class)
         ->add('lastname',TextType::class)
         ->add('email', RepeatedType::class, 
@@ -30,7 +33,16 @@ class UserType extends AbstractType
             array('type' => PasswordType::class, 'invalid_message' => 'The password fields must match.','options' 
                 => array('attr' => array('class' => 'password-field')),'required' => true, 'first_options'  
                 => array('label' => 'Password'),'second_options' => array('label' => 'Confirm password'),))
-        ->add('save',SubmitType::class);
+        ->add('save',SubmitType::class)
+        ->addEventListener(FormEvents::PRE_SUBMIT, function(FormEvent $event) {
+            $data = $event->getData();
+            $form = $event->getForm();
+            if ($data['firstname'] !== null && $data['lastname'] !== null){
+                $username = $data['firstname']." ".$data['lastname'];
+                $data['username'] = $username;
+                $event->setData($data); 
+            }
+        });
     }
     
     /**

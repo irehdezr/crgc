@@ -15,11 +15,11 @@ class __TwigTemplate_40e42da524115eed14e5debf7535537c1dfd42e054f581c05c4f218ab26
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_87004fefe4b5980b12e7da83fc18f60495ab850b2dc090342b6a54f51b69c81c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_87004fefe4b5980b12e7da83fc18f60495ab850b2dc090342b6a54f51b69c81c->enter($__internal_87004fefe4b5980b12e7da83fc18f60495ab850b2dc090342b6a54f51b69c81c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::footer.html.twig"));
+        $__internal_45c4e06200a6a643e89f42e2f32953eb4f400d32ee95cff76b5cee99a098f458 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_45c4e06200a6a643e89f42e2f32953eb4f400d32ee95cff76b5cee99a098f458->enter($__internal_45c4e06200a6a643e89f42e2f32953eb4f400d32ee95cff76b5cee99a098f458_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::footer.html.twig"));
 
-        $__internal_208d1e83f7798497536eaf1dda5babd09ca31f975a30b91a4403d593a1b421ac = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_208d1e83f7798497536eaf1dda5babd09ca31f975a30b91a4403d593a1b421ac->enter($__internal_208d1e83f7798497536eaf1dda5babd09ca31f975a30b91a4403d593a1b421ac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::footer.html.twig"));
+        $__internal_d2a166486c1546772e656373f0c39fc047297fbf3994c1b30edd2a11ac4abb09 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d2a166486c1546772e656373f0c39fc047297fbf3994c1b30edd2a11ac4abb09->enter($__internal_d2a166486c1546772e656373f0c39fc047297fbf3994c1b30edd2a11ac4abb09_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::footer.html.twig"));
 
         // line 1
         echo "<nav id=\"footerOptions\"class=\"navbar navbar-inverse \">
@@ -54,10 +54,10 @@ class __TwigTemplate_40e42da524115eed14e5debf7535537c1dfd42e054f581c05c4f218ab26
     <center>Copyright &#169; Universidad Nacional de Costa Rica, 2017-2018</center>
 </div>";
         
-        $__internal_87004fefe4b5980b12e7da83fc18f60495ab850b2dc090342b6a54f51b69c81c->leave($__internal_87004fefe4b5980b12e7da83fc18f60495ab850b2dc090342b6a54f51b69c81c_prof);
+        $__internal_45c4e06200a6a643e89f42e2f32953eb4f400d32ee95cff76b5cee99a098f458->leave($__internal_45c4e06200a6a643e89f42e2f32953eb4f400d32ee95cff76b5cee99a098f458_prof);
 
         
-        $__internal_208d1e83f7798497536eaf1dda5babd09ca31f975a30b91a4403d593a1b421ac->leave($__internal_208d1e83f7798497536eaf1dda5babd09ca31f975a30b91a4403d593a1b421ac_prof);
+        $__internal_d2a166486c1546772e656373f0c39fc047297fbf3994c1b30edd2a11ac4abb09->leave($__internal_d2a166486c1546772e656373f0c39fc047297fbf3994c1b30edd2a11ac4abb09_prof);
 
     }
 

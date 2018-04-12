@@ -24,47 +24,47 @@ class __TwigTemplate_4cc089079e02269535866a703d2404def2039cac1d25dc1e8ee706a6503
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_236b762983941a65dc6ae66634b0086a3f1a93155018acea4393ecf0203bf696 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_236b762983941a65dc6ae66634b0086a3f1a93155018acea4393ecf0203bf696->enter($__internal_236b762983941a65dc6ae66634b0086a3f1a93155018acea4393ecf0203bf696_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Security:login.html.twig"));
+        $__internal_2124bc98992cb99efe4abb8f00334953fb89fd0c83e11c9e39c0554fc1966916 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2124bc98992cb99efe4abb8f00334953fb89fd0c83e11c9e39c0554fc1966916->enter($__internal_2124bc98992cb99efe4abb8f00334953fb89fd0c83e11c9e39c0554fc1966916_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Security:login.html.twig"));
 
-        $__internal_f59af48a245c9db52bffa4fcdbd9def3ba4485f99c4803d9f293203959cb199d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f59af48a245c9db52bffa4fcdbd9def3ba4485f99c4803d9f293203959cb199d->enter($__internal_f59af48a245c9db52bffa4fcdbd9def3ba4485f99c4803d9f293203959cb199d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Security:login.html.twig"));
+        $__internal_4210fbcbf588af53d5a90e6995a2d89e68531d781410b0e0ce770a9bf004f39e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_4210fbcbf588af53d5a90e6995a2d89e68531d781410b0e0ce770a9bf004f39e->enter($__internal_4210fbcbf588af53d5a90e6995a2d89e68531d781410b0e0ce770a9bf004f39e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Security:login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_236b762983941a65dc6ae66634b0086a3f1a93155018acea4393ecf0203bf696->leave($__internal_236b762983941a65dc6ae66634b0086a3f1a93155018acea4393ecf0203bf696_prof);
+        $__internal_2124bc98992cb99efe4abb8f00334953fb89fd0c83e11c9e39c0554fc1966916->leave($__internal_2124bc98992cb99efe4abb8f00334953fb89fd0c83e11c9e39c0554fc1966916_prof);
 
         
-        $__internal_f59af48a245c9db52bffa4fcdbd9def3ba4485f99c4803d9f293203959cb199d->leave($__internal_f59af48a245c9db52bffa4fcdbd9def3ba4485f99c4803d9f293203959cb199d_prof);
+        $__internal_4210fbcbf588af53d5a90e6995a2d89e68531d781410b0e0ce770a9bf004f39e->leave($__internal_4210fbcbf588af53d5a90e6995a2d89e68531d781410b0e0ce770a9bf004f39e_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_566308b8ea8b2bcf48c186e6c47f7600f5e61da00bc8c67d34017b16371be807 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_566308b8ea8b2bcf48c186e6c47f7600f5e61da00bc8c67d34017b16371be807->enter($__internal_566308b8ea8b2bcf48c186e6c47f7600f5e61da00bc8c67d34017b16371be807_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_3e089c03678dac1fd0c966597d25a0df9189ee7058d11c56ed45ae3fc3724f1b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3e089c03678dac1fd0c966597d25a0df9189ee7058d11c56ed45ae3fc3724f1b->enter($__internal_3e089c03678dac1fd0c966597d25a0df9189ee7058d11c56ed45ae3fc3724f1b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_82de60487130fbd570d224380eb5d39d36581c3221bed347fc48914ef8484e61 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_82de60487130fbd570d224380eb5d39d36581c3221bed347fc48914ef8484e61->enter($__internal_82de60487130fbd570d224380eb5d39d36581c3221bed347fc48914ef8484e61_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_547400a2ca21527ed83bac00f7f4a9813a1e1ab143361da6195cecb4b9e96e04 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_547400a2ca21527ed83bac00f7f4a9813a1e1ab143361da6195cecb4b9e96e04->enter($__internal_547400a2ca21527ed83bac00f7f4a9813a1e1ab143361da6195cecb4b9e96e04_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Sign In ";
         
-        $__internal_82de60487130fbd570d224380eb5d39d36581c3221bed347fc48914ef8484e61->leave($__internal_82de60487130fbd570d224380eb5d39d36581c3221bed347fc48914ef8484e61_prof);
+        $__internal_547400a2ca21527ed83bac00f7f4a9813a1e1ab143361da6195cecb4b9e96e04->leave($__internal_547400a2ca21527ed83bac00f7f4a9813a1e1ab143361da6195cecb4b9e96e04_prof);
 
         
-        $__internal_566308b8ea8b2bcf48c186e6c47f7600f5e61da00bc8c67d34017b16371be807->leave($__internal_566308b8ea8b2bcf48c186e6c47f7600f5e61da00bc8c67d34017b16371be807_prof);
+        $__internal_3e089c03678dac1fd0c966597d25a0df9189ee7058d11c56ed45ae3fc3724f1b->leave($__internal_3e089c03678dac1fd0c966597d25a0df9189ee7058d11c56ed45ae3fc3724f1b_prof);
 
     }
 
     // line 4
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_d73d7371da7e9239f954a04187ecde82ca47006f627d88c863831179e2050cf1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d73d7371da7e9239f954a04187ecde82ca47006f627d88c863831179e2050cf1->enter($__internal_d73d7371da7e9239f954a04187ecde82ca47006f627d88c863831179e2050cf1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_6de84e27e5f75ee4d56d20330e66181e69afca696b4e1ddd8ebf24b527a835c8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_6de84e27e5f75ee4d56d20330e66181e69afca696b4e1ddd8ebf24b527a835c8->enter($__internal_6de84e27e5f75ee4d56d20330e66181e69afca696b4e1ddd8ebf24b527a835c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        $__internal_e419331a8fd419b926ec2c384abbee1c08d05c73b3052260e7f4bddf0de7e499 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e419331a8fd419b926ec2c384abbee1c08d05c73b3052260e7f4bddf0de7e499->enter($__internal_e419331a8fd419b926ec2c384abbee1c08d05c73b3052260e7f4bddf0de7e499_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_92274f7682c79f4131473424a0bafdf4a10d5950705fe16ea2ad1844875e0cc5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_92274f7682c79f4131473424a0bafdf4a10d5950705fe16ea2ad1844875e0cc5->enter($__internal_92274f7682c79f4131473424a0bafdf4a10d5950705fe16ea2ad1844875e0cc5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 5
         echo "    ";
@@ -76,76 +76,76 @@ class __TwigTemplate_4cc089079e02269535866a703d2404def2039cac1d25dc1e8ee706a6503
         echo "\" />
 ";
         
-        $__internal_e419331a8fd419b926ec2c384abbee1c08d05c73b3052260e7f4bddf0de7e499->leave($__internal_e419331a8fd419b926ec2c384abbee1c08d05c73b3052260e7f4bddf0de7e499_prof);
+        $__internal_92274f7682c79f4131473424a0bafdf4a10d5950705fe16ea2ad1844875e0cc5->leave($__internal_92274f7682c79f4131473424a0bafdf4a10d5950705fe16ea2ad1844875e0cc5_prof);
 
         
-        $__internal_d73d7371da7e9239f954a04187ecde82ca47006f627d88c863831179e2050cf1->leave($__internal_d73d7371da7e9239f954a04187ecde82ca47006f627d88c863831179e2050cf1_prof);
+        $__internal_6de84e27e5f75ee4d56d20330e66181e69afca696b4e1ddd8ebf24b527a835c8->leave($__internal_6de84e27e5f75ee4d56d20330e66181e69afca696b4e1ddd8ebf24b527a835c8_prof);
 
     }
 
     // line 9
     public function block_body($context, array $blocks = array())
     {
-        $__internal_f042fc02bccfdf0f21d428de5470cc7b7e69427a890c017d402f290fda544027 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f042fc02bccfdf0f21d428de5470cc7b7e69427a890c017d402f290fda544027->enter($__internal_f042fc02bccfdf0f21d428de5470cc7b7e69427a890c017d402f290fda544027_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a84b0ebf0dd020788e7c1a4ad3c5e436e9f4810cdc4613c84b2c6dcc3206d9d3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a84b0ebf0dd020788e7c1a4ad3c5e436e9f4810cdc4613c84b2c6dcc3206d9d3->enter($__internal_a84b0ebf0dd020788e7c1a4ad3c5e436e9f4810cdc4613c84b2c6dcc3206d9d3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_1b8dda8a32df0cebf47a8e1bd17d638ce02e722d3df7c99fb355113fe7233308 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1b8dda8a32df0cebf47a8e1bd17d638ce02e722d3df7c99fb355113fe7233308->enter($__internal_1b8dda8a32df0cebf47a8e1bd17d638ce02e722d3df7c99fb355113fe7233308_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_1e75d0296d92e951c47b797ea416aec4e31dabaaffc70dd05fd18c1f4dc19d86 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1e75d0296d92e951c47b797ea416aec4e31dabaaffc70dd05fd18c1f4dc19d86->enter($__internal_1e75d0296d92e951c47b797ea416aec4e31dabaaffc70dd05fd18c1f4dc19d86_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 10
-        echo "  <main>
-    <div id=\"login-modal\" >
-      <div class=\"modal-dialog\">
-        <div class=\"loginmodal-container\">
-          <form action= \"";
+        echo "  \t<main>
+    \t<div id=\"login-modal\" >
+     \t\t<div class=\"modal-dialog\">
+        \t\t<div class=\"loginmodal-container\">
+          \t\t\t<form action= \"";
         // line 14
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_signin");
         echo "\" method=\"post\" id=\"signin\" class=\"form-signin\">
-            <h1>Sign in</h1>
-            <label for=\"username\">Email:</label>
-            <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+            \t\t\t<h1>Sign in</h1>
+\t\t\t            <label for=\"username\">Email:</label>
+\t\t\t            <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
         // line 17
         echo twig_escape_filter($this->env, ($context["last_username"] ?? $this->getContext($context, "last_username")), "html", null, true);
         echo "\" placeholder=\"example@domin.com\" required autofocus/>
-            <label for=\"password\">Password:</label>
-            <input type=\"password\" id=\"password\" name=\"_password\" placeholder=\"**********\" required>
-            ";
+\t\t\t            <label for=\"password\">Password:</label>
+\t\t\t            <input type=\"password\" id=\"password\" name=\"_password\" placeholder=\"**********\" required>
+\t\t\t            ";
         // line 20
         if (($context["error"] ?? $this->getContext($context, "error"))) {
             // line 21
-            echo "              <div class=\"text-danger\">
-                <strong>";
+            echo "\t\t\t              <div class=\"text-danger\">
+\t\t\t                <strong>";
             // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans($this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageKey", array()), $this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageData", array()), "security"), "html", null, true);
             echo "</strong>
-              </div>
-            ";
+\t\t\t              </div>
+\t\t\t            ";
         }
         // line 25
-        echo "            <input type=\"submit\" name=\"signin\" class=\"login loginmodal-submit\" value=\"Access your account\">
-            <input type=\"button\" name=\"signup\" class=\"login loginmodal-submit\" value=\"Create a new account\">
-          </form>
-        </div>
-      </div>
-    </div>
-  </main>
+        echo "\t\t\t            <input type=\"submit\" name=\"signin\" class=\"login loginmodal-submit\" value=\"Access your account\">
+\t\t\t            <input type=\"button\" name=\"signup\" class=\"login loginmodal-submit\" value=\"Create a new account\">
+          \t\t\t</form>
+        \t\t</div>
+      \t\t</div>
+    \t</div>
+  \t</main>
 ";
         
-        $__internal_1b8dda8a32df0cebf47a8e1bd17d638ce02e722d3df7c99fb355113fe7233308->leave($__internal_1b8dda8a32df0cebf47a8e1bd17d638ce02e722d3df7c99fb355113fe7233308_prof);
+        $__internal_1e75d0296d92e951c47b797ea416aec4e31dabaaffc70dd05fd18c1f4dc19d86->leave($__internal_1e75d0296d92e951c47b797ea416aec4e31dabaaffc70dd05fd18c1f4dc19d86_prof);
 
         
-        $__internal_f042fc02bccfdf0f21d428de5470cc7b7e69427a890c017d402f290fda544027->leave($__internal_f042fc02bccfdf0f21d428de5470cc7b7e69427a890c017d402f290fda544027_prof);
+        $__internal_a84b0ebf0dd020788e7c1a4ad3c5e436e9f4810cdc4613c84b2c6dcc3206d9d3->leave($__internal_a84b0ebf0dd020788e7c1a4ad3c5e436e9f4810cdc4613c84b2c6dcc3206d9d3_prof);
 
     }
 
     // line 34
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_efdf09aa38d5b035a75181df31da4900fde99618990dd6f8f38032633252fed9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_efdf09aa38d5b035a75181df31da4900fde99618990dd6f8f38032633252fed9->enter($__internal_efdf09aa38d5b035a75181df31da4900fde99618990dd6f8f38032633252fed9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_cd4cb9c359192378f4127d0e7b1a157a93f252bf3abad2a58170920d1aa85a9a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_cd4cb9c359192378f4127d0e7b1a157a93f252bf3abad2a58170920d1aa85a9a->enter($__internal_cd4cb9c359192378f4127d0e7b1a157a93f252bf3abad2a58170920d1aa85a9a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_dd3ebc1734320e5d3b0ea55c7670a38757d18e69218bde82ffc6d95b5a092046 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dd3ebc1734320e5d3b0ea55c7670a38757d18e69218bde82ffc6d95b5a092046->enter($__internal_dd3ebc1734320e5d3b0ea55c7670a38757d18e69218bde82ffc6d95b5a092046_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_3e6f5f5c9fda8758d134b6d80a8e937bf5a11caeea18175a57fab4a5ad759296 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3e6f5f5c9fda8758d134b6d80a8e937bf5a11caeea18175a57fab4a5ad759296->enter($__internal_3e6f5f5c9fda8758d134b6d80a8e937bf5a11caeea18175a57fab4a5ad759296_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 35
         echo "    ";
@@ -154,7 +154,7 @@ class __TwigTemplate_4cc089079e02269535866a703d2404def2039cac1d25dc1e8ee706a6503
     <script>
       var signUpUrl = \"";
         // line 37
-        echo twig_escape_filter($this->env, twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_form"), "js"), "html", null, true);
+        echo twig_escape_filter($this->env, twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_signup"), "js"), "html", null, true);
         echo "\";  
     </script>
     <script src=\"";
@@ -163,10 +163,10 @@ class __TwigTemplate_4cc089079e02269535866a703d2404def2039cac1d25dc1e8ee706a6503
         echo "\" type=\"text/javascript\"></script> 
 ";
         
-        $__internal_dd3ebc1734320e5d3b0ea55c7670a38757d18e69218bde82ffc6d95b5a092046->leave($__internal_dd3ebc1734320e5d3b0ea55c7670a38757d18e69218bde82ffc6d95b5a092046_prof);
+        $__internal_3e6f5f5c9fda8758d134b6d80a8e937bf5a11caeea18175a57fab4a5ad759296->leave($__internal_3e6f5f5c9fda8758d134b6d80a8e937bf5a11caeea18175a57fab4a5ad759296_prof);
 
         
-        $__internal_efdf09aa38d5b035a75181df31da4900fde99618990dd6f8f38032633252fed9->leave($__internal_efdf09aa38d5b035a75181df31da4900fde99618990dd6f8f38032633252fed9_prof);
+        $__internal_cd4cb9c359192378f4127d0e7b1a157a93f252bf3abad2a58170920d1aa85a9a->leave($__internal_cd4cb9c359192378f4127d0e7b1a157a93f252bf3abad2a58170920d1aa85a9a_prof);
 
     }
 
@@ -204,34 +204,34 @@ class __TwigTemplate_4cc089079e02269535866a703d2404def2039cac1d25dc1e8ee706a6503
 {% endblock %}
 
 {% block body %}
-  <main>
-    <div id=\"login-modal\" >
-      <div class=\"modal-dialog\">
-        <div class=\"loginmodal-container\">
-          <form action= \"{{ path('user_signin') }}\" method=\"post\" id=\"signin\" class=\"form-signin\">
-            <h1>Sign in</h1>
-            <label for=\"username\">Email:</label>
-            <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" placeholder=\"example@domin.com\" required autofocus/>
-            <label for=\"password\">Password:</label>
-            <input type=\"password\" id=\"password\" name=\"_password\" placeholder=\"**********\" required>
-            {% if error %}
-              <div class=\"text-danger\">
-                <strong>{{ error.messageKey|trans(error.messageData, 'security') }}</strong>
-              </div>
-            {% endif %}
-            <input type=\"submit\" name=\"signin\" class=\"login loginmodal-submit\" value=\"Access your account\">
-            <input type=\"button\" name=\"signup\" class=\"login loginmodal-submit\" value=\"Create a new account\">
-          </form>
-        </div>
-      </div>
-    </div>
-  </main>
+  \t<main>
+    \t<div id=\"login-modal\" >
+     \t\t<div class=\"modal-dialog\">
+        \t\t<div class=\"loginmodal-container\">
+          \t\t\t<form action= \"{{ path('user_signin') }}\" method=\"post\" id=\"signin\" class=\"form-signin\">
+            \t\t\t<h1>Sign in</h1>
+\t\t\t            <label for=\"username\">Email:</label>
+\t\t\t            <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" placeholder=\"example@domin.com\" required autofocus/>
+\t\t\t            <label for=\"password\">Password:</label>
+\t\t\t            <input type=\"password\" id=\"password\" name=\"_password\" placeholder=\"**********\" required>
+\t\t\t            {% if error %}
+\t\t\t              <div class=\"text-danger\">
+\t\t\t                <strong>{{ error.messageKey|trans(error.messageData, 'security') }}</strong>
+\t\t\t              </div>
+\t\t\t            {% endif %}
+\t\t\t            <input type=\"submit\" name=\"signin\" class=\"login loginmodal-submit\" value=\"Access your account\">
+\t\t\t            <input type=\"button\" name=\"signup\" class=\"login loginmodal-submit\" value=\"Create a new account\">
+          \t\t\t</form>
+        \t\t</div>
+      \t\t</div>
+    \t</div>
+  \t</main>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script>
-      var signUpUrl = \"{{ path('user_form')|escape('js') }}\";  
+      var signUpUrl = \"{{ path('user_signup')|escape('js') }}\";  
     </script>
     <script src=\"{{ asset('js/login.js') }}\" type=\"text/javascript\"></script> 
 {% endblock %}", "UserBundle:Security:login.html.twig", "C:\\xampp\\htdocs\\crgc\\src\\UserBundle/Resources/views/Security/login.html.twig");

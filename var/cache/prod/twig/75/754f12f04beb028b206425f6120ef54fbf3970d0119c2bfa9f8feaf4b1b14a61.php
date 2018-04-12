@@ -13,7 +13,6 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
             'body' => array($this, 'block_body'),
-            'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
@@ -24,32 +23,32 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8fc2ac5d4768de069a52bd49ce5b7424ccf450f8243c5fc2819f12f7fd0fb8cf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8fc2ac5d4768de069a52bd49ce5b7424ccf450f8243c5fc2819f12f7fd0fb8cf->enter($__internal_8fc2ac5d4768de069a52bd49ce5b7424ccf450f8243c5fc2819f12f7fd0fb8cf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Default:signUp.html.twig"));
+        $__internal_fe11de715309bb50fdf3ba818f6e07c756a995605d9404c8ab0d6a149f614f8c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_fe11de715309bb50fdf3ba818f6e07c756a995605d9404c8ab0d6a149f614f8c->enter($__internal_fe11de715309bb50fdf3ba818f6e07c756a995605d9404c8ab0d6a149f614f8c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Default:signUp.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_8fc2ac5d4768de069a52bd49ce5b7424ccf450f8243c5fc2819f12f7fd0fb8cf->leave($__internal_8fc2ac5d4768de069a52bd49ce5b7424ccf450f8243c5fc2819f12f7fd0fb8cf_prof);
+        $__internal_fe11de715309bb50fdf3ba818f6e07c756a995605d9404c8ab0d6a149f614f8c->leave($__internal_fe11de715309bb50fdf3ba818f6e07c756a995605d9404c8ab0d6a149f614f8c_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_3e4cdde47ce9e28d7b1d3b4b88076b279f0ce11798c9170dcec2eb79182cabf2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3e4cdde47ce9e28d7b1d3b4b88076b279f0ce11798c9170dcec2eb79182cabf2->enter($__internal_3e4cdde47ce9e28d7b1d3b4b88076b279f0ce11798c9170dcec2eb79182cabf2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_532c54363e48c33bea0595fd4e07adadfde39cbeca2907be1d7b48d9dec09dca = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_532c54363e48c33bea0595fd4e07adadfde39cbeca2907be1d7b48d9dec09dca->enter($__internal_532c54363e48c33bea0595fd4e07adadfde39cbeca2907be1d7b48d9dec09dca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Sign Up ";
         
-        $__internal_3e4cdde47ce9e28d7b1d3b4b88076b279f0ce11798c9170dcec2eb79182cabf2->leave($__internal_3e4cdde47ce9e28d7b1d3b4b88076b279f0ce11798c9170dcec2eb79182cabf2_prof);
+        $__internal_532c54363e48c33bea0595fd4e07adadfde39cbeca2907be1d7b48d9dec09dca->leave($__internal_532c54363e48c33bea0595fd4e07adadfde39cbeca2907be1d7b48d9dec09dca_prof);
 
     }
 
     // line 4
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_89e72bf944a7b53e00fa5c90a3a82d8e93f7865eb9f6c2b0545a75edc3385068 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_89e72bf944a7b53e00fa5c90a3a82d8e93f7865eb9f6c2b0545a75edc3385068->enter($__internal_89e72bf944a7b53e00fa5c90a3a82d8e93f7865eb9f6c2b0545a75edc3385068_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_817991698568a39cba38249c6dc0cdf28fc57a7e3a8fd1cb2116d6ba31c88466 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_817991698568a39cba38249c6dc0cdf28fc57a7e3a8fd1cb2116d6ba31c88466->enter($__internal_817991698568a39cba38249c6dc0cdf28fc57a7e3a8fd1cb2116d6ba31c88466_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 5
         echo "    ";
@@ -61,15 +60,15 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
         echo "\" />
 ";
         
-        $__internal_89e72bf944a7b53e00fa5c90a3a82d8e93f7865eb9f6c2b0545a75edc3385068->leave($__internal_89e72bf944a7b53e00fa5c90a3a82d8e93f7865eb9f6c2b0545a75edc3385068_prof);
+        $__internal_817991698568a39cba38249c6dc0cdf28fc57a7e3a8fd1cb2116d6ba31c88466->leave($__internal_817991698568a39cba38249c6dc0cdf28fc57a7e3a8fd1cb2116d6ba31c88466_prof);
 
     }
 
     // line 9
     public function block_body($context, array $blocks = array())
     {
-        $__internal_1cfd81a64b22320ef121281a5a445d639ff09bd4e6d20ef24dc320e55cc1c0e7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1cfd81a64b22320ef121281a5a445d639ff09bd4e6d20ef24dc320e55cc1c0e7->enter($__internal_1cfd81a64b22320ef121281a5a445d639ff09bd4e6d20ef24dc320e55cc1c0e7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_597fddf76bdca73a125a705def2d0b6428b156a5cf902cc2b7171c06fc8f24a3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_597fddf76bdca73a125a705def2d0b6428b156a5cf902cc2b7171c06fc8f24a3->enter($__internal_597fddf76bdca73a125a705def2d0b6428b156a5cf902cc2b7171c06fc8f24a3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 10
         echo "<main>
@@ -84,53 +83,53 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
           <div class=\"form-group\">
             ";
         // line 17
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "username", array()), 'label');
-        echo "   
-            ";
-        // line 18
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "username", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Nickname")));
-        echo "  
-            <span class=\"text-danger\">";
-        // line 19
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "username", array()), 'errors');
-        echo "</span>       
-          </div>
-          <div class=\"form-group\">
-            ";
-        // line 22
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstname", array()), 'label');
         echo "   
             ";
-        // line 23
+        // line 18
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstname", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Firstname")));
         echo "  
             <span class=\"text-danger\">";
-        // line 24
+        // line 19
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstname", array()), 'errors');
         echo "</span>       
           </div>
           <div class=\"form-group\">
             ";
-        // line 27
+        // line 22
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastname", array()), 'label');
         echo "   
             ";
-        // line 28
+        // line 23
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastname", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Lastname")));
         echo "  
             <span class=\"text-danger\">";
-        // line 29
+        // line 24
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastname", array()), 'errors');
         echo "</span>       
           </div>
           <div class=\"form-group\">
             ";
-        // line 32
+        // line 27
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", array()), "first", array()), 'label');
         echo "   
             ";
-        // line 33
+        // line 28
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", array()), "first", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "example@domain.com")));
+        echo "  
+            <span class=\"text-danger\">";
+        // line 29
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", array()), "first", array()), 'errors');
+        echo "</span>       
+          </div>
+          <div class=\"form-group\">
+            ";
+        // line 32
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", array()), "second", array()), 'label');
+        echo "   
+            ";
+        // line 33
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", array()), "second", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "example@domain.com")));
         echo "  
             <span class=\"text-danger\">";
         // line 34
@@ -140,53 +139,39 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
           <div class=\"form-group\">
             ";
         // line 37
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", array()), "second", array()), 'label');
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "first", array()), 'label');
         echo "   
             ";
         // line 38
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", array()), "second", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "example@domain.com")));
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "first", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "**********")));
         echo "  
             <span class=\"text-danger\">";
         // line 39
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", array()), "first", array()), 'errors');
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "first", array()), 'errors');
         echo "</span>       
           </div>
           <div class=\"form-group\">
             ";
         // line 42
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "first", array()), 'label');
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "second", array()), 'label');
         echo "   
             ";
         // line 43
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "first", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "**********")));
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "second", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "**********")));
         echo "  
             <span class=\"text-danger\">";
         // line 44
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "first", array()), 'errors');
         echo "</span>       
           </div>
-          <div class=\"form-group\">
-            ";
-        // line 47
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "second", array()), 'label');
-        echo "   
-            ";
-        // line 48
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "second", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "**********")));
-        echo "  
-            <span class=\"text-danger\">";
-        // line 49
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", array()), "first", array()), 'errors');
-        echo "</span>       
-          </div>
           <div class=\"form-group\"> 
             ";
-        // line 52
+        // line 47
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "save", array()), 'widget', array("label" => "Create your new account", "attr" => array("class" => "pull-right btn btn-success")));
         echo "    
           </div>
         ";
-        // line 54
+        // line 49
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
       </div>
@@ -195,27 +180,7 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
 </main>
 ";
         
-        $__internal_1cfd81a64b22320ef121281a5a445d639ff09bd4e6d20ef24dc320e55cc1c0e7->leave($__internal_1cfd81a64b22320ef121281a5a445d639ff09bd4e6d20ef24dc320e55cc1c0e7_prof);
-
-    }
-
-    // line 61
-    public function block_javascripts($context, array $blocks = array())
-    {
-        $__internal_1896ddc0e5139a87094219f98eeade1ebf05a2d74b42c514f110703fa81e70c5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1896ddc0e5139a87094219f98eeade1ebf05a2d74b42c514f110703fa81e70c5->enter($__internal_1896ddc0e5139a87094219f98eeade1ebf05a2d74b42c514f110703fa81e70c5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 62
-        echo "    ";
-        $this->displayParentBlock("javascripts", $context, $blocks);
-        echo "
-    <script src=\"";
-        // line 63
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/signup.js"), "html", null, true);
-        echo "\" type=\"text/javascript\"></script> 
-";
-        
-        $__internal_1896ddc0e5139a87094219f98eeade1ebf05a2d74b42c514f110703fa81e70c5->leave($__internal_1896ddc0e5139a87094219f98eeade1ebf05a2d74b42c514f110703fa81e70c5_prof);
+        $__internal_597fddf76bdca73a125a705def2d0b6428b156a5cf902cc2b7171c06fc8f24a3->leave($__internal_597fddf76bdca73a125a705def2d0b6428b156a5cf902cc2b7171c06fc8f24a3_prof);
 
     }
 
@@ -231,7 +196,7 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
 
     public function getDebugInfo()
     {
-        return array (  214 => 63,  209 => 62,  203 => 61,  190 => 54,  185 => 52,  179 => 49,  175 => 48,  171 => 47,  165 => 44,  161 => 43,  157 => 42,  151 => 39,  147 => 38,  143 => 37,  137 => 34,  133 => 33,  129 => 32,  123 => 29,  119 => 28,  115 => 27,  109 => 24,  105 => 23,  101 => 22,  95 => 19,  91 => 18,  87 => 17,  82 => 15,  75 => 10,  69 => 9,  60 => 6,  55 => 5,  49 => 4,  37 => 3,  11 => 1,);
+        return array (  175 => 49,  170 => 47,  164 => 44,  160 => 43,  156 => 42,  150 => 39,  146 => 38,  142 => 37,  136 => 34,  132 => 33,  128 => 32,  122 => 29,  118 => 28,  114 => 27,  108 => 24,  104 => 23,  100 => 22,  94 => 19,  90 => 18,  86 => 17,  81 => 15,  74 => 10,  68 => 9,  59 => 6,  54 => 5,  48 => 4,  36 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -259,11 +224,6 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
       <div class=\"loginmodal-container\">
         <h1>Sign up</h1><br>
         {{ form_start(form,{'attr': {'novalidate': 'novalidate', 'role': 'form'}} ) }}
-          <div class=\"form-group\">
-            {{ form_label(form.username) }}   
-            {{ form_widget(form.username, { \"attr\": {\"class\": \"form-control\", \"placeholder\": \"Nickname\"} }) }}  
-            <span class=\"text-danger\">{{ form_errors(form.username) }}</span>       
-          </div>
           <div class=\"form-group\">
             {{ form_label(form.firstname) }}   
             {{ form_widget(form.firstname, { \"attr\": {\"class\": \"form-control\", \"placeholder\": \"Firstname\"} }) }}  
@@ -302,11 +262,6 @@ class __TwigTemplate_d8e7c80ccdf9afdadbe435e55400ec9c66f5cd3dc6e2d9a0e4020a527e5
     </div>
   </div>
 </main>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src=\"{{ asset('js/signup.js') }}\" type=\"text/javascript\"></script> 
 {% endblock %}", "UserBundle:Default:signUp.html.twig", "C:\\xampp\\htdocs\\crgc\\var\\cache\\prod/../../../src/UserBundle/Resources/views/Default/signUp.html.twig");
     }
 }

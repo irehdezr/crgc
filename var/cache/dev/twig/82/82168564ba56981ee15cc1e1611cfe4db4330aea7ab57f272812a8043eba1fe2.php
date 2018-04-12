@@ -15,11 +15,11 @@ class __TwigTemplate_cfe05fe170ddc09d1e834359dbc58682074abc6d6186daecf290c602f7b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2e7bed574612d1bc866968540e03fabcaa7b53cb9443fcedbd33d3c623c4073a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_2e7bed574612d1bc866968540e03fabcaa7b53cb9443fcedbd33d3c623c4073a->enter($__internal_2e7bed574612d1bc866968540e03fabcaa7b53cb9443fcedbd33d3c623c4073a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Page/Default/header.html.twig"));
+        $__internal_f554e621c1dab3a8c4e48525ef5bd053adee4abeafc6d8731f44acb9a5575c54 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f554e621c1dab3a8c4e48525ef5bd053adee4abeafc6d8731f44acb9a5575c54->enter($__internal_f554e621c1dab3a8c4e48525ef5bd053adee4abeafc6d8731f44acb9a5575c54_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Page/Default/header.html.twig"));
 
-        $__internal_a66420060caef74956d9c47887104c70e8edac6b119d452e91bad7d852b86cc7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a66420060caef74956d9c47887104c70e8edac6b119d452e91bad7d852b86cc7->enter($__internal_a66420060caef74956d9c47887104c70e8edac6b119d452e91bad7d852b86cc7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Page/Default/header.html.twig"));
+        $__internal_655e834935d88e10f9e600319c5d380048cb3356ddb9a0c7c8192f5eb0d2af2a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_655e834935d88e10f9e600319c5d380048cb3356ddb9a0c7c8192f5eb0d2af2a->enter($__internal_655e834935d88e10f9e600319c5d380048cb3356ddb9a0c7c8192f5eb0d2af2a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Page/Default/header.html.twig"));
 
         // line 1
         echo "<nav class=\"navbar navbar-inverse navbar-fixed-top\">
@@ -102,8 +102,6 @@ class __TwigTemplate_cfe05fe170ddc09d1e834359dbc58682074abc6d6186daecf290c602f7b
             // line 41
             echo "\t\t\t\t\t\t<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "lastname", array(), "method"), "html", null, true);
             echo " <span class=\"caret\"></span></a>
 \t\t\t\t\t\t<ul class=\"dropdown-menu\">
 \t\t\t\t\t\t\t<li>
@@ -139,10 +137,10 @@ class __TwigTemplate_cfe05fe170ddc09d1e834359dbc58682074abc6d6186daecf290c602f7b
     </div>
 </nav>";
         
-        $__internal_2e7bed574612d1bc866968540e03fabcaa7b53cb9443fcedbd33d3c623c4073a->leave($__internal_2e7bed574612d1bc866968540e03fabcaa7b53cb9443fcedbd33d3c623c4073a_prof);
+        $__internal_f554e621c1dab3a8c4e48525ef5bd053adee4abeafc6d8731f44acb9a5575c54->leave($__internal_f554e621c1dab3a8c4e48525ef5bd053adee4abeafc6d8731f44acb9a5575c54_prof);
 
         
-        $__internal_a66420060caef74956d9c47887104c70e8edac6b119d452e91bad7d852b86cc7->leave($__internal_a66420060caef74956d9c47887104c70e8edac6b119d452e91bad7d852b86cc7_prof);
+        $__internal_655e834935d88e10f9e600319c5d380048cb3356ddb9a0c7c8192f5eb0d2af2a->leave($__internal_655e834935d88e10f9e600319c5d380048cb3356ddb9a0c7c8192f5eb0d2af2a_prof);
 
     }
 
@@ -158,7 +156,7 @@ class __TwigTemplate_cfe05fe170ddc09d1e834359dbc58682074abc6d6186daecf290c602f7b
 
     public function getDebugInfo()
     {
-        return array (  133 => 53,  129 => 52,  125 => 50,  119 => 48,  112 => 44,  103 => 41,  101 => 40,  93 => 35,  88 => 32,  77 => 30,  73 => 29,  66 => 24,  55 => 21,  52 => 20,  48 => 19,  40 => 14,  25 => 1,);
+        return array (  131 => 53,  127 => 52,  123 => 50,  117 => 48,  110 => 44,  103 => 41,  101 => 40,  93 => 35,  88 => 32,  77 => 30,  73 => 29,  66 => 24,  55 => 21,  52 => 20,  48 => 19,  40 => 14,  25 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -211,7 +209,7 @@ class __TwigTemplate_cfe05fe170ddc09d1e834359dbc58682074abc6d6186daecf290c602f7b
             <ul class=\"nav navbar-nav navbar-right\">
    \t\t\t\t<li>
 \t\t\t\t\t{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-\t\t\t\t\t\t<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">{{ app.user.username }} {{ app.user.lastname() }} <span class=\"caret\"></span></a>
+\t\t\t\t\t\t<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">{{ app.user.username  }} <span class=\"caret\"></span></a>
 \t\t\t\t\t\t<ul class=\"dropdown-menu\">
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a href=\"{{ path('user_signout') }}\">Sign out</a>

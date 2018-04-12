@@ -1371,7 +1371,7 @@ UPGRADE FROM 2.x to 3.0
 
    ```jinja
    {{ form_start(form, {'method': 'GET', 'action': 'http://example.com'}) }}
-       ...
+      // ...
    {{ form_end(form) }}
    ```
 

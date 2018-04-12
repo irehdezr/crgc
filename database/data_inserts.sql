@@ -161,9 +161,9 @@ INSERT INTO `Farm_Certification` (`farm_id`, `certification_id`) VALUES
 ('2', '2');
 
 
-INSERT INTO `User` (`email`, `username`,`lastname`, `password`) VALUES 
-('admin@gmail.com', 'CRgourmet','Coffee', '$2y$12$JUcCH2ESdVVDw4LyDZiLtuDJZUuxZonom9gg0ynZ6FGDbYbUYOrrq'),
-('carlos@gmail.com', 'Carlos','Herrera', '$2y$12$t9LLBvfK1b84GDdWROZFLeHojdRP2vH9mhuY36ivx310g7wmtMC2i');
+INSERT INTO `User` (`email`,`username`, `firstname`,`lastname`, `password`) VALUES 
+('admin@gmail.com', 'CRgourmet Coffee', 'CRgourmet','Coffee', '$2y$12$JUcCH2ESdVVDw4LyDZiLtuDJZUuxZonom9gg0ynZ6FGDbYbUYOrrq'),
+('carlos@gmail.com', 'Carlos Herrera', 'Carlos','Herrera', '$2y$12$t9LLBvfK1b84GDdWROZFLeHojdRP2vH9mhuY36ivx310g7wmtMC2i');
 
 INSERT INTO `Shopping_Cart_T` (`id`, `page_title`, `cart_title`, `product_title`, `farm_title`, `description_title`, `weight_title`, `roast_title`, `grind_title`, `unit_price_title`, `quantity_title`, `sub_total_title`, `total_title`, `action_title`, `remove_button`, `shipping_title`, `continue_button`, `check_out_button`, `empty_cart_title`) VALUES
 (1, 'Shopping Cup', 'Your products', 'Product', 'Farm', 'Description', 'Weight','Roast','Grind','Unit Price', 'Quantity', 'Sub total', 'Total', 'Action', 'Remove', 'Shipping is not included', 'Continue Shopping', 'Check out', 'You have no products on your shopping cup');

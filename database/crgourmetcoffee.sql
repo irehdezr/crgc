@@ -175,6 +175,7 @@ CREATE TABLE IF NOT EXISTS `Farm_Certification` (
 CREATE TABLE IF NOT EXISTS `User` (
 	`email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
 	`username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`firstname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
 	`lastname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
 	`password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
 	PRIMARY KEY `PK_User` (`email`)

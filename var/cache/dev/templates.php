@@ -83,7 +83,6 @@
   'PageBundle:Default:header.html.twig' => __DIR__.'/../../../src/PageBundle/Resources/views/Default/header.html.twig',
   'PageBundle:Default:home.html.twig' => __DIR__.'/../../../src/PageBundle/Resources/views/Default/home.html.twig',
   'PageBundle:Default:onDevelopment.html.twig' => __DIR__.'/../../../src/PageBundle/Resources/views/Default/onDevelopment.html.twig',
-  'PageBundle:Default:product_information.html.twig' => __DIR__.'/../../../src/PageBundle/Resources/views/Default/product_information.html.twig',
   'PageBundle:Default:shopping_cart.html.twig' => __DIR__.'/../../../src/PageBundle/Resources/views/Default/shopping_cart.html.twig',
   'FarmBundle:Default:farm_information.html.twig' => __DIR__.'/../../../src/FarmBundle/Resources/views/Default/farm_information.html.twig',
   'ProductBundle:Default:product_information.html.twig' => __DIR__.'/../../../src/ProductBundle/Resources/views/Default/product_information.html.twig',
