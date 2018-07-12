@@ -15,8 +15,8 @@ class __TwigTemplate_8630dc0f0266b559526ef7d277244953b286ebeaf713d8975d3ba6dfc82
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_064c1052e002384adf08a762b21a776aeae3e3f9a7e310d630ea3f78ed5e6f6f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_064c1052e002384adf08a762b21a776aeae3e3f9a7e310d630ea3f78ed5e6f6f->enter($__internal_064c1052e002384adf08a762b21a776aeae3e3f9a7e310d630ea3f78ed5e6f6f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "footer.html.twig"));
+        $__internal_86fd7d8939c9ef0617d8b4ea5725be5f56dc2d7c670015cbec4d330f99abafc5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_86fd7d8939c9ef0617d8b4ea5725be5f56dc2d7c670015cbec4d330f99abafc5->enter($__internal_86fd7d8939c9ef0617d8b4ea5725be5f56dc2d7c670015cbec4d330f99abafc5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "footer.html.twig"));
 
         // line 1
         echo "<nav id=\"footerOptions\"class=\"navbar navbar-inverse \">
@@ -51,7 +51,7 @@ class __TwigTemplate_8630dc0f0266b559526ef7d277244953b286ebeaf713d8975d3ba6dfc82
     <center>Copyright &#169; Universidad Nacional de Costa Rica, 2017-2018</center>
 </div>";
         
-        $__internal_064c1052e002384adf08a762b21a776aeae3e3f9a7e310d630ea3f78ed5e6f6f->leave($__internal_064c1052e002384adf08a762b21a776aeae3e3f9a7e310d630ea3f78ed5e6f6f_prof);
+        $__internal_86fd7d8939c9ef0617d8b4ea5725be5f56dc2d7c670015cbec4d330f99abafc5->leave($__internal_86fd7d8939c9ef0617d8b4ea5725be5f56dc2d7c670015cbec4d330f99abafc5_prof);
 
     }
 

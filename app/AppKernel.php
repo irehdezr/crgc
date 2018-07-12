@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new FarmBundle\FarmBundle(),
             new ProductBundle\ProductBundle(),
             new UserBundle\UserBundle(),
-            new RegionBundle\RegionBundle(),
+            new RegionBundle\RegionBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

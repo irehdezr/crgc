@@ -10,34 +10,68 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller{
 
     
-    public function productAction($product, $presentation){
+    public function productAction($farm,$product, $presentation){
     	$em = $this->getDoctrine();
-    	$template = $em->getRepository('PageBundle:Product_T')->find(1); // depends on the language
+    	$template = $em->getRepository('PageBundle:Product_T')->find(1); 
+        $farm = $em->getRepository('FarmBundle:Farm_I')->find($farm);
     	$product = $em->getRepository('ProductBundle:Product_I')->find($product);
-    	$presentations = $product->getPresentations();	
-        $farm = $product->getFarm();
-    	$flag = false;
-    	foreach ($presentations as $temp){
-    		if($temp->getId() == $presentation){
-    		 	$flag = true;
-    		 	$defaultPresentation = $temp;
-    		}
-    	}
-    	if($product){   
-			if($flag){
-				return $this->render('ProductBundle:Default:product_information.html.twig', array("template" => $template,"product" => $product,"presentation" => $defaultPresentation,"farm"=>$farm));  
-			    }
-			else{
-				echo "Presentation doesnt exist";
-			    return $this->render('PageBundle:Default:error.html.twig');// Presentation doesnt exist
-			}
-		}
-		else{
-				echo "Product doesnt exist";
-		    return $this->render('PageBundle:Default:error.html.twig');//Product doesnt exist
-		}
+        $presentation = $em->getRepository('ProductBundle:Presentation')->find($presentation);
+        if($product->getFarm() == $farm && $presentation->getProduct() == $product){
+        	return $this->render('ProductBundle:Default:product_information.html.twig', array("template" => $template,"product" => $product,"presentation" => $presentation,"farm"=>$farm)); 
+        }else{
+            return $this->render('PageBundle:Default:error.html.twig');
+        }
+
+  //       $farm = $product->getFarm();
+  //   	$flag = false;
+  //   	foreach ($presentations as $temp){
+  //   		if($temp->getId() == $presentation){
+  //   		 	$flag = true;
+  //   		 	$defaultPresentation = $temp;
+  //   		}
+  //   	}
+  //   	if($product){   
+		// 	if($flag){
+		// 		return $this->render('ProductBundle:Default:product_information.html.twig', array("template" => $template,"product" => $product,"presentation" => $defaultPresentation,"farm"=>$farm));  
+		// 	    }
+		// 	else{
+		// 		echo "Presentation doesnt exist";
+		// 	    return $this->render('PageBundle:Default:error.html.twig');// Presentation doesnt exist
+		// 	}
+		// }
+		// else{
+		// 		echo "Product doesnt exist";
+		//     return $this->render('PageBundle:Default:error.html.twig');//Product doesnt exist
+		// }
     }
 
+    // public function productAction($product, $presentation){
+    //     $em = $this->getDoctrine();
+    //     $template = $em->getRepository('PageBundle:Product_T')->find(1); // depends on the language
+    //     $product = $em->getRepository('ProductBundle:Product_I')->find($product);
+    //     $presentations = $product->getPresentations();  
+    //     $farm = $product->getFarm();
+    //     $flag = false;
+    //     foreach ($presentations as $temp){
+    //         if($temp->getId() == $presentation){
+    //             $flag = true;
+    //             $defaultPresentation = $temp;
+    //         }
+    //     }
+    //     if($product){   
+    //         if($flag){
+    //             return $this->render('ProductBundle:Default:product_information.html.twig', array("template" => $template,"product" => $product,"presentation" => $defaultPresentation,"farm"=>$farm));  
+    //             }
+    //         else{
+    //             echo "Presentation doesnt exist";
+    //             return $this->render('PageBundle:Default:error.html.twig');// Presentation doesnt exist
+    //         }
+    //     }
+    //     else{
+    //             echo "Product doesnt exist";
+    //         return $this->render('PageBundle:Default:error.html.twig');//Product doesnt exist
+    //     }
+    // }
 
     public function addToCartAction(Request $request){
         $reponse = $this->generateUrl('page_homepage', array('name' => 'error'));
@@ -112,7 +146,7 @@ class DefaultController extends Controller{
             }
         }
         return new Response($response);  
-    }
+    }   
 
     public function presentationGetPriceAction(Request $request){
         $response = '';
@@ -130,5 +164,13 @@ class DefaultController extends Controller{
         $session->set('itemsOnCart',$session->get('itemsOnCart')-1);
 
     }
-
+    public function getProductAction(Request $request){
+        $response = "Request error";
+        if($request->isXMLHttpRequest()){
+            $id = $request->request("id");
+            $product = $this->getDoctrine()->getRepository('ProductBundle:Product_I')->find($id);
+            $response = $product;
+        }
+        return new Response ($response);
+    }
 }

@@ -6,7 +6,6 @@ namespace ProductBundle\Entity;
  * Product_I
  */
 class Product_I{
-
     /**
      * @var integer
      */
@@ -28,11 +27,6 @@ class Product_I{
     private $rank;
 
     /**
-     * @var integer
-     */
-    private $reviews;
-
-    /**
      * @var string
      */
     private $description;
@@ -41,6 +35,11 @@ class Product_I{
      * @var \Doctrine\Common\Collections\Collection
      */
     private $presentations;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $reviews;
 
     /**
      * @var \FarmBundle\Entity\Farm_I
@@ -73,6 +72,7 @@ class Product_I{
     public function __construct()
     {
         $this->presentations = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->reviews = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -95,7 +95,7 @@ class Product_I{
     public function setName($name)
     {
         $this->name = $name;
-
+    
         return $this;
     }
 
@@ -119,7 +119,7 @@ class Product_I{
     public function setImage($image)
     {
         $this->image = $image;
-
+    
         return $this;
     }
 
@@ -143,7 +143,7 @@ class Product_I{
     public function setRank($rank)
     {
         $this->rank = $rank;
-
+    
         return $this;
     }
 
@@ -158,30 +158,6 @@ class Product_I{
     }
 
     /**
-     * Set reviews
-     *
-     * @param integer $reviews
-     *
-     * @return Product_I
-     */
-    public function setReviews($reviews)
-    {
-        $this->reviews = $reviews;
-
-        return $this;
-    }
-
-    /**
-     * Get reviews
-     *
-     * @return integer
-     */
-    public function getReviews()
-    {
-        return $this->reviews;
-    }
-
-    /**
      * Set description
      *
      * @param string $description
@@ -191,7 +167,7 @@ class Product_I{
     public function setDescription($description)
     {
         $this->description = $description;
-
+    
         return $this;
     }
 
@@ -215,7 +191,7 @@ class Product_I{
     public function addPresentation(\ProductBundle\Entity\Presentation $presentation)
     {
         $this->presentations[] = $presentation;
-
+    
         return $this;
     }
 
@@ -240,6 +216,40 @@ class Product_I{
     }
 
     /**
+     * Add review
+     *
+     * @param \ProductBundle\Entity\Review $review
+     *
+     * @return Product_I
+     */
+    public function addReview(\ProductBundle\Entity\Review $review)
+    {
+        $this->reviews[] = $review;
+    
+        return $this;
+    }
+
+    /**
+     * Remove review
+     *
+     * @param \ProductBundle\Entity\Review $review
+     */
+    public function removeReview(\ProductBundle\Entity\Review $review)
+    {
+        $this->reviews->removeElement($review);
+    }
+
+    /**
+     * Get reviews
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReviews()
+    {
+        return $this->reviews;
+    }
+
+    /**
      * Set farm
      *
      * @param \FarmBundle\Entity\Farm_I $farm
@@ -249,7 +259,7 @@ class Product_I{
     public function setFarm(\FarmBundle\Entity\Farm_I $farm = null)
     {
         $this->farm = $farm;
-
+    
         return $this;
     }
 
@@ -273,7 +283,7 @@ class Product_I{
     public function setCultivar(\FarmBundle\Entity\Cultivar $cultivar = null)
     {
         $this->cultivar = $cultivar;
-
+    
         return $this;
     }
 
@@ -297,7 +307,7 @@ class Product_I{
     public function setGrade(\ProductBundle\Entity\Grade $grade = null)
     {
         $this->grade = $grade;
-
+    
         return $this;
     }
 
@@ -321,7 +331,7 @@ class Product_I{
     public function setProcessing(\ProductBundle\Entity\Processing $processing = null)
     {
         $this->processing = $processing;
-
+    
         return $this;
     }
 
@@ -345,7 +355,7 @@ class Product_I{
     public function setFlavor(\ProductBundle\Entity\Flavor $flavor = null)
     {
         $this->flavor = $flavor;
-
+    
         return $this;
     }
 

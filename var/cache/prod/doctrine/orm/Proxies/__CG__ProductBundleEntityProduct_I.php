@@ -64,10 +64,10 @@ class Product_I extends \ProductBundle\Entity\Product_I implements \Doctrine\ORM
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'id', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'name', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'image', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'rank', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'reviews', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'description', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'presentations', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'farm', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'cultivar', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'grade', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'processing', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'flavor'];
+            return ['__isInitialized__', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'id', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'name', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'image', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'rank', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'description', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'presentations', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'reviews', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'farm', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'cultivar', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'grade', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'processing', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'flavor'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'id', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'name', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'image', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'rank', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'reviews', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'description', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'presentations', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'farm', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'cultivar', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'grade', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'processing', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'flavor'];
+        return ['__isInitialized__', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'id', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'name', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'image', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'rank', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'description', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'presentations', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'reviews', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'farm', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'cultivar', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'grade', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'processing', '' . "\0" . 'ProductBundle\\Entity\\Product_I' . "\0" . 'flavor'];
     }
 
     /**
@@ -257,28 +257,6 @@ class Product_I extends \ProductBundle\Entity\Product_I implements \Doctrine\ORM
     /**
      * {@inheritDoc}
      */
-    public function setReviews($reviews)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setReviews', [$reviews]);
-
-        return parent::setReviews($reviews);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getReviews()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getReviews', []);
-
-        return parent::getReviews();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setDescription($description)
     {
 
@@ -329,6 +307,39 @@ class Product_I extends \ProductBundle\Entity\Product_I implements \Doctrine\ORM
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPresentations', []);
 
         return parent::getPresentations();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addReview(\ProductBundle\Entity\Review $review)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addReview', [$review]);
+
+        return parent::addReview($review);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeReview(\ProductBundle\Entity\Review $review)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeReview', [$review]);
+
+        return parent::removeReview($review);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getReviews()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getReviews', []);
+
+        return parent::getReviews();
     }
 
     /**

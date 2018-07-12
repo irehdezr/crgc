@@ -17,3 +17,6 @@ product_remove_presentation:
 product_presentation_price:
     path:     /presentation/getPrice
     defaults: { _controller: ProductBundle:Default:presentationGetPrice}
+product_get:
+    path:   /product/get
+    defaults:   {_controller:ProductBundle:Default:getProduct}

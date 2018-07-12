@@ -1,18 +1,19 @@
-	$(document).ready(function(){
-  setPrice();
-  $(".btn-default").click(function(e){
-  	e.preventDefault();
-    setActiveBotton($(this));
-    setPrice();
+$(document).ready(function(){
+	setPrice();
+	$('.productName').text($('#productName').text());
+	$(".btn-default").click(function(e){
+		e.preventDefault();
+		setActiveBotton($(this));
+		setPrice();
 	});
-  $(".orderPresentation").click(function(e){
-    e.preventDefault();
-    addToCart(findSelected());
-  });
-  $('#myCarousel').on('slid.bs.carousel', function () {
-    setPrice();
-    $('#myCarousel2').blind();
-  });
+	$(".orderPresentation").click(function(e){
+		e.preventDefault();
+		addToCart(findSelected());
+	});
+	$('#myCarousel').on('slid.bs.carousel', function () {
+		setPrice();
+		$('.productName').text($('#myCarousel').find('.active').find('#productName').text());
+	});
 });
 
 
@@ -56,7 +57,7 @@ function getPrice(presentation){
 		url: getPriceUrl,
 		type: 'POST',
 		async: false,
-		data: {id: presentation}
+		data: { id: presentation }
 	})
 	.done( function(result) {
 		response = result;

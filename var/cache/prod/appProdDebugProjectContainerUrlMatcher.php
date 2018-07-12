@@ -58,9 +58,17 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
                 return array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::removePresentationAction',  '_route' => 'product_remove_presentation',);
             }
 
-            // product_presentation_price
-            if ($pathinfo === '/product/presentation/getPrice') {
-                return array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::presentationGetPriceAction',  '_route' => 'product_presentation_price',);
+            if (0 === strpos($pathinfo, '/product/pr')) {
+                // product_presentation_price
+                if ($pathinfo === '/product/presentation/getPrice') {
+                    return array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::presentationGetPriceAction',  '_route' => 'product_presentation_price',);
+                }
+
+                // product_get
+                if ($pathinfo === '/product/product/get') {
+                    return array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::getProductAction',  '_route' => 'product_get',);
+                }
+
             }
 
         }

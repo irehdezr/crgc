@@ -166,4 +166,50 @@ class Presentation{
     {
         return $this->grind;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $review;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->review = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add review
+     *
+     * @param \ReviewBundle\Entity\Review $review
+     *
+     * @return Presentation
+     */
+    public function addReview(\ReviewBundle\Entity\Review $review)
+    {
+        $this->review[] = $review;
+    
+        return $this;
+    }
+
+    /**
+     * Remove review
+     *
+     * @param \ReviewBundle\Entity\Review $review
+     */
+    public function removeReview(\ReviewBundle\Entity\Review $review)
+    {
+        $this->review->removeElement($review);
+    }
+
+    /**
+     * Get review
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReview()
+    {
+        return $this->review;
+    }
 }

@@ -17,15 +17,16 @@ ProductBundle\Entity\Product_I:
             length: 255
         rank:
             type: integer
-        reviews:
-            type: integer
         description:
             type: string
             length: 255
     oneToMany:
         presentations:
-          targetEntity: Presentation
-          mappedBy: product
+            targetEntity: Presentation
+            mappedBy: product
+        reviews:
+            targetEntity: Review
+            mappedBy: product
     manyToOne:
         farm:
           targetEntity: FarmBundle\Entity\Farm_I
