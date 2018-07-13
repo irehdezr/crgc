@@ -4,7 +4,8 @@
 
 {% block stylesheets%}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/homepage.css')}}" />{% endblock %}
+    <link rel="stylesheet" href="{{ asset('css/homepage.css')}}" />
+{% endblock %}
 {% block body %}
 <main>
     <div id='banner' style='background-image: url( {{ template.getBannerImage() }} )'>

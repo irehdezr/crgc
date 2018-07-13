@@ -107,9 +107,9 @@ class DefaultController extends Controller{
             $roastDescription = $request->request->get('roast');
             $weight = $request->request->get('weight');
             $grindDescription = $request->request->get('grind');
-            $em = $this->getDoctrine();            
-            $roast = ($em->getRepository('ProductBundle:Roast')->findOneBy(array('description' => $roastDescription )))->getId();
-            $grind = ($em->getRepository('ProductBundle:Grind')->findOneBy(array('description' => $grindDescription )))->getId();
+            $em = $this->getDoctrine(); 
+            $roast = $em->getRepository('ProductBundle:Roast')->findOneBy(array('description' => $roastDescription ));
+            $grind = $em->getRepository('ProductBundle:Grind')->findOneBy(array('description' => $grindDescription ));
             $response = $grind;
             $presentation = $em->getRepository('ProductBundle:Presentation')->findOneBy(array('product' => $product, 'roast' => $roast,'weight' => $weight, 'grind' => $grind));
             if($presentation){

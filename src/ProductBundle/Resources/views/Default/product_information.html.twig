@@ -49,7 +49,7 @@
 							<p class='prodInfoIconHeadOrder col-xs-offset-4 col-xs-4'>
 								<center>
 									<p class='price'>
-										$<span class="presentation-price"></span>
+										${{ presentation.getPrice() }}
 									</p>
 								</center>
 							</p>
@@ -227,12 +227,6 @@
 	{% endblock %}
 	{% block javascripts %}
 		{{ parent() }}
-		<script>
-			var findPresentationUrl = "{{ path('product_search_presentation')|escape('js') }}";
-			var getPriceUrl = "{{ path('product_presentation_price')|escape('js') }}";
-			var getProductUrl = "{{ path('product_get')|escape('js') }}";
-		</script>
-		<script src="{{ asset('js/product_information.js')}}"></script>
 		
 		
 	{% endblock %}
