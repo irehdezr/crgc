@@ -46,13 +46,11 @@
 				<div id='prodInfoCarouselContainer2' class='col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6' data-spy="affix" data-offset-top="480">
 					<div class="container col-xs-12">
 						<div>
-							<p class='prodInfoIconHeadOrder col-xs-offset-4 col-xs-4'>
-								<center>
-									<p class='price'>
-										${{ presentation.getPrice() }}
-									</p>
-								</center>
-							</p>
+							<center>
+								<p class='price' id="presentation-price">
+									${{ presentation.getPrice() }}
+								</p>
+							</center>
 						</div>
 						<div class='stickyRow row'>
 							<div class='ratingCont col-xs-4'>
@@ -214,7 +212,7 @@
 					</div>
 					<div class='row'>
 						<div id="product_Reviews"class='col-xs-12'>
-							Reviews of the product:</br>
+							{{ product.getName() }}'s reviews:</br>
 							{% for review in product.getReviews() %}
 								{{review.getUser() }}: {{review.getComment()}}
 							{% endfor %}
@@ -227,6 +225,9 @@
 	{% endblock %}
 	{% block javascripts %}
 		{{ parent() }}
-		
-		
+		<script type="text/javascript">
+			var findPresentationUrl = "{{ path('product_search_presentation')|escape('js') }}";
+			var getPriceUrl = "{{ path('product_presentation_price')|escape('js') }}";
+		</script>
+		<script src="{{ asset('js/product_information.js') }}"></script>
 	{% endblock %}

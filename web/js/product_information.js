@@ -1,18 +1,8 @@
 $(document).ready(function(){
-	setPrice();
-	$('.productName').text($('#productName').text());
 	$(".btn-default").click(function(e){
 		e.preventDefault();
 		setActiveBotton($(this));
 		setPrice();
-	});
-	$(".orderPresentation").click(function(e){
-		e.preventDefault();
-		addToCart(findSelected());
-	});
-	$('#myCarousel').on('slid.bs.carousel', function () {
-		setPrice();
-		$('.productName').text($('#myCarousel').find('.active').find('#productName').text());
 	});
 });
 
@@ -25,7 +15,7 @@ function setActiveBotton(bottonclicked){
 }
 
 function findSelected(){
-  var product = $("#myCarousel").find(".active").data("product-id");
+  var product = $("#product").data("product-id");
   var roast = $("#roastSection").find(".active").text();
   var weight = $("#weightSection").find(".active").text();
   var grind = $("#grindSection").find(".active").text();
@@ -35,7 +25,7 @@ function findSelected(){
 function setPrice(){
   var presentation = findSelected();
   var price = getPrice(presentation);
-  $(".presentation-price").text(price);
+  $("#presentation-price").text("$"+price);
 }
 
 function findPresentation(product,roast,weight,grind){
