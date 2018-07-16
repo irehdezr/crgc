@@ -4,6 +4,11 @@ $(document).ready(function(){
 		setActiveBotton($(this));
 		setPrice();
 	});
+	
+	$(".orderPresentation").click(function(e){
+		e.preventDefault();
+		addToCart(findSelected());
+	});
 });
 
 
@@ -54,3 +59,5 @@ function getPrice(presentation){
 	}); 
 	return response;
 }
+
+
