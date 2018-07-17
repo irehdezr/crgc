@@ -1,59 +1,61 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBarMenu">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>                        
-			</button>
-			<text class="navbar-brand">cr<span>gourmet</span><span>coffee.com</text>
-   		</div>
-   		<div class="collapse navbar-collapse" >
-   		    <ul class="nav navbar-nav">
-   				<li>
-					<a href="{{ path('page_homepage', {'name': 'home'}) }}">Home</a>
-				</li>
-   				<li class="dropdown">
-   					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Regions <span class="caret"></span></a>
-   				    <ul class="dropdown-menu">
-   						{% for region in regions %}
-   							<li>
-   								<a href="{{ path('region_homepage',{'id': region.getId() }) }}">{{ region.getName() }}</a>
-   							</li>
-   						{% endfor %}
-   					</ul>
-   				</li>
-   				<li class="dropdown">
-   					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Farms <span class="caret"></span></a>
-   					<ul class="dropdown-menu">
-   						{% for farm in farms %}
-   							<li><a href="{{ path('farm_information',{'farm_id': farm.getId()} ) }}">{{ farm.getName() }}</a></li>
-   						{% endfor %}
-   					</ul>
-   				</li>
-          		<li>
-					<a href="{{ path('page_homepage', {'name': 'onDevelopment'}) }}">Search</a>
-				</li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-   				<li>
-					{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ app.user.username  }} <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="{{ path('user_signout') }}">Sign out</a>
-							</li>
-							</ul>
-					{% else %}
-						<a href="{{ path('user_signin') }}">Sign in <span class="glyphicon glyphicon-log-in"></span> </a>
-					{% endif %}
-   				</li>
-   				<li>
-   					<a id='shopping-cup' href="{{ path('page_homepage', {'name': 'shoppingCart'}) }}">
-   						<span id='itemsCart'>{{ app.session.get('itemsOnCart') }}</span>
-   					</a>
-   				</li>
-   			</ul>
-   		</div>
+<nav id='navBar' class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">cr<span>gourmet</span><span>coffee.com</span></a>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul id='mainMenu' class="nav navbar-nav">
+        <li>
+          <a href="{{ path('page_homepage', {'name': 'home'}) }}">Home</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Regions <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for region in regions %}
+              <li>
+                <a href="{{ path('region_homepage',{'id': region.getId() }) }}">{{ region.getName() }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Farms <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for farm in farms %}
+              <li>
+                <a href="{{ path('farm_information',{'farm_id': farm.getId()} ) }}">{{ farm.getName() }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li>
+          <a href="{{ path('page_homepage', {'name': 'onDevelopment'}) }}">Search</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ app.user.username  }} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{ path('user_signout') }}">Sign out</a>
+              </li>
+            </ul>
+          {% else %}
+            <a href="{{ path('user_signin') }}">Sign in <span class="glyphicon glyphicon-log-in"></span> </a>
+          {% endif %}
+        </li>
+        <li>
+          <a id='shopping-cup' href="{{ path('page_homepage', {'name': 'shoppingCart'}) }}">
+            <span id='itemsCart'>{{ app.session.get('itemsOnCart') }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
