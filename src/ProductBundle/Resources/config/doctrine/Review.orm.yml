@@ -1,6 +1,6 @@
 ProductBundle\Entity\Review:
     type: entity
-    table: null
+    table: Review
     repositoryClass: ProductBundle\Repository\ReviewRepository
     id:
         id:
