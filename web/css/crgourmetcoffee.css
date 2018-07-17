@@ -6,15 +6,15 @@ html,body{
     overflow-x:auto; 
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     font-size: 16px;
 }
 
 header {
     background-color: #0e0604 !important;
-    width: 100vw;
-	height: 5vh;
+    width: 100%;
+	height: 5%;
 }
 
 .navbar-inverse .navbar-brand {
@@ -47,8 +47,8 @@ header {
 }
 
 main{
-	width: 100vw;
-	min-height: 85vh;
+	width: 100%;
+	min-height: 120%;
 }
 h1,h2,h3{
 	margin: 0px;
@@ -62,8 +62,8 @@ a:hover {
 }
 
 footer{
-	width: 100vw;
-	height: 10vh;
+	width: 100%;
+	height: 10%;
     background-color: #0e0604 !important;
 	right: 0;
 	left: 0;
