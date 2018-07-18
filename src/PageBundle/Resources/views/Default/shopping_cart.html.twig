@@ -2,6 +2,10 @@
 {% block title%}
 	Shopping Cup
 {% endblock %}
+{% block stylesheets%}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/shopping_cup.css')}}" />
+{% endblock %}
 {% block body %}
 	<div class='pageTitle'>
 		<center>
@@ -74,13 +78,14 @@
 				<button class='continue-shopping btn btn-success'>{{ template.getContinueButton() }}</button> 
 			</center>
 		{% endif %}
-	</div> 
+	</div>
+	<div class="clearfix"></div>
 {% endblock %}
 {% block javascripts %}
-    {{ parent() }}
+	{{ parent() }}
 	<script>
 		var checkSessionmUrl = "{{ path('user_check_session') | escape('js') }}";
 		var removeItemUrl = "{{ path('product_remove_presentation') | escape('js') }}";
 	</script>
-    <script src="{{ asset('js/shopping_cart.js') }}"></script> 
+	<script src="{{ asset('js/shopping_cart.js') }}"></script> 
 {% endblock %}
