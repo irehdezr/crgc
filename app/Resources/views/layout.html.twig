@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>
-            {% block title %}
-                CRgourmetcoffee
-            {% endblock %}
-        </title>
-        <meta name="viewport" content="width=device-width,height=device-height initial-scale=1.0">
-        <link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon"/>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" />
-            <link rel="stylesheet" href="{{ asset('css/crgourmetcoffee.css')}}" />
-        {% endblock %}
-    </head>
-    <body>
-        <header>
-            {{ render(controller('PageBundle:Default:header' )) }}
-        </header>
-        <main>
-            {% block body %}
-            {% endblock %}
-        </main>
-        <footer>
-            {% include "footer.html.twig"%}
-        </footer>
-        {% block javascripts %}
-			<script>
-				var addToCartUrl = "{{ path('product_add_presentation_to_cart')|escape('js') }}";
-                var homeUrl = "{{ path('page_homepage')|escape('js') }}";
-			</script>
-            <script src= "{{ asset('js/jquery-3.1.0.min.js') }}"></script>
-            <script src= "{{ asset('js/bootstrap.js') }}"> </script>
-            <script src= "{{ asset('js/crgourmetcoffee.js') }}"> </script>
-       {% endblock %}
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>
+			{% block title %}
+				CRgourmetcoffee
+			{% endblock %}
+		</title>
+		<meta name="viewport" content="width=device-width,height=device-height initial-scale=1.0">
+		<link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon"/>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" />
+			<link rel="stylesheet" href="{{ asset('css/crgourmetcoffee.css')}}" />
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			{{ render(controller('PageBundle:Default:header' )) }}
+		</header>
+		<main>
+			{% block body %}
+			{% endblock %}
+		</main>
+		<footer>
+			{% include "footer.html.twig"%}
+		</footer>
+	</body>
+	{% block javascripts %}
+		<script>
+			var addToCartUrl = "{{ path('product_add_presentation_to_cart')|escape('js') }}";
+			var homeUrl = "{{ path('page_homepage')|escape('js') }}";
+		</script>
+		<script src= "{{ asset('js/jquery-3.1.0.min.js') }}"></script>
+		<script src= "{{ asset('js/bootstrap.js') }}"> </script>
+		<script src= "{{ asset('js/crgourmetcoffee.js') }}"> </script>
+	{% endblock %}
 </html>
