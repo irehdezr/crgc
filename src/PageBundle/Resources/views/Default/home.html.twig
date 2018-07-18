@@ -1,20 +1,19 @@
 {% extends "layout.html.twig" %}
-
-{% block title%}CR Gourmet Coffee{% endblock %}
-
+{% block title%}
+	CR Gourmet Coffee
+{% endblock %}
 {% block stylesheets%}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/homepage.css')}}" />
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/homepage.css')}}" />
 {% endblock %}
 {% block body %}
-<main>
-    <div id='banner' style='background-image: url( {{ template.getBannerImage() }} )'>
-        <img id="logoSite" src="{{ asset('imgs/logo_final_v1_osc.svg') }}"/>  
+	<div id='banner' style='background-image: url( {{ template.getBannerImage() }} )'>
+		<img id="logoSite" src="{{ asset('imgs/logo_final_v1_osc.svg') }}"/>  
 	</div>
 	</section>
 		<div class="pageTitle">
 			<h2>
-				{{ template.getFeaturedProductsTitle() }}		
+				{{ template.getFeaturedProductsTitle() }}
 			</h2>
 		</div>
 	<section id='productsShowcase'>
@@ -33,7 +32,7 @@
 						<center>
 							{{ template.getProductFarmTitle() }} 
 							<a href="{{ path('farm_information', {'farm_id': product.getFarm().getId()}) }}"> {{ product.getFarm().getName }} </a>
-						</center>						
+						</center>
 					</div>
 				</div>
 			</div>
@@ -46,12 +45,11 @@
 			<div id='siteInfo' class="col-xs-12 col-md-8" style='background-image: url({{ template.getFarm().getImage()  }} )'></div>
 			<div id='siteInfoText' class="col-xs-12 col-md-4">
 				<h3>
-                    {{ template.getDescriptionTitle() }}
-				</h3>	
+					{{ template.getDescriptionTitle() }}
+				</h3>
 				<h4>
-                    {{ template.getDescriptionInfo() }}
-                </h4>
+					{{ template.getDescriptionInfo() }}
+				</h4>
 			</div>
 		</div>
-</main>
 {% endblock %}
