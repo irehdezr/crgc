@@ -9,8 +9,8 @@
         </title>
         <meta name="viewport" content="width=device-width,height=device-height initial-scale=1.0">
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('/web/public/css/bootstrap.css')}}" />
-            <link rel="stylesheet" href="{{ asset('/web/public/css/crgourmetcoffee.css')}}" />
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" />
+            <link rel="stylesheet" href="{{ asset('css/crgourmetcoffee.css')}}" />
         {% endblock %}
     </head>
     <body>
@@ -19,9 +19,9 @@
             {% endblock %}
         </div>
         {% block javascripts %}
-            <script src= "{{ asset('/web/public/js/jquery-3.1.0.min.js') }}"></script>
-            <script src= "{{ asset('/web/public/js/bootstrap.js') }}"> </script>
-            <script src= "{{ asset('/web/public/js/crgourmetcoffee.js') }}"> </script>
+            <script src= "{{ asset('js/jquery-3.1.0.min.js') }}"></script>
+            <script src= "{{ asset('js/bootstrap.js') }}"> </script>
+            <script src= "{{ asset('js/crgourmetcoffee.js') }}"> </script>
        {% endblock %}
     </body>
 </html>
