@@ -12,13 +12,11 @@ $(document).ready(function(){
 
 function addNewAddress(){
   var response = null;
-  alert(addNewAddress);
   $.post({
     url: addNewAddressUrl,
     async: false,
   })
   .done( function(result) {
-	alert(result);
     location.href=result;
   }); 
 }
